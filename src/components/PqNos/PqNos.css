@@ -1,0 +1,97 @@
+.container-whyUs{
+    padding: 0;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+
+.tittleWhyUs{
+    width: 50%;
+    border: 1px solid black;
+   height: 555px;
+    
+}
+
+.tittleWhyUs h1{
+    margin-top: 250px;
+    margin-left: 100px;
+    font-size: 40px;
+    line-height: 150%;
+
+}
+
+.responseOne {
+    background-image: url(/iconBrown.svg);
+    background-repeat: no-repeat;
+    background-position: top 100px left 80px;
+    width: 49.5%;
+    border: solid 1px black;
+    height: 555px;  
+}
+
+.responseOne h1{
+    margin-top: 250px;
+    margin-left: 100px;
+    font-size: 30px;
+}
+
+.responseOne p{
+    line-height: 150%;
+    margin-left: 100px;
+    font-size: 25px;
+    width: 515px;
+}
+
+
+.responseTwo {
+    background-image: url(/iconGreen.svg);
+    background-repeat: no-repeat;
+    background-position: top 100px left 80px;
+    border: solid 1px black;
+    height: 555px; 
+    width: 50%; 
+}
+
+.responseTwo h1{
+    margin-top: 250px;
+    margin-left: 100px;
+    font-size: 30px;
+}
+
+.responseTwo p{
+    line-height: 150%;
+    margin-left: 100px;
+    font-size: 25px;
+    width: 515px;
+}
+
+
+
+
+.responseTree {
+    background-image: url(/iconWhite.svg);
+    background-repeat: no-repeat;
+    background-position: top 100px left 80px;
+    border: solid 1px black;
+    height: 555px; 
+    width: 49.5%; 
+}
+
+.responseTree h1{
+    margin-top: 250px;
+    margin-left: 100px;
+    font-size: 30px;
+}
+
+.responseTree p{
+    line-height: 150%;
+    margin-left: 100px;
+    font-size: 25px;
+    width: 515px;
+}
+
+@media (max-width: 768px) {
+    .tittleWhyUs {
+      width: 100%; /* Em telas menores, os cards ocupam 100% da largura */
+    }
+  }
