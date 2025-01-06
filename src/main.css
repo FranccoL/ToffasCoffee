@@ -17,6 +17,9 @@ body {
 .d-flex{
   display: flex;
 }
+.flex-column{
+flex-direction: column;
+}
 
 .al-center{
   align-items: center;

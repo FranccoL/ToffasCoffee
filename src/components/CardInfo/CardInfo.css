@@ -1,0 +1,42 @@
+
+.containerCardInfo{
+    padding: 0px;
+}
+
+.backBlack{
+    background-image: url(/backgBlack.svg);
+    width: 100%;
+    height: 715px;
+    background-position: center;
+    background-size: cover;
+    margin-top: 100px;
+}
+
+.imageInfo{
+    background-image: url(/imageInfo.svg);
+    position: relative;
+    width: 1550px;
+    height: auto;
+    background-repeat: no-repeat;
+    margin-top: 30px;
+    margin-bottom: 20px;
+
+}
+
+.tittleInfo h1{
+    color: white;
+    line-height: 150%;
+    margin-top: 100px;
+    margin-left: 100px;
+    width: 530px;
+}
+
+.tittleInfo p{
+    color: white;
+    width: 343px;
+    height: 385px;
+    margin-left: 100px;
+    margin-top: 80px;
+    line-height: 200%;
+    font-size: 20px;
+}

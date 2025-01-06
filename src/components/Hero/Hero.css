@@ -1,14 +1,15 @@
 .hero{
     background-image: url(/hero.svg);
-    background-position: center;
+    background-position: center bottom;
     background-size: cover;
-    height: 708px;
+    height: 612px;
     padding: 50px;
+    transition: transform 0.3s ease;
 }
 
 .hero h1{
     color: white;
-    font-size: 52px;
+    font-size: 42px;
     line-height: 200%;
 }
 
@@ -21,6 +22,7 @@
     font-family: "Julius Sans One", serif;
     border-radius: 2px;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .btHero:hover{

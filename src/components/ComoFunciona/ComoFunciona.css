@@ -1,0 +1,100 @@
+.tittleHow{
+    margin-left: -40px;
+    padding-top: 60px;
+    margin-bottom: 50px;
+}
+
+
+.image-coffe{
+    background-image: url(/imageCafe.svg);
+    width: 1250px;
+    height: 720px;
+    right: 1%;
+    position: relative;
+    object-fit: cover;
+}
+
+.whiteCard{
+    width: 957px;
+    height: 550px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 15%; 
+    left: 12%;
+    flex-direction: row;
+
+}
+.tittleIcons{
+    font-size: 10px;
+    position: relative; 
+    margin-bottom: 340px;
+    width: 100%;
+    
+}
+.tittleIcon1{
+    margin-top: 350px;
+    margin-left: -680px;
+    margin-right: 100px;
+}
+.tittleIcon2{
+    margin-top: 350px;
+    margin-right: 100px;
+    margin-left: 50px;
+    
+}
+.tittleIcon3{
+    margin-top: 350px;
+   margin-right: 180px;
+   margin-left: 20px;
+}  
+.iconsHow{
+    margin-top: 200px ;
+    background-repeat: no-repeat;
+    position: relative; 
+}
+.iconCoffe{
+    background-image: url(/iconCoffe.svg);
+    width: 100px;    
+    height: 100px; 
+    margin-right: 200px;
+    margin-left: 250px;
+}
+.iconWhatsapp{
+    background-image: url(/WhatsApp.svg);
+    width: 100px;    
+    height: 100px; 
+    margin-right: 200px;
+    
+}
+.iconDelivery{
+    background-image: url(/Delivery.svg); 
+    width: 100px;    
+    height: 100px;  
+    
+}
+
+
+
+
+
+
+
+
+.buttonHow{
+    width: 250px;
+    height: 50px;
+    border-color: #91490B;
+    font-size: 15px;
+    font-family: "Julius Sans One", serif;
+    border-radius: 2px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative; 
+    margin-top: 500px;
+    margin-left: -755px;
+}
+.buttonHow:hover{
+    background-color: #91490B;
+    color: white;
+
+}
