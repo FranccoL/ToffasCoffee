@@ -1,7 +1,7 @@
-import './CardInfo.css'
+import './SectionInfo.css'
 
 
-function CardInfo () {
+function SectionInfo () {
     
     return (
         <div className="containerCardInfo">
@@ -19,4 +19,4 @@ function CardInfo () {
     )
 }
 
-export default CardInfo
+export default SectionInfo
