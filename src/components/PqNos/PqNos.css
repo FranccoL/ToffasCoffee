@@ -1,97 +1,197 @@
-.container-whyUs{
+
+.container-whyUs {
+    display: flex;
+    flex-wrap: wrap; 
+    margin: 0; 
+    padding: 0; 
+    width: 100%; 
+}
+
+
+.tittleWhyUs {
+    width: 48%; 
+    min-height: 400px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     padding: 0;
-    width: 100%;
-    flex-wrap: wrap;
-}
-
-
-.tittleWhyUs{
-    width: 50%;
     border: 1px solid black;
-   height: 555px;
-    
+    margin: 0; 
 }
 
-.tittleWhyUs h1{
-    margin-top: 250px;
-    margin-left: 150px;
-    font-size: 40px;
-    line-height: 150%;
 
+.tittleWhyUs h1 {
+    font-size: 2rem; 
+    text-align: center;
+    margin: 0;
 }
+
+
+.responseOne, .responseTwo, .responseTree, .responseFour {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    min-height: 400px;
+    padding: 0;
+    background-repeat: no-repeat;
+    background-position: top left;
+    background-size: 100px;
+    width: 48%; 
+    box-sizing: border-box;
+    margin: 0; 
+}
+
 
 .responseOne {
     background-image: url(/iconBrown.svg);
-    background-repeat: no-repeat;
-    background-position: top 100px left 80px;
-    width: 49.5%;
-    border: solid 1px black;
-    height: 555px;  
 }
-
-.responseOne h1{
-    margin-top: 250px;
-    margin-left: 100px;
-    font-size: 30px;
-}
-
-.responseOne p{
-    line-height: 150%;
-    margin-left: 100px;
-    font-size: 25px;
-    width: 515px;
-}
-
 
 .responseTwo {
     background-image: url(/iconGreen.svg);
-    background-repeat: no-repeat;
-    background-position: top 100px left 80px;
-    border: solid 1px black;
-    height: 555px; 
-    width: 50%; 
 }
-
-.responseTwo h1{
-    margin-top: 250px;
-    margin-left: 100px;
-    font-size: 30px;
-}
-
-.responseTwo p{
-    line-height: 150%;
-    margin-left: 100px;
-    font-size: 25px;
-    width: 515px;
-}
-
-
-
 
 .responseTree {
     background-image: url(/iconWhite.svg);
-    background-repeat: no-repeat;
-    background-position: top 100px left 80px;
-    border: solid 1px black;
-    height: 555px; 
-    width: 49.5%; 
 }
 
-.responseTree h1{
-    margin-top: 250px;
-    margin-left: 100px;
-    font-size: 30px;
+.responseFour {
+    background-image: url(/iconOther.svg);
 }
 
-.responseTree p{
+
+.responseOne h1,
+.responseTwo h1,
+.responseTree h1,
+.responseFour h1 {
+    font-size: 1.4rem; 
+    text-align: center;
+    margin-bottom: 5px; 
+}
+
+
+.responseOne p,
+.responseTwo p,
+.responseTree p,
+.responseFour p {
+    font-size: 1rem; 
     line-height: 150%;
-    margin-left: 100px;
-    font-size: 25px;
-    width: 515px;
+    text-align: center;
+    max-width: 90%;
+    margin: 0;
+    padding: 0;
 }
+
 
 @media (max-width: 768px) {
-    .tittleWhyUs {
-      width: 100%; /* Em telas menores, os cards ocupam 100% da largura */
+    
+    .tittleWhyUs, .responseOne, .responseTwo, .responseTree, .responseFour {
+        width: 100%;
+        height: auto; 
     }
-  }
+
+    
+    .container-whyUs {
+        flex-direction: column; 
+        align-items: center;
+        margin: 0;
+    }
+
+    
+    .responseOne, .responseTwo, .responseTree, .responseFour {
+        background-size: 80px;
+    }
+
+    
+    .tittleWhyUs h1 {
+        font-size: 1.8rem;
+    }
+
+    .responseOne h1,
+    .responseTwo h1,
+    .responseTree h1,
+    .responseFour h1 {
+        font-size: 1.2rem;
+    }
+
+    .responseOne p,
+    .responseTwo p,
+    .responseTree p,
+    .responseFour p {
+        font-size: 1rem;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .tittleWhyUs h1 {
+        font-size: 1.6rem;
+    }
+
+    .responseOne h1,
+    .responseTwo h1,
+    .responseTree h1,
+    .responseFour h1 {
+        font-size: 1rem;
+    }
+
+    .responseOne p,
+    .responseTwo p,
+    .responseTree p,
+    .responseFour p {
+        font-size: 0.9rem;
+    }
+}
+
+
+@media (min-width: 769px) {
+    
+    .container-whyUs {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        margin: 0;
+    }
+
+    
+    .tittleWhyUs, .responseOne {
+        width: 48%; 
+        margin: 0; 
+        padding: 0; 
+    }
+
+    
+    .responseTwo, .responseTree, .responseFour {
+        width: 48%;
+        margin: 0; 
+        padding: 0; 
+    }
+
+    
+    .responseOne, .responseTwo, .responseTree, .responseFour {
+        background-size: 100px;
+        padding-left: 10px;
+        padding-top: 10px;
+    }
+
+    
+    .responseOne h1,
+    .responseTwo h1,
+    .responseTree h1,
+    .responseFour h1 {
+        font-size: 1.6rem;
+    }
+
+    .responseOne p,
+    .responseTwo p,
+    .responseTree p,
+    .responseFour p {
+        font-size: 1.2rem;
+    }
+
+    
+    .responseOne, .responseTwo, .responseTree, .responseFour {
+        min-height: 500px;
+    }
+}

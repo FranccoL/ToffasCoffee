@@ -83,3 +83,123 @@
     
     line-height: 200%;
 }
+
+/* Ajustes para a versão mobile */
+@media (max-width: 768px) {
+    .footer {
+        margin-top: 60px; /* Menor margem superior */
+        width: 100%;
+        height: 900px;
+        background-color: #000000;
+        padding-bottom: 20px; /* Adiciona espaço inferior */
+    }
+
+    /* Logo */
+    .logoFooter {
+        background-image: url(/logoHeader.svg);
+        background-repeat: no-repeat;
+        width: 180px; /* Tamanho reduzido */
+        height: 90px;
+        
+        background-size: contain;
+    }
+
+    /* Título do Footer */
+    .tittleFooter h1 {
+        color: white;
+        margin-top: 600px; /* Ajusta a margem superior */
+        margin-left: 100px;
+        font-weight: lighter;
+        font-size: 20px; /* Tamanho de fonte reduzido */
+        line-height: 150%;
+        text-align: center; /* Centraliza o título */
+    }
+
+    /* Seção Info (INFO) */
+    .infosFooter {
+        color: white;
+        font-weight: lighter;
+        margin-top: 20px;
+        text-align: center;
+        font-size: 10px;
+        margin-top: 220px;
+        margin-left: -50px;    
+    }
+
+    .infoFooter {
+        margin-bottom: 15px; /* Espaço entre os itens */
+    }
+
+    .infoFooter p {
+        font-size: 14px; /* Tamanho de fonte reduzido */
+        line-height: 1.5;
+        margin-bottom: 10px;
+    }
+
+    /* Endereço */
+    .infoFooter p {
+        font-size: 14px;
+        line-height: 1.5;
+        margin-bottom: 10px;
+        text-align: center; /* Centraliza o texto */
+    }
+
+    /* Botões de redes sociais */
+    .btRedes {
+        background: transparent;
+        color: white;
+        border: none;
+        cursor: pointer;
+        text-decoration: underline;
+        font-family: "Julius Sans One", serif;
+        font-size: 18px;
+        line-height: 200%;
+        margin-bottom: 10px;
+        display: block;
+        width: 80%; /* Limita o tamanho dos botões */
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    /* Botão "Trabalhe Conosco" */
+    .buttonFotter {
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .btfooter {
+        background-color: white;
+        cursor: pointer;
+        border-radius: 15px;
+        font-family: "Julius Sans One", serif;
+        font-weight: bold;
+        width: 200px;
+        height: 40px;
+        margin-left: 100px;
+        
+    }
+
+    .btfooter:hover {
+        background-color: #91490B;
+        color: white;
+    }
+
+    /* Ajustes finais para a estrutura */
+    .footer {
+        padding-top: 30px;
+        padding-bottom: 20px;
+    }
+
+    /* Remover linha de separação */
+    .lineFooter {
+        display: none;
+    }
+}
+
+
+
+
+

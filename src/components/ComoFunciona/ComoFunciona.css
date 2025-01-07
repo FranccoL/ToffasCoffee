@@ -1,100 +1,164 @@
-.tittleHow{
-    margin-left: -40px;
-    padding-top: 60px;
-    margin-bottom: 50px;
-}
-
-
-.image-coffe{
-    background-image: url(/imageCafe.svg);
-    width: 1250px;
-    height: 720px;
-    right: 1%;
-    position: relative;
-    object-fit: cover;
-}
-
-.whiteCard{
-    width: 957px;
-    height: 550px;
-    background-color: rgb(255, 255, 255);
-    position: absolute;
-    top: 15%; 
-    left: 12%;
-    flex-direction: row;
-
-}
-.tittleIcons{
-    font-size: 10px;
-    position: relative; 
-    margin-bottom: 340px;
-    width: 100%;
-    
-}
-.tittleIcon1{
-    margin-top: 350px;
-    margin-left: -680px;
-    margin-right: 100px;
-}
-.tittleIcon2{
-    margin-top: 350px;
-    margin-right: 100px;
-    margin-left: 50px;
-    
-}
-.tittleIcon3{
-    margin-top: 350px;
-   margin-right: 180px;
-   margin-left: 20px;
-}  
-.iconsHow{
-    margin-top: 200px ;
-    background-repeat: no-repeat;
-    position: relative; 
-}
-.iconCoffe{
-    background-image: url(/iconCoffe.svg);
-    width: 100px;    
-    height: 100px; 
-    margin-right: 200px;
-    margin-left: 250px;
-}
-.iconWhatsapp{
-    background-image: url(/WhatsApp.svg);
-    width: 100px;    
-    height: 100px; 
-    margin-right: 200px;
-    
-}
-.iconDelivery{
-    background-image: url(/Delivery.svg); 
-    width: 100px;    
-    height: 100px;  
-    
-}
-
-
-
-
-
-
-
-
-.buttonHow{
-    width: 250px;
-    height: 50px;
-    border-color: #91490B;
-    font-size: 15px;
-    font-family: "Julius Sans One", serif;
-    border-radius: 2px;
+/* Título principal */
+.tittleHow h1 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 20px;
     font-weight: bold;
-    cursor: pointer;
-    position: relative; 
-    margin-top: 500px;
-    margin-left: -755px;
-}
-.buttonHow:hover{
+  }
+  
+  /* Imagem de fundo */
+  .image-coffe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    background-image: url('imageCafe.svg'); /* Coloque o caminho da sua imagem */
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* Ocupa toda a altura da tela */
+    padding: 0; /* Garantir que não há padding */
+    margin: 0; /* Garantir que não há margem */
+  }
+  
+  /* Card branco */
+  .whiteCard {
+    width: 80%; /* Ajustando a largura para 80% */
+    background-color: rgba(255, 255, 255, 0.9); /* Leve transparência para a imagem aparecer */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); /* Opcional: sombra para destacar o card */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Alinha os itens dentro do card */
+    margin-top: 50px; /* Dá um espaçamento do topo */
+  }
+  
+  /* Estilo dos ícones e títulos */
+  .iconsHow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px; /* Espaço entre os ícones + título */
+    width: 100%;
+  }
+  
+  .iconCoffe,
+  .iconWhatsapp,
+  .iconDelivery {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px; /* Espaço entre o ícone e o título */
+  }
+  
+  /* Estilo dos ícones */
+  .iconCoffe {
+    background-image: url('iconCoffe.svg'); /* Substitua pelo caminho do seu ícone */
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .iconWhatsapp {
+    background-image: url('WhatsApp.svg'); /* Substitua pelo caminho do seu ícone */
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .iconDelivery {
+    background-image: url('Delivery.svg'); /* Substitua pelo caminho do seu ícone */
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .tittleIcon {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 20px; /* Margem entre o título e o próximo ícone + título */
+    color: #333; /* Cor do texto */
+  }
+  
+  /* Botão de contato */
+  .buttonHowM {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .buttonHow {
+    padding: 12px 24px;
     background-color: #91490B;
     color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .buttonHow:hover {
+    background-color: #7c3e09;
+  }
+  
+  /* Estilos para a versão desktop */
+  @media (min-width: 768px) {
+    .image-coffe {
+      height: 100vh; /* Manter a altura da imagem no desktop */
+      padding: 0; /* Garantir que não há padding */
+      margin: 0; /* Garantir que não há margem */
+    }
+  
+    .whiteCard {
+      width: 60%; /* Ajusta a largura do card para 60% na versão desktop */
+      margin-top: 10%; /* Espaço superior */
+    }
+  
+    .iconsHow {
+      margin-bottom: 20px;
+    }
+  
+    .tittleIcon {
+      font-size: 1.4rem;
+    }
+  }
+  
+  /* Estilos para a versão mobile */
+  @media (max-width: 768px) {
+    .image-coffe {
+      height: auto; /* Ajusta a altura da imagem de fundo na versão mobile */
+      padding: 0; /* Remove padding */
+      margin: 0; /* Remove margem */
+    }
+  
+    .whiteCard {
+      width: 60%; /* Ajusta a largura do card para 90% na versão mobile */
+      margin: 10 auto; /* Centraliza o card */
+      margin-bottom: 20px;
+    }
+  
+    .iconsHow {
+      margin-bottom: 20px;
+    }
+  
+    .iconCoffe,
+    .iconWhatsapp,
+    .iconDelivery {
+      width: 50px; /* Ajusta o tamanho dos ícones */
+      height: 50px;
+    }
+  
+    .tittleIcon {
+      font-size: 1rem;
+      text-align: center;
+    }
+  
+    .buttonHowM {
+      margin-top: 20px;
+    }
 
-}
+    .container {
+        margin-left: 0; /* Remover a margem esquerda */
+        padding: 0; /* Garantir que o padding também seja removido */
+      }
+  }
+  

@@ -30,3 +30,41 @@
     color: white;
 
 }
+
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 30px;
+        height: 500px; /* Ajusta a altura para telas menores */
+    }
+
+    .hero h1 {
+        font-size: 28px; /* Diminui o tamanho da fonte */
+        text-align: center; /* Centraliza o texto */
+    }
+
+    .btHero {
+        width: 200px; /* Diminui a largura do botão */
+        height: 45px; /* Ajusta a altura do botão */
+        font-size: 14px; /* Ajusta o tamanho da fonte */
+        margin-top: 20px; /* Aumenta o espaço acima do botão */
+    }
+}
+
+/* Media query para telas muito pequenas (celulares em modo retrato) */
+@media (max-width: 480px) {
+    .hero {
+        padding: 20px;
+        height: 400px; /* Ajusta ainda mais a altura */
+    }
+
+    .hero h1 {
+        font-size: 22px; /* Tamanho menor da fonte */
+    }
+
+    .btHero {
+        width: 180px; /* Tamanho menor para o botão */
+        height: 40px;
+        font-size: 13px; /* Fonte menor */
+    }
+}

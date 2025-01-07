@@ -43,3 +43,61 @@
     color: white;
     cursor: pointer;
 }
+
+/* Ajustes para a versão mobile */
+@media (max-width: 768px) {
+    /* Container e layout geral */
+    .aboutToffa {
+        width: 100%;
+        height: auto;
+        flex-direction: column; /* Para organizar os elementos em coluna no mobile */
+        text-align: center; /* Centraliza o conteúdo */
+    }
+
+    /* Imagem da xícara de café */
+    .cupCoffe {
+        background-image: url(/cup.svg);
+        background-repeat: no-repeat;
+        width: 80%; /* Ajusta a largura da imagem */
+        height: 300px; /* Ajusta a altura da imagem */
+        margin-top: 30px; /* Menor margem superior */
+        background-size: contain; /* Ajusta o tamanho da imagem */
+        background-position: center;
+        margin-bottom: 20px; /* Espaço após a imagem */
+    }
+
+    /* Título e subtítulo */
+    .tittleSubAboutToffa {
+        width: 100%; /* Ocupa a largura inteira da tela no mobile */
+        margin-top: 30px; /* Ajusta o espaço superior */
+        font-size: 16px; /* Reduz o tamanho da fonte */
+    }
+
+    .subTittleAboutSection {
+        line-height: 1.5; /* Melhora a legibilidade */
+        font-size: 14px; /* Ajusta o tamanho do texto */
+        margin: 0 20px; /* Adiciona margens laterais para evitar que o texto encoste nas bordas */
+    }
+
+    /* Botão */
+    .buttonAboutSection {
+        margin-top: 20px;
+    }
+
+    .btAbout {
+        width: 200px; /* Ajusta o tamanho do botão */
+        height: 45px;
+        background-color: white;
+        cursor: pointer;
+        font-family: "Julius Sans One", serif;
+        font-size: 16px; /* Ajusta o tamanho da fonte */
+        font-weight: bold;
+        margin: 0 auto; /* Centraliza o botão */
+    }
+
+    .btAbout:hover {
+        background-color: #91490B;
+        color: white;
+        cursor: pointer;
+    }
+}
