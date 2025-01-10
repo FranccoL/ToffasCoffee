@@ -1,4 +1,4 @@
-/* Título principal */
+
 .tittleHow h1 {
     font-size: 2rem;
     text-align: center;
@@ -6,41 +6,41 @@
     font-weight: bold;
   }
   
-  /* Imagem de fundo */
+  
   .image-coffe {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     width: 100%;
-    background-image: url('imageCafe.svg'); /* Coloque o caminho da sua imagem */
+    background-image: url('imageCafe.svg');
     background-size: cover;
     background-position: center;
-    height: 100vh; /* Ocupa toda a altura da tela */
-    padding: 0; /* Garantir que não há padding */
-    margin: 0; /* Garantir que não há margem */
+    height: 100vh; 
+    padding: 0; 
+    margin: 0; 
   }
   
-  /* Card branco */
+  
   .whiteCard {
-    width: 80%; /* Ajustando a largura para 80% */
-    background-color: rgba(255, 255, 255, 0.9); /* Leve transparência para a imagem aparecer */
+    width: 80%; 
+    background-color: rgba(255, 255, 255, 0.9); 
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); /* Opcional: sombra para destacar o card */
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1); 
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between; /* Alinha os itens dentro do card */
-    margin-top: 50px; /* Dá um espaçamento do topo */
+    justify-content: space-between; 
+    margin-top: 50px; 
   }
   
-  /* Estilo dos ícones e títulos */
+  
   .iconsHow {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 20px; /* Espaço entre os ícones + título */
+    margin-bottom: 20px; 
     width: 100%;
   }
   
@@ -49,24 +49,24 @@
   .iconDelivery {
     width: 60px;
     height: 60px;
-    margin-bottom: 10px; /* Espaço entre o ícone e o título */
+    margin-bottom: 10px;
   }
   
-  /* Estilo dos ícones */
+  
   .iconCoffe {
-    background-image: url('iconCoffe.svg'); /* Substitua pelo caminho do seu ícone */
+    background-image: url('iconCoffe.svg'); 
     background-size: cover;
     background-position: center;
   }
   
   .iconWhatsapp {
-    background-image: url('WhatsApp.svg'); /* Substitua pelo caminho do seu ícone */
+    background-image: url('WhatsApp.svg'); 
     background-size: cover;
     background-position: center;
   }
   
   .iconDelivery {
-    background-image: url('Delivery.svg'); /* Substitua pelo caminho do seu ícone */
+    background-image: url('Delivery.svg'); 
     background-size: cover;
     background-position: center;
   }
@@ -74,11 +74,11 @@
   .tittleIcon {
     font-size: 1.2rem;
     text-align: center;
-    margin-bottom: 20px; /* Margem entre o título e o próximo ícone + título */
-    color: #333; /* Cor do texto */
+    margin-bottom: 20px; 
+    color: #333; 
   }
   
-  /* Botão de contato */
+  
   .buttonHowM {
     margin-top: 20px;
     width: 100%;
@@ -100,39 +100,19 @@
     background-color: #7c3e09;
   }
   
-  /* Estilos para a versão desktop */
-  @media (min-width: 768px) {
-    .image-coffe {
-      height: 100vh; /* Manter a altura da imagem no desktop */
-      padding: 0; /* Garantir que não há padding */
-      margin: 0; /* Garantir que não há margem */
-    }
   
-    .whiteCard {
-      width: 60%; /* Ajusta a largura do card para 60% na versão desktop */
-      margin-top: 10%; /* Espaço superior */
-    }
   
-    .iconsHow {
-      margin-bottom: 20px;
-    }
   
-    .tittleIcon {
-      font-size: 1.4rem;
-    }
-  }
-  
-  /* Estilos para a versão mobile */
   @media (max-width: 768px) {
     .image-coffe {
-      height: auto; /* Ajusta a altura da imagem de fundo na versão mobile */
-      padding: 0; /* Remove padding */
-      margin: 0; /* Remove margem */
+      height: auto; 
+      padding: 0; 
+      margin: 0; 
     }
   
     .whiteCard {
-      width: 60%; /* Ajusta a largura do card para 90% na versão mobile */
-      margin: 10 auto; /* Centraliza o card */
+      width: 60%; 
+      margin: 10 auto; 
       margin-bottom: 20px;
     }
   
@@ -143,7 +123,7 @@
     .iconCoffe,
     .iconWhatsapp,
     .iconDelivery {
-      width: 50px; /* Ajusta o tamanho dos ícones */
+      width: 50px; 
       height: 50px;
     }
   
@@ -157,8 +137,8 @@
     }
 
     .container {
-        margin-left: 0; /* Remover a margem esquerda */
-        padding: 0; /* Garantir que o padding também seja removido */
+        margin-left: 0; 
+        padding: 0; 
       }
   }
   

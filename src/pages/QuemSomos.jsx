@@ -1,7 +1,12 @@
+import Header from '../components/Header/Header'
+import Footer from '../components/Footer/Footer'
+
+
 function QuemSomos () {
     return (
         <>
-        <h1>a</h1>
+        <Header />   
+        <Footer />
         </>
     )
 }

@@ -1,7 +1,15 @@
+import Header from '../components/Header/Header'
+import OurProducts from '../components/OurProducts/OurProducts'
+import Footer from '../components/Footer/Footer'
+
+
 function NossosProdutos () {
     return (
         <>
-        <h1>a</h1>
+        <Header /> 
+        <OurProducts />  
+        
+        <Footer />
         </>
     )
 }

@@ -11,18 +11,22 @@
     color: white;
     font-size: 42px;
     line-height: 200%;
+    margin-left: 100px;
+    margin-bottom: 100px;
+    
 }
 
 .btHero{
-    width: 250px;
+    width: 220px;
     height: 50px;
     margin-top: 10px;
     border-color: #91490B;
-    font-size: 15px;
+    font-size: 18px;
     font-family: "Julius Sans One", serif;
-    border-radius: 2px;
-    font-weight: bold;
+    border-radius: 5px;
+    font-weight:lighter;
     cursor: pointer;
+    margin-left: 100px;
 }
 
 .btHero:hover{
@@ -35,36 +39,45 @@
 @media (max-width: 768px) {
     .hero {
         padding: 30px;
-        height: 500px; /* Ajusta a altura para telas menores */
+        height: 500px; 
     }
 
     .hero h1 {
-        font-size: 28px; /* Diminui o tamanho da fonte */
-        text-align: center; /* Centraliza o texto */
+        font-size: 28px; 
+        text-align: center; 
+        margin: 0;
+        margin-left: 120px;
+        
+        
     }
 
     .btHero {
-        width: 200px; /* Diminui a largura do botão */
-        height: 45px; /* Ajusta a altura do botão */
-        font-size: 14px; /* Ajusta o tamanho da fonte */
-        margin-top: 20px; /* Aumenta o espaço acima do botão */
+        width: 200px; 
+        height: 45px; 
+        font-size: 14px; 
+        margin: 0;
+        margin-top: 110px;
+        font-weight: 900;
     }
 }
 
-/* Media query para telas muito pequenas (celulares em modo retrato) */
+
 @media (max-width: 480px) {
     .hero {
         padding: 20px;
-        height: 400px; /* Ajusta ainda mais a altura */
+        height: 400px; 
     }
 
     .hero h1 {
-        font-size: 22px; /* Tamanho menor da fonte */
+        font-size: 18px; 
+        margin-left: 80px;
+
     }
 
     .btHero {
-        width: 180px; /* Tamanho menor para o botão */
+        width: 180px; 
         height: 40px;
-        font-size: 13px; /* Fonte menor */
+        font-size: 13px; 
+        
     }
 }

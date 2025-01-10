@@ -1,0 +1,32 @@
+.container-products
+.sectionProducts{
+    background-color: #303030;
+}
+.tittleProducts{
+    background-color: #303030;
+    height: 60px;
+    width: 100%;
+    box-shadow: 0 20px 60px rgb(0, 0, 0);
+    z-index: 1; /* Eleva a sombra acima de outros elementos */
+  position: relative; /* Garante que o z-index funcione */
+  overflow: visible; /* Permite que a sombra fique visível */
+   
+}
+
+.tittleProducts h1{
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    
+}
+
+.products{
+    background-image: url('/backBrown.svg');
+    width: 100%;
+    height: 800px;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    
+ 
+    
+}

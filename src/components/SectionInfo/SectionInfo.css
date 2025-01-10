@@ -42,57 +42,57 @@
 }
 
 
-/* Ajustes para a versão mobile */
+
 @media (max-width: 768px) {
-    /* Back Black */
+    
     .backBlack {
         background-image: url(/backgBlack.svg);
         width: 100%;
-        height: auto; /* Ajusta a altura automaticamente para mobile */
+        height: auto; 
         background-position: center;
         background-size: cover;
-        margin-top: 40px; /* Menor margem superior para o mobile */
+        margin-top: 40px; 
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
-       /* Espaçamento nas laterais */
+       
     }
 
-    /* Imagem */
+    
     .imageInfo {
         background-image: url(/imageInfo.svg);
-        width: 100%; /* Mantém a largura total */
-        height: 300px; /* Aumenta o tamanho da imagem */
+        width: 100%; 
+        height: 300px; 
         background-repeat: no-repeat;
         background-size: contain;
-        margin-top: 10px; /* Menor espaço entre o texto e a imagem */
-        margin-bottom: 30px; /* Retira o espaço extra após a imagem */
-        background-position: center; /* Centraliza a imagem */
+        margin-top: 10px; 
+        margin-bottom: 30px; 
+        background-position: center; 
     }
 
-    /* Título */
+    
     .tittleInfo h1 {
         color: white;
         line-height: 1.5;
-        margin-top: 30px; /* Retira o espaço superior para que o texto fique mais perto da imagem */
+        margin-top: 30px; 
         margin-left: 20px;
         margin-right: 20px;
-        font-size: 1.2rem; /* Tamanho da fonte ajustado */
-        width: 90%; /* Evitar que o texto ultrapasse a tela */
-        text-align: center; /* Centraliza o texto */
+        font-size: 1.2rem; 
+        width: 90%; 
+        text-align: center; 
     }
 
-    /* Parágrafo */
+    
     .tittleInfo p {
         color: white;
         width: 90%;
         margin-left: 20px;
-        margin-top: 10px; /* Reduz o espaço entre o título e o parágrafo */
-        font-size: 1rem; /* Ajuste no tamanho da fonte */
+        margin-top: 10px; 
+        font-size: 1rem; 
         line-height: 1.6;
         margin-right: 20px;
-        text-align: center; /* Centraliza o texto */
+        text-align: center; 
         margin-bottom: -200px;
     }
 }
