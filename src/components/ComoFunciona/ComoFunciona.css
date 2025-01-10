@@ -13,7 +13,7 @@
     align-items: center;
     justify-content: flex-start;
     width: 100%;
-    background-image: url('imageCafe.svg');
+    background-image: url('/imageCafe.svg');
     background-size: cover;
     background-position: center;
     height: 100vh; 
@@ -54,19 +54,19 @@
   
   
   .iconCoffe {
-    background-image: url('iconCoffe.svg'); 
+    background-image: url(/iconCoffe.svg); 
     background-size: cover;
     background-position: center;
   }
   
   .iconWhatsapp {
-    background-image: url('WhatsApp.svg'); 
+    background-image: url(/WhatsApp.svg); 
     background-size: cover;
     background-position: center;
   }
   
   .iconDelivery {
-    background-image: url('Delivery.svg'); 
+    background-image: url(/Delivery.svg); 
     background-size: cover;
     background-position: center;
   }

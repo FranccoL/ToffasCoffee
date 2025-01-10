@@ -10,7 +10,7 @@ header{
 }
 
 header.home {
-    background-image: url('hero.svg'); 
+    background-image: url(/hero.svg); 
     background-size: cover;
     background-position: center;
     
