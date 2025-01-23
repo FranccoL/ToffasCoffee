@@ -6,7 +6,7 @@
 .backBlack{
     background-image: url(/backgBlack.svg);
     width: 100%;
-    height: 715px;
+    height: 615px;
     background-position: center;
     background-size: cover;
     margin-top: 100px;
@@ -15,9 +15,11 @@
 .imageInfo{
     background-image: url(/imageInfo.svg);
     position: relative;
-    width: 1550px;
-    height: auto;
+    width: 500px;
+    height: 500px;
     background-repeat: no-repeat;
+    background-size: contain; /* Faz com que a imagem se ajuste ao contêiner */
+    background-position: center; /* Centraliza a imagem dentro do contêiner */
     margin-top: 30px;
     margin-bottom: 20px;
 
@@ -28,15 +30,17 @@
     line-height: 150%;
     margin-top: 100px;
     margin-left: 100px;
-    width: 530px;
+    width: 500px;
+    
+
+    
 }
 
 .tittleInfo p{
     color: white;
-    width: 343px;
-    height: 385px;
-    margin-left: 100px;
-    margin-top: 80px;
+    width: 380px;
+    height: 370px;
+    margin-top: 20px;
     line-height: 200%;
     font-size: 20px;
 }
@@ -51,7 +55,7 @@
         height: auto; 
         background-position: center;
         background-size: cover;
-        margin-top: 40px; 
+       
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -63,7 +67,7 @@
     .imageInfo {
         background-image: url(/imageInfo.svg);
         width: 100%; 
-        height: 300px; 
+        height: 500px; 
         background-repeat: no-repeat;
         background-size: contain;
         margin-top: 10px; 
@@ -78,7 +82,7 @@
         margin-top: 30px; 
         margin-left: 20px;
         margin-right: 20px;
-        font-size: 1.2rem; 
+        font-size: 25px; 
         width: 90%; 
         text-align: center; 
     }
@@ -89,7 +93,7 @@
         width: 90%;
         margin-left: 20px;
         margin-top: 10px; 
-        font-size: 1rem; 
+        font-size: 20px; 
         line-height: 1.6;
         margin-right: 20px;
         text-align: center; 

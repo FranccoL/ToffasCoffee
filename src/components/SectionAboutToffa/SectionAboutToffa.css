@@ -1,103 +1,96 @@
-
-.aboutToffa{
+.aboutToffa {
     width: 100%;
-    height: auto;
+    height: 600px;
+    display: flex; /* Adiciona flexbox para organizar os elementos em linha */
+    align-items: center; /* Centraliza verticalmente os elementos */
+    justify-content: space-between; /* Espaça os elementos (imagem e texto) */
+    padding: 0 50px; /* Adiciona um espaçamento interno nas laterais */
+    gap: 20px; /* Espaçamento entre a imagem e os textos */
+    box-sizing: border-box;
 }
 
-.cupCoffe{
+.cupCoffe {
     background-image: url(/cup.svg);
     background-repeat: no-repeat;
-    width: 60%;
-    height: 500px;
-    margin-top: 100px;
+    background-size: contain; /* Garante que a imagem se ajusta ao contêiner */
+    background-position: center; /* Centraliza a imagem no contêiner */
+    width: 48%; /* A imagem ocupa metade do espaço */
+    height: 350px;
 }
 
-.tittleSubAboutToffa{
-    width: 40%;
-    margin-top: 150px;
+.tittleSubAboutToffa {
+    width: 50%; /* Os textos ocupam a outra metade do espaço */
     font-size: 20px;
 }
 
-.subTittleAboutSection{
-    line-height: 150%;
+.subTittleAboutSection {
+    line-height: 1.5;
+    font-size: 15px;
+    margin-top: 20px;
+    width: 400px;
 }
 
-.buttonAboutSection{
-  margin-top: 20px;
+.buttonAboutSection {
+    margin-top: 20px;
 }
 
-.btAbout{
-    width: 230px;
-    height: 45px;
-    background-color: white;
-    cursor: pointer;
-    font-family: "Julius Sans One", serif;
-    font-size: 18px;
-    font-weight: bold;
-    
-}
-
-.btAbout:hover{
-    
+.btAbout {
+    padding: 12px 24px;
     background-color: #91490B;
     color: white;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
+    text-align: center;
+    width: 200px;
+    font-size: 18px;
+    height: 50px;
+    text-decoration: none; 
+
+    transition: all 0.3s ease; 
+    text-align: center; 
+    align-items: center;
 }
 
+.btAbout:hover {
+    
+    text-decoration: none; 
+    background-color: #91490B;
+    color: white;
+    transform: scale(1.05); /* Aumenta levemente o botão ao passar o mouse */
+}
 
 @media (max-width: 768px) {
-    
     .aboutToffa {
-        width: 100%;
+        flex-direction: column; /* Empilha os elementos verticalmente no mobile */
         height: auto;
-        flex-direction: column; 
-        text-align: center; 
+        text-align: center; /* Centraliza o texto no mobile */
     }
 
-    
     .cupCoffe {
-        background-image: url(/cup.svg);
-        background-repeat: no-repeat;
-        width: 80%; 
-        height: 300px; 
-        margin-top: 30px; 
-        background-size: contain; 
-        background-position: center;
-        margin-bottom: 20px; 
+        width: 100%; /* A imagem ocupa toda a largura */
+        height: 200px; /* Ajusta a altura para caber no mobile */
+        margin: 0 auto; /* Centraliza horizontalmente */
     }
 
-    
     .tittleSubAboutToffa {
-        width: 100%; 
-        margin-top: 30px; 
-        font-size: 16px; 
+        width: 100%; /* Textos ocupam toda a largura */
+        margin-top: 20px;
+        font-size: 16px;
     }
 
     .subTittleAboutSection {
-        line-height: 1.5; 
-        font-size: 14px; 
-        margin: 0 20px; 
-    }
-
-    
-    .buttonAboutSection {
-        margin-top: 20px;
+        font-size: 14px;
+        line-height: 1.4;
     }
 
     .btAbout {
-        width: 200px; 
+        width: 200px;
         height: 45px;
-        background-color: white;
-        cursor: pointer;
-        font-family: "Julius Sans One", serif;
-        font-size: 16px; 
-        font-weight: bold;
-        margin: 0 auto; 
-    }
-
-    .btAbout:hover {
-        background-color: #91490B;
-        color: white;
-        cursor: pointer;
+        font-size: 16px;
+        margin-bottom: 200px;
+        display: flex;
+        text-align: center;
+        align-items: center;
     }
 }

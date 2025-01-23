@@ -1,23 +1,23 @@
 import './Header.css'
-import { Link, useLocation } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useState } from 'react'
 
 
 
 function Header () {
     const [isOpen, setIsOpen] = useState(false)
-    const location = useLocation();
+ 
 
-    const isHomePage = location.pathname === '/';
+    
 
     const toggleMenu = () => {
       setIsOpen (!isOpen)
     }
     return (
-      <header className={`header ${isHomePage ? 'home' : 'not-home'}`}> {/* Adiciona a classe 'home' se for a página inicial */}
+      <header>
         <div className="container-header">
-            <div className="al-center d-flex jc-space-between">
-                <Link to="/"><img src="/logoHeader.svg" alt="logo" /></Link>
+            <div className="headAll d-flex al-center">
+                <Link to="/"><img src="/logoHeader.svg" alt="logo" className="imgHeader d-flex jc-flex-start al-center" /></Link>
                 <div className="mobile-menu">
                   <button className="btMobile" onClick={toggleMenu}></button>
                 </div>

@@ -1,7 +1,11 @@
-.container-products
-.sectionProducts{
-    background-color: #303030;
+
+
+
+
+.container-products{
+    background-color: #303030
 }
+
 .tittleProducts{
     background-color: #303030;
     height: 60px;
@@ -19,14 +23,261 @@
     
 }
 
+.container-products .swiper {
+    margin-top: 80px; /* Adiciona espaçamento acima do carrossel, se necessário */
+    margin-bottom: 80px;
+  }
+
 .products{
-    background-image: url('/backBrown.svg');
+    background-image: url('/backBck.svg');
     width: 100%;
-    height: 800px;
+    height: 1500px;
     background-repeat: no-repeat;
     background-size: 100%;
     background-position: center;
+    margin-top: -99px;
     
+    
+}
+
+
+.productsList {
+    display: flex; /* Permite que o Swiper controle os slides */
+    gap: 20px; /* Espaço entre os slides */
+    padding: 20px;
+    overflow: hidden; /* Evita scroll horizontal extra */
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center; /* Centraliza os cartões */
+    align-items: center;
+    width: 100%; /* Faz os slides ocuparem o espaço correto */
+}
+  
+.product-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    width: 250px; /* Ajuste o tamanho conforme necessário */
+}
+  
+  
+.product-card:hover {
+    transform: scale(1.05);
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #000000; /* Cor das setas */
+  background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
+  border-radius: 50%; /* Forma circular */
+  width: 40px;
+  height: 40px;
+}
+
+/* Alterar tamanho das setas ao passar o mouse */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background-color: #91490b; /* Cor do fundo ao passar o mouse */
+  transform: scale(1.1); /* Leve aumento no tamanho */
+}
+
+/* Ajusta a posição das setas */
+.swiper-button-next {
+  right: -20px; /* Ajusta o espaço entre a seta e o carrossel */
+}
+
+.swiper-button-prev {
+  left: -20px; /* Ajusta o espaço entre a seta e o carrossel */
+}
+
+
+.swiper {
+    width: 100%;
+    height: auto;
+}
+
+.swiper-wrapper {
+    display: flex; /* Garantir que os slides se alinhem horizontalmente */
+}
+  
+  .product-image {
+    width: 100px;
+  height: 150px; 
+  object-fit: cover;
+  }
+  
+  .product-name {
+    font-size: 18px;
+    margin: 12px 0;
+    color: #333;
+  }
+  
+  .product-description {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 12px;
+    
+  }
+  
+  .product-button {
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 16px;
+    cursor: pointer;
+  }
+  
+  .product-button:hover {
+    background-color: #603108;
+  }
+  
+  .lineFaq{
+    width: 1000px;
+    height: 500px;
+    border: #91490b solid 3px;
+    color: #fff;
+    margin-bottom: 100px;
+  }
+  .questions{
+    margin-left: 100px;
+    
+  }
+  .questions h2{
+    text-decoration: underline;
+  }
+  .questions h1{
+    font-size: 18px;
+    margin-bottom: -10px;
+  }
+
+  .questions p{
+    font-size: 15px;
+    line-height: 160%;
+    
+  }
+
+
+
+
+
+
+
+
  
-    
+@media (max-width: 480px) {
+    .container-products {
+        padding: 10px; /* Reduz o espaçamento nas laterais */
+    }
+
+    .tittleProducts h1 {
+        font-size: 16px; /* Reduz o tamanho da fonte do título */
+    }
+
+    .product-card {
+        width: 90%; /* Reduz a largura do card para caber na tela */
+        padding: 10px; /* Reduz o espaçamento interno */
+    }
+
+    .product-image {
+        width: 80px; /* Reduz o tamanho da imagem */
+        height: 120px;
+    }
+
+    .product-name {
+        font-size: 14px; /* Ajusta o tamanho da fonte */
+    }
+
+    .product-description {
+        font-size: 12px;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        width: 30px;
+        height: 30px; /* Ajusta o tamanho das setas */
+    }
+}
+
+  /* Versão Desktop - Mantida como está */
+.lineFaq {
+    width: 1000px;
+    height: 500px;
+    border: #91490b solid 3px;
+    color: #fff;
+    margin-bottom: 100px;
+}
+
+.questions {
+    margin-left: 100px;
+}
+
+.questions h2 {
+    text-decoration: underline;
+}
+
+.questions h1 {
+    font-size: 18px;
+    margin-bottom: -10px;
+}
+
+.questions p {
+    font-size: 15px;
+    line-height: 160%;
+}
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 768px) {
+    .lineFaq {
+        width: 90%; /* Reduz a largura para caber na tela */
+        height: auto; /* Ajusta a altura automaticamente */
+        margin: 20px auto; /* Centraliza e ajusta margens */
+        padding: 10px; /* Adiciona espaçamento interno */
+    }
+
+    .questions {
+        margin-left: 0; /* Remove margem lateral para centralizar em telas menores */
+        padding: 10px; /* Adiciona espaçamento interno */
+    }
+
+    .questions h2 {
+        font-size: 18px; /* Ajusta o tamanho do título */
+        text-align: center; /* Centraliza o título */
+    }
+
+    .questions h1 {
+        font-size: 16px; /* Ajusta o tamanho dos subtítulos */
+        margin-bottom: 5px; /* Espaço entre subtítulo e texto */
+    }
+
+    .questions p {
+        font-size: 14px; /* Reduz o tamanho do texto */
+        line-height: 1.5; /* Ajusta o espaçamento entre linhas */
+    }
+}
+
+@media (max-width: 480px) {
+    .lineFaq {
+        padding: 10px; /* Reduz o padding em telas menores */
+        border-width: 2px; /* Ajusta a espessura da borda */
+    }
+
+    .questions h2 {
+        font-size: 16px; /* Ajusta o título principal */
+    }
+
+    .questions h1 {
+        font-size: 14px; /* Reduz o tamanho dos subtítulos */
+    }
+
+    .questions p {
+        font-size: 12px; /* Ajusta o texto para telas muito pequenas */
+        line-height: 1.4; /* Reduz o espaçamento entre linhas */
+    }
 }

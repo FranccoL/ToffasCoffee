@@ -1,6 +1,7 @@
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
+
 // PAGES
 import Inicio from './pages/Inicio';
 import NossosProdutos from './pages/NossosProdutos';
