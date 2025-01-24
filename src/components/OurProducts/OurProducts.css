@@ -1,7 +1,4 @@
 
-
-
-
 .container-products{
     background-color: #303030
 }
@@ -174,6 +171,7 @@
 
  
 @media (max-width: 480px) {
+
     .container-products {
         padding: 10px; /* Reduz o espaçamento nas laterais */
     }
@@ -234,13 +232,19 @@
     line-height: 160%;
 }
 
+
+
 /* Responsividade para dispositivos móveis */
 @media (max-width: 768px) {
+    
+  
+    
     .lineFaq {
         width: 90%; /* Reduz a largura para caber na tela */
         height: auto; /* Ajusta a altura automaticamente */
         margin: 20px auto; /* Centraliza e ajusta margens */
         padding: 10px; /* Adiciona espaçamento interno */
+        z-index: 1;
     }
 
     .questions {
@@ -256,6 +260,7 @@
     .questions h1 {
         font-size: 16px; /* Ajusta o tamanho dos subtítulos */
         margin-bottom: 5px; /* Espaço entre subtítulo e texto */
+        z-index: 1;
     }
 
     .questions p {
@@ -276,6 +281,7 @@
 
     .questions h1 {
         font-size: 14px; /* Reduz o tamanho dos subtítulos */
+        z-index: 1;
     }
 
     .questions p {

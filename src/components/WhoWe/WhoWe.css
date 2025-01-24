@@ -17,6 +17,9 @@
   }
   .titleWho h1 {
     color: white;
+    z-index: 1;
+    position: relative;
+   
   }
   
   
@@ -193,10 +196,13 @@
     .container {
       padding: 10px;
     }
-    
-    h1 {
-      font-size: 2.5rem;
+    .titleWho h1 {
+      color: white;
+      z-index: 1;
+      position: relative;
+     
     }
+   
   
     .description p {
       font-size: 1rem;

@@ -49,6 +49,7 @@ function OurProducts () {
                 <h1>NOSSOS PRODUTOS</h1>
             </div>
             <Swiper
+            
                 spaceBetween={20} // Espaço entre slides
                 slidesPerView={4} // Quantos slides aparecem por vez
                 loop={false} // Faz o carrossel ser infinito

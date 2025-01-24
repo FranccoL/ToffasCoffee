@@ -15,7 +15,6 @@
     position: absolute; 
     transition: background-position 0.3s ease-out;
     background-position: bottom center;
-    
 }
 
 .hero-text {
@@ -29,7 +28,6 @@
 
 .hero-text h1 {
     font-size: 36px;
-    
 }
 
 .btHero {
@@ -45,24 +43,22 @@
     width: 230px;
     height: 40px;
     text-decoration: none;
-    top: 100px
+    top: 100px;
 }
-
 
 .btHero:hover {
     background-color: #603108; 
     transform: scale(1.1); /* Aumenta o tamanho do botão */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Cor do botão ao passar o mouse */
-    
 }
 
 @media (max-width: 768px) {
     .hero {
-        height: 380px; /* Ajusta a altura da hero para telas menores */
+        height: 450px; /* Ajusta a altura da hero para telas menores */
     }
 
     .hero-text {
-        bottom: 120px; /* Ajusta a posição do texto */
+        bottom: 140px; /* Ajusta a posição do texto */
         left: 20px; /* Ajusta a posição para se ajustar à tela */
         gap: 10px;
     }
@@ -79,13 +75,14 @@
 /* Responsividade para dispositivos muito pequenos (até 480px) */
 @media (max-width: 480px) {
     .hero {
-        height: 300px; /* Ajusta a altura para telas muito pequenas */
+        height: 500px; /* Aumenta a altura para telas pequenas */
     }
 
     .hero-text {
-        bottom: 80px; /* Move o texto para cima */
+        bottom: 300px; /* Move o texto para cima */
         left: 10px; /* Ajusta a margem esquerda para tela muito pequena */
         gap: 5px;
+
     }
 
     .hero-text h1 {

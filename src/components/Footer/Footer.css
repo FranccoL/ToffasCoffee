@@ -63,22 +63,38 @@
   @media (max-width: 768px) {
     .footer {
       flex-direction: column; /* Muda a direção para coluna */
-      padding: 20px;
+      padding: 0;
+      padding-top: 100px;
+      padding-right: 100px;
+      margin-left: -40px;
       text-align: center;
+      min-height: 200px; /* Adiciona uma altura mínima para garantir que o footer não fique cortado */
+      display: flex;
+      justify-content: flex-start; /* Alinha o conteúdo do footer no topo */
+      height: 700px;
+      
     }
   
     .footer-left,
     .footer-right {
       align-items: center;
       margin-bottom: 20px;
+      flex-grow: 1; /* Permite que esses itens cresçam e ocupem o espaço disponível */
     }
   
     .logo {
       margin: 0 auto 15px; /* Centraliza a logo */
     }
   
+    .social {
+      display: flex; /* Alinha os itens social com flexbox */
+      justify-content: center; /* Centraliza os ícones sociais */
+      flex-direction: row; /* Mantém os ícones na horizontal */
+      gap: 10px; /* Espaçamento entre os ícones */
+    }
+  
     .social a {
-      display: block; /* Links em linha única */
+      display: block; /* Garante que os links sejam blocos */
       margin: 5px 0;
     }
-  }
+}
