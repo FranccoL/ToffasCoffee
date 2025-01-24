@@ -37,6 +37,7 @@
     font-weight: bold;
     text-transform: uppercase;
     width: 200px;
+    text-decoration: none;
   }
   
   .contact-button:hover {

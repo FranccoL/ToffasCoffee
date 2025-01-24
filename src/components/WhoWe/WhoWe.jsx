@@ -10,7 +10,9 @@ function WhoWe() {
 
       <div className="description">
         <p>
-          Somos uma equipe apaixonada por inovações tecnológicas e pelo impacto positivo que podemos gerar no mundo. Nosso objetivo é transformar ideias em soluções criativas, práticas e eficientes.
+        TOFFA’S CAFÉ , um blend de grãos selecionados com o objetivo de adquirir um café de alta qualidade para agradar os paladares mais exigentes e requintados.
+SABOR, AROMA E CORPO são os 3 pontos básicos para a apreciação dessa bebida. 
+<br />Nosso objetivo: deliciar os consumidores com um excelente café unindo os sentidos e o espírito. 
         </p>
       </div>
 
@@ -21,11 +23,11 @@ function WhoWe() {
               <img src="/cupCoffee.svg" alt="Card 1" />
             </div>
             <div className="card-text">
-              <h2>Nosso Compromisso com a Qualidade</h2>
+              <h2>O Compromisso por Trás de Cada Gole: A Arte do Café</h2>
               <p>
-                Nosso compromisso com a qualidade é inabalável. Estamos sempre em busca de melhores práticas e inovações para oferecer o melhor aos nossos clientes.
+              Uma boa xícara de café reflete o esforço e dedicação de muitas pessoas que fazem desta bebida um elixir tão apreciado pelo mundo
               </p>
-              <button className="card-button">Saiba Mais</button>
+              <button className="card-button">Conheça nossos produtos</button>
             </div>
           </div>
         </div>
@@ -33,11 +35,11 @@ function WhoWe() {
         <div className="card card-reverse">
           <div className="card-content">
             <div className="card-text">
-              <h2>Nosso Compromisso com a Sustentabilidade</h2>
+              <h2>TOFFA CAFÉ: Um Legado de Qualidade e Dedicação no Café Arábica</h2>
               <p>
-                A sustentabilidade é um pilar central em nosso trabalho. Trabalhamos para reduzir nosso impacto ambiental enquanto oferecemos soluções inovadoras.
+              Com mais de 50 anos de trabalho e dedicação , meu avô se tornou um produtor de café arábica de altíssima qualidade e continuando seu legado TOFFA’S CAFÉ
               </p>
-              <button className="card-button">Saiba Mais</button>
+              <button className="card-button">Entre em contato</button>
             </div>
             <div className="card-image">
               <img src="/coletando.svg" alt="Card 2" />

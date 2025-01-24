@@ -3,6 +3,7 @@
     height: 650px;
     overflow: hidden; 
     position: relative;
+    z-index: 0;
 }
 
 .imgHero {
@@ -14,6 +15,7 @@
     position: absolute; 
     transition: background-position 0.3s ease-out;
     background-position: bottom center;
+    
 }
 
 .hero-text {

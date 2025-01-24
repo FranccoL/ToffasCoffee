@@ -1,5 +1,5 @@
 import './PqNos.css';
-
+import { Link } from 'react-router-dom';
 function PqNos() {
     return (
         <div className="container-whyUs d-flex">  
@@ -30,7 +30,9 @@ function PqNos() {
             </div>
 
             <div className="WhyUs">
-                <button className="WhyUss" type="submit">Mais informações</button>
+            <Link to="/produtos" className="WhyUss">
+                    Mais informações
+                </Link>
             </div>
         </div>
     );

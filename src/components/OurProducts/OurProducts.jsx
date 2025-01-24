@@ -37,6 +37,11 @@ function OurProducts () {
         },
     ];
 
+    const createWhatsAppLink = (productName, productDescription) => {
+        const message = `Olá, gostaria de saber mais sobre o produto ${productName} - ${productDescription}.`;
+        return `https://wa.me/5511915387618?text=${encodeURIComponent(message)}`;
+    };
+
     return (
         <div className="container-products">
             <div className="tittleProducts d-flex al-center jc-flex-center">
@@ -66,7 +71,14 @@ function OurProducts () {
                                     </span>
                                 ))}
                             </p>
-                            <button className="product-button">Entre em Contato</button>
+                            <a
+                                href={createWhatsAppLink(product.name, product.description)}
+                                className="product-button"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                Entre em Contato
+                            </a>
                         </div>
                     </SwiperSlide>
                 ))}

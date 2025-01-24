@@ -32,6 +32,7 @@
 
 .buttonAboutSection {
     margin-top: 20px;
+    text-decoration: none;
 }
 
 .btAbout {
@@ -46,10 +47,13 @@
     font-size: 18px;
     height: 50px;
     text-decoration: none; 
-
+    font-family: "Julius Sans One", serif;
     transition: all 0.3s ease; 
     text-align: center; 
     align-items: center;
+}
+.buttonAboutSection a {
+    text-decoration: none;
 }
 
 .btAbout:hover {

@@ -49,14 +49,16 @@ nav a:hover{
     display: none;
 }
 .btMobile{
-    background-image: url(Menu.png);
-    width: 70px;
-    height: 70px;
+    background-image: url(MenuMb.svg);
+    width: 50px; /* Largura do botão */
+    height: 50px; /* Altura do botão */
     background-color: transparent;
-    background-repeat: none;
+    background-repeat: no-repeat;
+    background-size: contain; /* Ajusta a imagem para caber no botão sem cortar */
+    background-position: center; /* Garante que a imagem fique centralizada */
     border: 0;
-    margin-left: 150px;
     cursor: pointer;
+    margin-left: 250px;
     
 }
 .btMobile:hover{
@@ -85,6 +87,9 @@ nav a:hover{
         display: flex;
         border-radius: 20px 0;
         line-height: 400%;
+        display: flex; /* Torna visível */
+        transform: translateX(0); 
+        opacity: 1;
     }
     header img {
         height: 60px;
@@ -92,7 +97,7 @@ nav a:hover{
     nav {
         background-color: #303030;
         border-left: 10px solid #333;
-        display: none;
+        display: none; /* Esconde inicialmente */
         flex-direction: column;
         height: 100%;
         padding: 20px;
@@ -100,8 +105,11 @@ nav a:hover{
         right: 0;
         top: 0;
         width: 70vw;
-        z-index: 1;
-        box-shadow: -50vw 0px 0px 0px rgba(0,0,0,0.9);
+        z-index: 9999; /* Garante que está acima do hero */
+        box-shadow: -50vw 0px 0px 0px rgba(0, 0, 0, 0.9);
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease; /* Adiciona transição suave */
+        transform: translateX(100%); /* Move para fora da tela inicialmente */
+        opacity: 0; /* Invisível inicialmente */
         
     }
 
@@ -126,10 +134,10 @@ nav a:hover{
         width: 100%;
     }
     .btMobile {
-        width: 85px; 
-        height: 85px;
+        
         display: block;
         background-repeat: no-repeat;
+        object-fit: contain;
     }
     .mobile-menu {
         display: block;

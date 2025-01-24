@@ -19,7 +19,7 @@ function Header () {
             <div className="headAll d-flex al-center">
                 <Link to="/"><img src="/logoHeader.svg" alt="logo" className="imgHeader d-flex jc-flex-start al-center" /></Link>
                 <div className="mobile-menu">
-                  <button className="btMobile" onClick={toggleMenu}></button>
+                  <button className="btMobile d-flex jc-flex-end al-center" onClick={toggleMenu}></button>
                 </div>
                 <nav className={`${isOpen ? 'open' : ''}`}>
                   <button className="mobile-menu close-btn" onClick={toggleMenu}>X</button>

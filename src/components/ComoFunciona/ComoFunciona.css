@@ -46,7 +46,8 @@
   width: 100%;
   margin-bottom: 20px; /* Espaçamento entre os ícones e títulos */
   margin-right: 190px;
-  margin-left: 20px;
+  margin-left: 50px;
+  
 }
 
 .iconCoffe, .iconWhatsapp, .iconDelivery {
@@ -86,11 +87,12 @@
   text-align: center;
   width: 200px;
   font-size: 18px;
-  height: 50px;
+  height: 20px;
   transition: all 0.3s ease;
   position: relative;
-  right: 650px;
-  top: 100px;
+  right: 678px;
+  top: 130px;
+  text-decoration: none;
 }
 
 .buttonHow:hover {
