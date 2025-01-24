@@ -74,28 +74,28 @@
 
 .swiper-button-next,
 .swiper-button-prev {
-  color: #000000; /* Cor das setas */
-  background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
-  border-radius: 50%; /* Forma circular */
-  width: 40px;
-  height: 40px;
+  background-size: contain; /* Faz a imagem se ajustar ao tamanho do botão */
+    background-repeat: no-repeat; /* Evita que a imagem se repita */
+    width: 40px; /* Ajuste o tamanho do botão */
+    height: 40px;
+    background-color: transparent;
+    
+    z-index: 10;
+}
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  color: #000000; /* Cor desejada para as setas */
+  font-size: 40px; /* Ajuste o tamanho, se necessário */
 }
 
 /* Alterar tamanho das setas ao passar o mouse */
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
-  background-color: #91490b; /* Cor do fundo ao passar o mouse */
+  
   transform: scale(1.1); /* Leve aumento no tamanho */
 }
 
 /* Ajusta a posição das setas */
-.swiper-button-next {
-  right: -20px; /* Ajusta o espaço entre a seta e o carrossel */
-}
-
-.swiper-button-prev {
-  left: -20px; /* Ajusta o espaço entre a seta e o carrossel */
-}
 
 
 .swiper {
