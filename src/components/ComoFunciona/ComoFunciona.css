@@ -125,7 +125,6 @@
     align-items: center;
     width: 100%;
     margin-bottom: 20px;
-    
   }
 
   .iconWithTitle {
@@ -153,6 +152,7 @@
     width: 100px;
     margin-top: 10px;
     margin-bottom: 20px;
+    margin-left: 0px;
   }
 
   .buttonHowM {
@@ -160,11 +160,32 @@
     justify-content: center;
     align-items: center;
     margin-top: 20px;
+    width: 100%;
+    visibility: visible;
+    z-index: 100000;
   }
 
   .buttonHow {
-    width: 200px;
-    height: 25px;
-    display: block;
+    width: 90%;
+    height: auto;
+    display: inline-block;
+    padding: 12px;
+    font-size: 16px;
+    text-align: center;
+    background-color: #91490B;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    visibility: visible;
+    position: relative;
+    z-index: 100000;
+    text-decoration: none;
+  }
+
+  .buttonHow:hover {
+    background-color: #7c3e09;
+    transform: scale(1.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
   }
 }

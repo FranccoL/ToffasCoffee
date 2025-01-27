@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
 
 // PAGES
+
 import Inicio from './pages/Inicio';
 import NossosProdutos from './pages/NossosProdutos';
 import QuemSomos from './pages/QuemSomos';
@@ -17,6 +18,7 @@ function App() {
   return (
     <>
     <Router>
+    
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Inicio />} />
