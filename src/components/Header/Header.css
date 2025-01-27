@@ -1,69 +1,77 @@
-* {
-    position: static; /* Reseta o contexto de empilhamento */
-    z-index: auto; /* Reseta valores personalizados */
-}
-.headAll {
-    background-color: #ffffff;
-    height: 80px;
-    color: #fff;
+
+.headAll{
+    background-color: #ffffff; 
+    height: 80px; 
+    color: #fff; 
     display: flex;
     width: 100%;
+    height: auto;
     box-shadow: 0 20px 60px rgb(0, 0, 0);
-    z-index: 1;
-    position: relative;
+    z-index: 1; 
+    position: relative; 
     overflow: visible;
-    justify-content: space-between;
-    align-items: center; /* Centraliza verticalmente */
 }
-
-.imgHeader {
+.imgHeader{
     width: 180px;
     height: 80px;
+    
 }
 
-header ul,
-li {
+header ul, li {
     list-style: none;
+    
 }
-
-nav ul {
-    margin-left: auto; /* Ajusta para alinhar à direita */
+nav ul{
+    margin-left: 700px;
 }
-
-nav a {
+nav a {     
     color: rgb(0, 0, 0);
+    
     font-size: 15px;
     text-decoration: none;
     margin-left: 40px;
     font-weight: 600;
 }
-
-nav a:hover {
+nav a:hover{
     color: #91490B;
 }
 
-/* Estilos do menu mobile */
+
+
+
+
+ 
+ 
+
+
+
 .mobile-menu {
     display: none;
 }
-
-.btMobile {
+.btMobile{
     background-image: url(MenuMb.svg);
     width: 50px; /* Largura do botão */
     height: 50px; /* Altura do botão */
     background-color: transparent;
     background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
+    background-size: contain; /* Ajusta a imagem para caber no botão sem cortar */
+    background-position: center; /* Garante que a imagem fique centralizada */
     border: 0;
     cursor: pointer;
-    margin-left: auto; /* Empurra o ícone para o final (direita) */
-    margin-right: 20px;
+    margin-left: 250px;
+    
 }
-
-.btMobile:hover {
+.btMobile:hover{
     transform: rotate(90deg);
 }
+
+
+
+
+
+
+
+
 
 @media (max-width: 768px) {
     header.home {
@@ -71,19 +79,17 @@ nav a:hover {
         background-color: black;
         width: 100%;
         height: auto;
+        
     }
-
+    
     nav.open {
         display: flex; /* Torna visível */
-        transform: translateX(0);
+        transform: translateX(0); 
         opacity: 1;
-        z-index: 9999;
     }
-
     header img {
         height: 60px;
     }
-
     nav {
         background-color: #303030;
         border-left: 10px solid #333;
@@ -91,28 +97,22 @@ nav a:hover {
         flex-direction: column;
         height: 100%;
         padding: 20px;
-        position:fixed;
+        position: fixed;
         right: 0;
         top: 0;
         width: 70vw;
-        z-index: 9999; /* Garante que está acima do conteúdo */
+        z-index: 9999; /* Garante que está acima do hero */
         box-shadow: -50vw 0px 0px 0px rgba(0, 0, 0, 0.9);
-        transition: transform 0.3s ease-in-out, opacity 0.3s ease; /* Transição suave */
-        transform: translateX(100%); /* Inicia fora da tela */
+        transition: transform 0.3s ease-in-out, opacity 0.3s ease; /* Adiciona transição suave */
+        transform: translateX(100%); /* Move para fora da tela inicialmente */
         opacity: 0; /* Invisível inicialmente */
         
-    z-index: 10000;
     }
 
-    nav.open {
-        transform: translateX(0); /* Torna visível */
-        opacity: 1; /* Torna visível */
-        z-index: 2;
-    }
-
-    nav ul {
+    nav ul{
         flex-direction: column;
         width: 100%;
+        
     }
 
     nav ul li {
@@ -129,9 +129,24 @@ nav a:hover {
         text-decoration: none;
         width: 100%;
     }
-
     .btMobile {
-        display: block; /* Garante que o ícone seja exibido */
+        
+        background-image: url(MenuMb.svg);
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    border: 0;
+    cursor: pointer;
+    }
+    .btMobile:hover {
+        transform: rotate(90deg);
+    }
+    .mobile-menu {
+        display: block;
+        
     }
 
     .close-btn {
@@ -143,15 +158,14 @@ nav a:hover {
         padding: 12px;
         width: fit-content;
         cursor: pointer;
-    }
+        
+        
 
-    .close-btn:hover {
+    }   
+    .close-btn:hover{
         transform: scale(0.95);
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.50);
+        
         background-color: #91490B;
-    }
-
-    .mobile-menu {
-        display: block;
     }
 }
