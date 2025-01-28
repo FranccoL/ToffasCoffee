@@ -10,7 +10,7 @@ function WhoWe() {
 
       <div className="description">
         <p>
-        TOFFA’S CAFÉ , um blend de grãos selecionados com o objetivo de adquirir um café de alta qualidade para agradar os paladares mais exigentes e requintados.
+        TOFFA’S COFFEE , um blend de grãos selecionados com o objetivo de adquirir um café de alta qualidade para agradar os paladares mais exigentes e requintados.
 SABOR, AROMA E CORPO são os 3 pontos básicos para a apreciação dessa bebida. 
 <br />Nosso objetivo: deliciar os consumidores com um excelente café unindo os sentidos e o espírito. 
         </p>
@@ -35,7 +35,7 @@ SABOR, AROMA E CORPO são os 3 pontos básicos para a apreciação dessa bebida.
         <div className="card card-reverse">
           <div className="card-content">
             <div className="card-text">
-              <h2>TOFFA CAFÉ: Um Legado de Qualidade e Dedicação no Café Arábica</h2>
+              <h2>TOFFA’S COFFEE: Um Legado de Qualidade e Dedicação no Café Arábica</h2>
               <p>
               Com mais de 50 anos de trabalho e dedicação , meu avô se tornou um produtor de café arábica de altíssima qualidade e continuando seu legado TOFFA’S CAFÉ
               </p>
