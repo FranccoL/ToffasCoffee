@@ -25,6 +25,7 @@
     gap: 20px;
     animation: slideIn 1s ease-out;
     
+    
 }
 
 @keyframes slideIn {
@@ -39,7 +40,8 @@
 }
 
 .hero-text h1 {
-    font-size: 36px;
+    
+    font-size: 30px;
     line-height: 180%;
 }
 
@@ -68,18 +70,23 @@
         height: 450px;     }
 
     .hero-text {
-        bottom: 140px;         
+        bottom: 10px;         
         left: 20px;         
         gap: 10px;
         animation: slideIn 1s ease-out;
     }
 
     .hero-text h1 {
-        font-size: 28px; 
+        font-size: 28px;
+        
     }
 
     .btHero {
         padding: 10px 25px;     
+        margin-top: -50px;
+        margin-left: 20px;
+        text-align: center;
+
     }
 }
 
