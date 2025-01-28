@@ -204,10 +204,31 @@
     font-size: 15px;
     line-height: 160%;
 }
+.lineFaq {
+  padding: 10px;         
+  border-width: 2px;     
+}
+
+.questions h2 {
+  font-size: 16px;     
+}
+
+.questions h1 {
+  font-size: 14px;         
+}
+
+.questions p {
+  font-size: 12px;         
+  line-height: 1.4;     
+}
 
 
 
 @media (max-width: 768px) {
+
+    .card-image{
+      display: none;
+    }
    .tittleProducts h1{
           font-size: 28px;
    }
@@ -240,21 +261,3 @@
       }
 }
 
-@media (max-width: 480px) {
-    .lineFaq {
-        padding: 10px;         
-        border-width: 2px;     
-      }
-
-    .questions h2 {
-        font-size: 16px;     
-      }
-
-    .questions h1 {
-        font-size: 14px;         
-    }
-
-    .questions p {
-        font-size: 12px;         
-        line-height: 1.4;     }
-}
