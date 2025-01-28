@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 function SectionAboutToffa () {
     return (
-      <div className="container">
+      <div className="container-about">
         <div className="aboutToffa d-flex">
         <div className="cupCoffe d-flex"></div>
         <div className="tittleSubAboutToffa d-flex flex-column">

@@ -1,15 +1,18 @@
 .container-Form{
   background-color: #303030;
   height: 800px;
+  width: 100%;
+  padding: 0;
 }
 .container-contato {
-    width: 100%;
-    max-width: 600px;
-    margin: 80px auto;
+    width: 40%;
+    height:500px ;
+    margin: 80px 0 0 430px ;
     padding: 20px;
     background-color: #f9f9f9;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding-right: -15px;
   }
   
   .titulo-contato {
@@ -75,9 +78,7 @@
     height: 60px;
     width: 100%;
     box-shadow: 0 20px 60px rgb(0, 0, 0);
-    z-index: 1; /* Eleva a sombra acima de outros elementos */
-    position: relative; /* Garante que o z-index funcione */
-   overflow: visible; /* Permite que a sombra fique visível */
+    
    color: white;
   }
 
@@ -85,10 +86,11 @@
 
 
   
-  /* Responsividade */
-  @media (max-width: 768px) {
+    @media (max-width: 768px) {
     .container-contato {
       padding: 15px;
+      width: 90%;
+      margin-left: 6px;
     }
   
     .titulo-contato {

@@ -3,8 +3,7 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: auto; /* Ajuste a altura para que a altura da seção fique flexível */
-}
+    height: auto; }
 
 .tittleWhyUs {
     width: 100%; 
@@ -20,20 +19,15 @@
 
 .quadrados-container {
     display: flex;
-    flex-wrap: wrap; /* Permite que os quadrados quebrem de linha automaticamente */
-    gap: 20px; /* Espaço entre os quadrados */
-    justify-content: center; /* Centraliza os quadrados */
-    width: 95%;
+    flex-wrap: wrap;     gap: 20px;     justify-content: center;     width: 95%;
 }
 
 .quadrado {
-    width: 49%; /* Cada quadrado ocupa 48% da largura, deixando um pequeno espaço entre eles */
-    height: 300px;
+    width: 49%;     height: 300px;
     background-color: #f4f4f4;
     border: 1px solid #000;
     padding: 20px;
-    box-sizing: border-box; /* Inclui o padding na largura e altura */
-    border-radius: 8px;
+    box-sizing: border-box;     border-radius: 8px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -43,9 +37,7 @@
 }
 
 .quadrado:hover {
-    transform: scale(1.05); /* Aumenta o tamanho do quadrado */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Adiciona uma sombra mais pronunciada */
-    background-color:#91490B;
+    transform: scale(1.05);     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);     background-color:#91490B;
     color: white;
 }
 
@@ -61,7 +53,6 @@
     line-height: 1.4;
 }
 
-/* Estilo para os ícones */
 .responseTwo {
     background-image: url(/iconGreen.svg);
     background-repeat: no-repeat;
@@ -98,16 +89,12 @@
     background-color: #7c3e09;
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
     .quadrado {
-        width: 100%; /* Faz com que cada quadrado ocupe 100% da largura em telas pequenas */
-        margin-bottom: 20px; /* Espaço entre os quadrados */
-    }
+        width: 100%;         margin-bottom: 20px;     }
 
     .tittleWhyUs h1 {
-        font-size: 1.6rem; /* Ajusta o tamanho do texto do título */
-    }
+        font-size: 1.6rem;     }
 
     .quadrado h1 {
         font-size: 1.4rem;

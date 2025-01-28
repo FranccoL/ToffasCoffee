@@ -10,16 +10,12 @@
     height: 60px;
     width: 100%;
     box-shadow: 0 20px 60px rgb(0, 0, 0);
-    z-index: 1; /* Eleva a sombra acima de outros elementos */
-    position: relative; /* Garante que o z-index funcione */
-   overflow: visible; /* Permite que a sombra fique visível */
-   color: white;
+   
+   overflow: visible;    color: white;
   }
   .titleWho h1 {
     color: white;
-    z-index: 1;
-    position: relative;
-   
+    
   }
   
   
@@ -50,20 +46,13 @@
     margin-right: 50px;
     margin-bottom: 50px;
     
-        opacity: 0; /* Começa invisível */
-        transform: translateY(50px); /* Inicia deslocado para baixo */
-        animation: fadeIn 0.8s ease forwards; /* Animação de entrada */
+        opacity: 0;         transform: translateY(50px);         animation: fadeIn 0.8s ease forwards; 
 
-
-        position: relative; /* Necessário para o pseudo-elemento */
-  overflow: hidden; /* Garante que o conteúdo extra não fique visível */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;   overflow: hidden;   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-    transform: translateY(-10px); /* Eleva o card */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* Aumenta a sombra */
-  }
+    transform: translateY(-10px);     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);   }
   .card::before {
     content: "";
     position: absolute;
@@ -77,28 +66,21 @@
   }
   .card:hover::before {
     opacity: 1;
-    transform: rotate(45deg); /* Adiciona um leve movimento de rotação */
-  }
+    transform: rotate(45deg);   }
   
-  /* Animação do texto no hover */
-  .card-text {
+    .card-text {
     transition: transform 0.3s ease, color 0.3s ease;
   }
   
   .card:hover .card-text {
-    transform: translateX(10px); /* Move o texto levemente à direita */
-    color: #91490B; /* Altera a cor do texto */
-  }
+    transform: translateX(10px);     color: #91490B;   }
   
-  /* Efeito adicional no botão ao passar o mouse */
-  .card-button {
+    .card-button {
     transition: transform 0.3s ease, background-color 0.3s ease;
   }
   
   .card:hover .card-button {
-    transform: scale(1.1); /* Aumenta o botão no hover */
-    background-color: #7c3e09; /* Altera a cor de fundo */
-  }
+    transform: scale(1.1);     background-color: #7c3e09;   }
 .card:nth-child(1) {
     animation-delay: 0.2s;
   }
@@ -106,21 +88,15 @@
     animation-delay: 0.4s;
   }
   
-  /* Efeito ao passar o mouse */
-  .card:hover {
-    transform: scale(1.05); /* Aumenta ligeiramente o tamanho */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Aumenta a sombra */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    .card:hover {
+    transform: scale(1.05);     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
   
-  /* Botão com efeito de hover */
-  .card-button:hover {
+    .card-button:hover {
     background-color: #7c3e09;
-    transform: scale(1.1); /* Botão aumenta no hover */
-  }
+    transform: scale(1.1);   }
   
-  /* Animação de entrada (keyframes) */
-  @keyframes fadeIn {
+    @keyframes fadeIn {
     from {
       opacity: 0;
       transform: translateY(50px);
@@ -191,16 +167,13 @@
     transform: scale(0.95);
   }
   
-  /* Responsividade */
-  @media (max-width: 768px) {
+    @media (max-width: 768px) {
     .container {
       padding: 10px;
     }
     .titleWho h1 {
       color: white;
-      z-index: 1;
-      position: relative;
-     
+
     }
    
   

@@ -8,9 +8,8 @@
     height: 60px;
     width: 100%;
     box-shadow: 0 20px 60px rgb(0, 0, 0);
-    z-index: 1; /* Eleva a sombra acima de outros elementos */
-  position: relative; /* Garante que o z-index funcione */
-  overflow: visible; /* Permite que a sombra fique visível */
+   
+ 
    
 }
 
@@ -21,8 +20,7 @@
 }
 
 .container-products .swiper {
-    margin-top: 80px; /* Adiciona espaçamento acima do carrossel, se necessário */
-    margin-bottom: 80px;
+    margin-top: 80px;     margin-bottom: 80px;
   }
 
 .products{
@@ -39,17 +37,13 @@
 
 
 .productsList {
-    display: flex; /* Permite que o Swiper controle os slides */
-    gap: 20px; /* Espaço entre os slides */
-    padding: 20px;
-    overflow: hidden; /* Evita scroll horizontal extra */
-}
+    display: flex;     gap: 20px;     padding: 20px;
+    overflow: hidden; }
 
 .swiper-slide {
     display: flex;
-    justify-content: center; /* Centraliza os cartões */
-    align-items: center;
-    width: 100%; /* Faz os slides ocuparem o espaço correto */
+    justify-content: center;     align-items: center;
+    width: 100%;     
 }
   
 .product-card {
@@ -60,7 +54,7 @@
     text-align: center;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s;
-    width: 250px; /* Ajuste o tamanho conforme necessário */
+    width: 250px;     
     
 }
   
@@ -71,37 +65,32 @@
 
 .swiper-button-next,
 .swiper-button-prev {
-  background-size: contain; /* Faz a imagem se ajustar ao tamanho do botão */
-    background-repeat: no-repeat; /* Evita que a imagem se repita */
-    width: 40px; /* Ajuste o tamanho do botão */
-    height: 40px;
+  background-size: contain;     background-repeat: no-repeat;     width: 40px;     height: 40px;
     background-color: transparent;
     
-    z-index: 10;
+    
+ 
 }
 .swiper-button-next::after,
 .swiper-button-prev::after {
-  color: #000000; /* Cor desejada para as setas */
-  font-size: 40px; /* Ajuste o tamanho, se necessário */
+  color: #000000;   font-size: 40px;   
 }
 
-/* Alterar tamanho das setas ao passar o mouse */
 .swiper-button-next:hover,
 .swiper-button-prev:hover {
   
-  transform: scale(1.1); /* Leve aumento no tamanho */
-}
+  transform: scale(1.1); }
 
-/* Ajusta a posição das setas */
 
 
 .swiper {
     width: 100%;
     height: auto;
+    position: relative;     z-index: 0; 
 }
 
 .swiper-wrapper {
-    display: flex; /* Garantir que os slides se alinhem horizontalmente */
+    display: flex; 
 }
   
   .product-image {
@@ -163,36 +152,22 @@
   }
 
 
-
-
-
-
-
-
- 
 @media (max-width: 480px) {
 
-    .container-products {
-        padding: 10px; /* Reduz o espaçamento nas laterais */
-    }
+    
 
     .tittleProducts h1 {
-        font-size: 16px; /* Reduz o tamanho da fonte do título */
-    }
+        font-size: 16px;     }
 
     .product-card {
-        width: 90%; /* Reduz a largura do card para caber na tela */
-        padding: 10px; /* Reduz o espaçamento interno */
-    }
+        width: 90%;         padding: 10px;     }
 
     .product-image {
-        width: 80px; /* Reduz o tamanho da imagem */
-        height: 120px;
+        width: 80px;         height: 120px;
     }
 
     .product-name {
-        font-size: 14px; /* Ajusta o tamanho da fonte */
-    }
+        font-size: 14px;     }
 
     .product-description {
         font-size: 12px;
@@ -201,12 +176,10 @@
     .swiper-button-next,
     .swiper-button-prev {
         width: 30px;
-        height: 30px; /* Ajusta o tamanho das setas */
-    }
+        height: 30px;     }
 }
 
-  /* Versão Desktop - Mantida como está */
-.lineFaq {
+  .lineFaq {
     width: 1000px;
     height: 500px;
     border: #91490b solid 3px;
@@ -234,58 +207,38 @@
 
 
 
-/* Responsividade para dispositivos móveis */
 @media (max-width: 768px) {
-    
-  
+   
     
     .lineFaq {
-        width: 90%; /* Reduz a largura para caber na tela */
-        height: auto; /* Ajusta a altura automaticamente */
-        margin: 20px auto; /* Centraliza e ajusta margens */
-        padding: 10px; /* Adiciona espaçamento interno */
-        z-index: 1;
+        width: 90%;         height: auto;         margin: 20px auto;         padding: 10px;         
     }
 
     .questions {
-        margin-left: 0; /* Remove margem lateral para centralizar em telas menores */
-        padding: 10px; /* Adiciona espaçamento interno */
-    }
+        margin-left: 0;         padding: 10px;     }
 
     .questions h2 {
-        font-size: 18px; /* Ajusta o tamanho do título */
-        text-align: center; /* Centraliza o título */
-    }
+        font-size: 18px;         text-align: center;     }
 
     .questions h1 {
-        font-size: 16px; /* Ajusta o tamanho dos subtítulos */
-        margin-bottom: 5px; /* Espaço entre subtítulo e texto */
-        z-index: 1;
+        font-size: 16px;         margin-bottom: 5px;         
     }
 
     .questions p {
-        font-size: 14px; /* Reduz o tamanho do texto */
-        line-height: 1.5; /* Ajusta o espaçamento entre linhas */
-    }
+        font-size: 14px;         line-height: 1.5;     }
 }
 
 @media (max-width: 480px) {
     .lineFaq {
-        padding: 10px; /* Reduz o padding em telas menores */
-        border-width: 2px; /* Ajusta a espessura da borda */
-    }
+        padding: 10px;         border-width: 2px;     }
 
     .questions h2 {
-        font-size: 16px; /* Ajusta o título principal */
-    }
+        font-size: 16px;     }
 
     .questions h1 {
-        font-size: 14px; /* Reduz o tamanho dos subtítulos */
-        z-index: 1;
+        font-size: 14px;         
     }
 
     .questions p {
-        font-size: 12px; /* Ajusta o texto para telas muito pequenas */
-        line-height: 1.4; /* Reduz o espaçamento entre linhas */
-    }
+        font-size: 12px;         line-height: 1.4;     }
 }

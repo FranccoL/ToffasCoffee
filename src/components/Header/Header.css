@@ -17,9 +17,14 @@
     
 }
 
+
 header ul, li {
     list-style: none;
     
+}
+
+nav{
+     display: flex;   
 }
 nav ul{
     margin-left: 700px;
@@ -50,13 +55,9 @@ nav a:hover{
 }
 .btMobile{
     background-image: url(MenuMb.svg);
-    width: 50px; /* Largura do botão */
-    height: 50px; /* Altura do botão */
-    background-color: transparent;
+    width: 50px;     height: 50px;     background-color: transparent;
     background-repeat: no-repeat;
-    background-size: contain; /* Ajusta a imagem para caber no botão sem cortar */
-    background-position: center; /* Garante que a imagem fique centralizada */
-    border: 0;
+    background-size: contain;     background-position: center;     border: 0;
     cursor: pointer;
     margin-left: 150px;
     
@@ -66,108 +67,64 @@ nav a:hover{
 }
 
 
-
-
-
-
-
-
-
-@media (max-width: 768px) {
-    header.home {
-        background-image: none;
-        background-color: black;
-        width: 100%;
-        height: auto;
-        
-    }
-    
-    nav.open {
+@media (max-width: 768px){
+    nav.open{
         display: flex;
-        transform: translateX(0); 
-        opacity: 1;
+        align-items: end;
     }
-    header img {
-        height: 60px;
-    }
-    nav {
+
+    nav{
         background-color: #303030;
-        border-left: 10px solid #333;
-        display: none; /* Esconde inicialmente */
+        border-left: 10px solid #91490B;
+        display: none;
         flex-direction: column;
         height: 100%;
-        padding: 20px;
+        padding: 37px;
         position: fixed;
         right: 0;
         top: 0;
-        width: 70vw;
-        z-index: 9999; /* Garante que está acima do hero */
-        box-shadow: -50vw 0px 0px 0px rgba(0, 0, 0, 0.9);
-        transition: transform 0.3s ease-in-out, opacity 0.3s ease; /* Adiciona transição suave */
-        transform: translateX(100%); /* Move para fora da tela inicialmente */
-        opacity: 0; /* Invisível inicialmente */
-        
+        width: 60vw;
+        z-index: 9999;
+        box-shadow: -50vw 0px 0px 0px rgb(0,0,0,0.90);
+        border-top-left-radius: 50px;
     }
 
     nav ul{
         flex-direction: column;
         width: 100%;
-        margin: 0;
-        padding: 0;
-        
     }
 
     nav ul li {
-        
-        margin-bottom: 40px;
+        display: flex;
     }
 
     nav a {
         border-bottom: 1px solid white;
         color: white;
-        font-size: 18px;
-        margin: 0;
+        font-size: 20px;
+        margin: 30px 0 10px 0;
         padding: 12px;
         text-decoration: none;
         width: 100%;
-        display: block;
-    }
-    .btMobile {
-        
-        background-image: url(MenuMb.svg);
-    width: 50px;
-    height: 50px;
-    background-color: transparent;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    border: 0;
-    cursor: pointer;
-    }
-    .btMobile:hover {
-        transform: rotate(90deg);
-    }
-    .mobile-menu {
-        display: block;
-        
     }
 
-    .close-btn {
-        background: none;
+    .mobile-menu{
+        display: block;
+    }
+
+    .close-btn{
+        background-color: #303030;
         border: none;
         color: white;
-        font-size: 20px;
+        font-size: 25px;
         margin: 0 0 12px;
         padding: 12px;
         width: fit-content;
-        cursor: pointer;
-        
-        
-
-    }   
-    .close-btn:hover{
-        transform: scale(0.95);
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.50);
-        background-color: #91490B;
     }
 }
+
+
+
+
+
+

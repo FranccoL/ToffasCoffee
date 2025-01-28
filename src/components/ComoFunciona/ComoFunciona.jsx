@@ -2,7 +2,7 @@ import './ComoFunciona.css';
 
 function ComoFunciona () {
   return (
-    <div className="container">
+    <div className="container-how">
       <div className="tittleHow">
         <h1>COMO FUNCIONA?</h1>
       </div>

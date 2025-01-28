@@ -1,4 +1,4 @@
-.container {
+.container-how {
   margin: 0 auto;
   width: 100%;
 }
@@ -94,7 +94,6 @@
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Ajustes específicos para mobile */
 @media (max-width: 768px) {
   .container {
     padding: 0;

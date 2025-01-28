@@ -2,11 +2,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #121212; /* Cor de fundo */
-    color: white;
+    background-color: #121212;     color: white;
     padding: 20px 40px;
-    flex-wrap: wrap; /* Permite quebrar em linhas menores */
-  }
+    flex-wrap: wrap;   }
   
   .footer-left,
   .footer-right {
@@ -20,8 +18,7 @@
   .logo {
     width: 250px;
     height: 130px;
-    background-image: url(logoHeader.svg); /* Caminho da imagem */
-    background-size: cover;
+    background-image: url(logoHeader.svg);     background-size: cover;
     background-position: center;
     margin-bottom: 15px;
     border-radius: 50%;
@@ -59,19 +56,15 @@
     text-decoration: underline;
   }
   
-  /* Responsividade para telas menores */
-  @media (max-width: 768px) {
+    @media (max-width: 768px) {
     .footer {
-      flex-direction: column; /* Muda a direção para coluna */
-      padding: 0;
+      flex-direction: column;       padding: 0;
       padding-top: 100px;
       padding-right: 100px;
       margin-left: -40px;
       text-align: center;
-      min-height: 200px; /* Adiciona uma altura mínima para garantir que o footer não fique cortado */
-      display: flex;
-      justify-content: flex-start; /* Alinha o conteúdo do footer no topo */
-      height: 700px;
+      min-height: 200px;       display: flex;
+      justify-content: flex-start;       height: 700px;
       
     }
   
@@ -79,22 +72,15 @@
     .footer-right {
       align-items: center;
       margin-bottom: 20px;
-      flex-grow: 1; /* Permite que esses itens cresçam e ocupem o espaço disponível */
-    }
+      flex-grow: 1;     }
   
     .logo {
-      margin: 0 auto 15px; /* Centraliza a logo */
-    }
+      margin: 0 auto 15px;     }
   
     .social {
-      display: flex; /* Alinha os itens social com flexbox */
-      justify-content: center; /* Centraliza os ícones sociais */
-      flex-direction: row; /* Mantém os ícones na horizontal */
-      gap: 10px; /* Espaçamento entre os ícones */
-    }
+      display: flex;       justify-content: center;       flex-direction: row;       gap: 10px;     }
   
     .social a {
-      display: block; /* Garante que os links sejam blocos */
-      margin: 5px 0;
+      display: block;       margin: 5px 0;
     }
 }

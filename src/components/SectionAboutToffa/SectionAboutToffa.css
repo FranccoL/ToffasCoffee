@@ -1,26 +1,22 @@
 .aboutToffa {
     width: 100%;
     height: 600px;
-    display: flex; /* Adiciona flexbox para organizar os elementos em linha */
-    align-items: center; /* Centraliza verticalmente os elementos */
-    justify-content: space-between; /* Espaça os elementos (imagem e texto) */
-    padding: 0 50px; /* Adiciona um espaçamento interno nas laterais */
-    gap: 20px; /* Espaçamento entre a imagem e os textos */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    padding: 0 50px; 
+    gap: 20px;
     box-sizing: border-box;
 }
 
 .cupCoffe {
     background-image: url(/cup.svg);
     background-repeat: no-repeat;
-    background-size: contain; /* Garante que a imagem se ajusta ao contêiner */
-    background-position: center; /* Centraliza a imagem no contêiner */
-    width: 48%; /* A imagem ocupa metade do espaço */
-    height: 350px;
+    background-size: contain;     background-position: center;     width: 48%;     height: 350px;
 }
 
 .tittleSubAboutToffa {
-    width: 50%; /* Os textos ocupam a outra metade do espaço */
-    font-size: 20px;
+    width: 50%;     font-size: 20px;
 }
 
 .subTittleAboutSection {
@@ -61,21 +57,19 @@
     text-decoration: none; 
     background-color: #91490B;
     color: white;
-    transform: scale(1.05); /* Aumenta levemente o botão ao passar o mouse */
-}
+    transform: scale(1.05); }
 
 @media (max-width: 768px) {
     .aboutToffa {
         flex-direction: column;
         height: auto;
         text-align: center;
-        padding: 0 15px; /* Ajuste no padding */
+        padding: 0px;
     }
 
     .cupCoffe {
-        width: 80%; /* Aumenta um pouco para garantir que caiba melhor */
-        height: 200px;
-        margin: 0 auto;
+        display: none;
+
     }
 
     .tittleSubAboutToffa {
@@ -93,11 +87,7 @@
         width: 200px;
         height: 45px;
         font-size: 16px;
-        margin-bottom: 40px; /* Ajuste o valor de acordo com a necessidade */
-        display: flex;
-        justify-content: center; /* Centraliza o texto horizontalmente */
-        align-items: center; /* Centraliza o texto verticalmente */
-        margin: 0 auto; /* Centraliza o botão */
-        margin-bottom: 20px;
+        margin-bottom: 40px;         display: flex;
+        justify-content: center;         align-items: center;         margin: 0 auto;         margin-bottom: 20px;
     }
 }

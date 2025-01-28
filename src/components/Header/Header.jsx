@@ -22,10 +22,10 @@ function Header() {
                     <nav className={`${isOpen ? 'open' : ''}`}>
                         <button className="mobile-menu close-btn" onClick={toggleMenu}>X</button>
                         <ul className="d-flex">
-                            <li><Link to="/">Inicio</Link></li>
-                            <li><Link to="produtos">Nossos Produtos</Link></li>
-                            <li><Link to="quemSomos">Quem Somos</Link></li>
-                            <li><Link to="contato">Contato</Link></li>
+                            <li><Link to="/" onClick={toggleMenu}>Inicio</Link></li>
+                            <li><Link to="produtos"onClick={toggleMenu}>Nossos Produtos</Link></li>
+                            <li><Link to="quemSomos"onClick={toggleMenu}>Quem Somos</Link></li>
+                            <li><Link to="contato"onClick={toggleMenu}>Contato</Link></li>
                         </ul>
                     </nav>
                 </div>
