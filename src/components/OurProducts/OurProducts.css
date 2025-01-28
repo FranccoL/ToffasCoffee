@@ -208,7 +208,9 @@
 
 
 @media (max-width: 768px) {
-   
+   .tittleProducts h1{
+          font-size: 28px;
+   }
     
     .lineFaq {
         width: 90%;         height: auto;         margin: 20px auto;         padding: 10px;         

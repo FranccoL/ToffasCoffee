@@ -189,7 +189,7 @@
       flex-direction: column;
     }
   
-    .card-image img {
+    .card-image {
       display: none;
     }
   }
