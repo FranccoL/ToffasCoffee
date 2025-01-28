@@ -1,86 +1,95 @@
 .footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #121212;     color: white;
-    padding: 20px 40px;
-    flex-wrap: wrap;   }
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Alinha no topo para evitar que o conteúdo sobreponha */
+  background-color: #121212;
+  color: white;
+  padding: 20px 40px;
+  flex-wrap: wrap;
+  min-height: 200px; /* Garante uma altura mínima */
+}
+
+.footer-left,
+.footer-right {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  flex: 1;
+  margin-left: 100px;
+}
+
+.logo {
+  width: 250px;
+  height: 130px;
+  background-image: url(logoHeader.svg);
+  background-size: cover;
+  background-position: center;
+  margin-bottom: 15px;
+  border-radius: 50%;
+}
+
+.contact-button {
+  padding: 10px 20px;
+  background-color: orange;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  width: 200px;
+  text-decoration: none;
+}
+
+.contact-button:hover {
+  background-color: darkorange;
+}
+
+.info {
+  margin-bottom: 15px;
+}
+
+.social a {
+  color: white;
+  text-decoration: none;
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+.social a:hover {
+  text-decoration: underline;
+}
+
+/* Responsividade mobile */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    padding: 20px; /* Ajuste no padding */
+    align-items: center; /* Centraliza os itens no mobile */
+    min-height: 300px; /* Garante que o footer tenha altura suficiente */
+  }
+
   .footer-left,
   .footer-right {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 20px;
-    flex: 1;
-    margin-left: 100px;
+    margin-left: 0; /* Remove o margin-left */
+    margin-right: 0; /* Remove o margin-right */
+    flex: 1 1 100%; /* Flexibilidade para ocupar 100% da largura */
+    align-items: center; /* Centraliza os itens */
+    text-align: center; /* Alinha o texto no centro */
   }
-  
+
   .logo {
-    width: 250px;
-    height: 130px;
-    background-image: url(logoHeader.svg);     background-size: cover;
-    background-position: center;
-    margin-bottom: 15px;
-    border-radius: 50%;
+    width: 150px;
+    height: 80px;
   }
-  
+
   .contact-button {
-    padding: 10px 20px;
-    background-color: orange;
-    color: black;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-weight: bold;
-    text-transform: uppercase;
-    width: 200px;
-    text-decoration: none;
+    width: 100%;
+    margin-top: 20px;
   }
-  
-  .contact-button:hover {
-    background-color: darkorange;
-  }
-  
-  .info {
-    margin-bottom: 15px;
-  }
-  
+
   .social a {
-    color: white;
-    text-decoration: none;
-    margin-right: 10px;
-    font-weight: bold;
+    display: block; /* Coloca os links sociais em coluna */
+    margin-bottom: 10px; /* Adiciona espaçamento entre os links */
   }
-  
-  .social a:hover {
-    text-decoration: underline;
-  }
-  
-    @media (max-width: 768px) {
-    .footer {
-      flex-direction: column;       padding: 0;
-      padding-top: 100px;
-      padding-right: 100px;
-      margin-left: -40px;
-      text-align: center;
-      min-height: 200px;       display: flex;
-      justify-content: flex-start;       height: 700px;
-      
-    }
-  
-    .footer-left,
-    .footer-right {
-      align-items: center;
-      margin-bottom: 20px;
-      flex-grow: 1;     }
-  
-    .logo {
-      margin: 0 auto 15px;     }
-  
-    .social {
-      display: flex;       justify-content: center;       flex-direction: row;       gap: 10px;     }
-  
-    .social a {
-      display: block;       margin: 5px 0;
-    }
 }

@@ -8,7 +8,8 @@ function SectionAboutToffa () {
         <div className="cupCoffe d-flex"></div>
         <div className="tittleSubAboutToffa d-flex flex-column">
             <h1 className="tittleAboutSection d-flex" >SOBRE TOFFA’S CAFÉ</h1>
-            <p className="subTittleAboutSection d-flex">Café para todos os gostos Sou um parágrafo. Aqui você pode adicionar seu texto. Café para todos os gostos Sou um parágrafo. Aqui você pode adicionar seu texto.</p>
+            <p className="subTittleAboutSection d-flex">TOFFA’S CAFÉ: um blend exclusivo de grãos cuidadosamente selecionados, criado para oferecer um café de alta qualidade que encanta os paladares mais refinados e exigentes.
+            SABOR, AROMA e CORPO são os três pilares essenciais para apreciar essa bebida única.</p>
             <div className="buttonAboutSection d-flex flex-column">
             <Link to="quemSomos">
             <button className="btAbout d-flex">SAIBA MAIS</button>

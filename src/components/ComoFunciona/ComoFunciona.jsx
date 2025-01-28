@@ -21,7 +21,7 @@ function ComoFunciona () {
             <div className="iconDelivery"></div>
             <h1 className="tittleIcon">APROVEITE A SUA ENTREGA</h1>
           </div>
-          <div className="buttonHowM d-flex jc-flex-center al-center">
+          <div className="buttonHowM d-flex jc-flex-center al-center flex-column">
           <a href="https://wa.me/5511915387618?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento%20dos%20produtos.%20Poderia%20me%20informar%20mais%20detalhes%20,%20por%20favor?" className="buttonHow" target="_blank" rel="noopener noreferrer">
             Entre em Contato
           </a >

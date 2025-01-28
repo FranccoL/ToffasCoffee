@@ -52,7 +52,7 @@ nav a:hover{
     background-repeat: no-repeat;
     background-size: contain;     background-position: center;     border: 0;
     cursor: pointer;
-    margin-left: 150px;
+    margin-left: 120px;
     border-radius: 50px;
     
     transition: background-color 0.3s ease;

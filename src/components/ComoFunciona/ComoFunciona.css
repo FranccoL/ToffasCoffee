@@ -18,6 +18,7 @@
   height: 100vh;
   position: relative;
   margin-left: 5vw;
+  overflow: visible
 }
 
 .whiteCard {
@@ -85,16 +86,31 @@
   position: relative;
   text-decoration: none;
   top: 150px;
-  right: 670px;
+  right: 700px;
+  z-index: 20;
 }
 
 .buttonHow:hover {
   background-color: #7c3e09;
   transform: scale(1.1);
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 768px) {
+  
   .container {
     padding: 0;
   }
@@ -155,31 +171,26 @@
   }
 
   .buttonHowM {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
-    width: 100%;
-    visibility: visible;
-    z-index: 100000;
+    display: flex; /* Garante que o contêiner do botão aparece */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    width: 100%; /* Ocupa toda a largura */
+    margin-top: 20px; /* Espaço superior */
   }
 
   .buttonHow {
-    width: 90%;
-    height: auto;
-    display: inline-block;
-    padding: 12px;
-    font-size: 16px;
-    text-align: center;
-    background-color: #91490B;
+    display: inline-block; /* Garante que o botão seja exibido */
+    width: 90%; /* Adapta a largura ao mobile */
+    padding: 12px; /* Ajusta o tamanho do botão */
+    font-size: 16px; /* Reduz o texto no mobile */
+    text-align: center; /* Centraliza o texto */
+    background-color: #91490B; /* Cor do botão */
     color: white;
     border-radius: 5px;
     cursor: pointer;
-    border: none;
-    visibility: visible;
-    position: relative;
-    z-index: 100000;
-    text-decoration: none;
+    top: 0;
+    right: 0;
+    margin: 0 auto; 
   }
 
   .buttonHow:hover {
