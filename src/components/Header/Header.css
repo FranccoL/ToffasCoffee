@@ -46,16 +46,21 @@ nav a:hover{
     display: none;
 }
 .btMobile{
-    background-image: url('/menu-mb.svg');
-    width: 50px;     height: 50px;     background-color: transparent;
+    color: white;
+    width: 70px;     height: 50px;     background-color: black;
+    font-family: "Julius Sans One", serif;
     background-repeat: no-repeat;
     background-size: contain;     background-position: center;     border: 0;
     cursor: pointer;
     margin-left: 150px;
+    border-radius: 50px;
+    
+    transition: background-color 0.3s ease;
     
 }
 .btMobile:hover{
     transform: rotate(90deg);
+    background-color: #91490B;
 }
 
 
