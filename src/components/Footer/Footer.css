@@ -66,7 +66,7 @@
     flex-direction: column;
     padding: 20px; /* Ajuste no padding */
     align-items: center; /* Centraliza os itens no mobile */
-    height: 900px;
+    height: 700px;
     display: flex;
   }
 
