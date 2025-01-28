@@ -23,7 +23,19 @@
     z-index: 1; 
     color: #fff; 
     gap: 20px;
+    animation: slideIn 1s ease-out;
     
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px); /* Começa de baixo */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Termina na posição original */
+    }
 }
 
 .hero-text h1 {
@@ -59,6 +71,7 @@
         bottom: 140px;         
         left: 20px;         
         gap: 10px;
+        animation: slideIn 1s ease-out;
     }
 
     .hero-text h1 {
