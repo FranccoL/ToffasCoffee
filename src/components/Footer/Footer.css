@@ -21,7 +21,7 @@
 .logo {
   width: 250px;
   height: 130px;
-  background-image: url(logoHeader.svg);
+  background-image: url('/logoTof.svg');
   background-size: cover;
   background-position: center;
   margin-bottom: 15px;
@@ -66,30 +66,37 @@
     flex-direction: column;
     padding: 20px; /* Ajuste no padding */
     align-items: center; /* Centraliza os itens no mobile */
-    min-height: 300px; /* Garante que o footer tenha altura suficiente */
+    height: 900px;
+    display: flex;
   }
 
-  .footer-left,
-  .footer-right {
-    margin-left: 0; /* Remove o margin-left */
-    margin-right: 0; /* Remove o margin-right */
-    flex: 1 1 100%; /* Flexibilidade para ocupar 100% da largura */
-    align-items: center; /* Centraliza os itens */
-    text-align: center; /* Alinha o texto no centro */
+  .logo{
+    align-items: center;
+    justify-content: center;
+  }
+  .logo h3, a{
+    align-items: center;
+    justify-content: center;
+  }
+  .contact-button{
+    align-items: center;
+    
   }
 
-  .logo {
-    width: 150px;
-    height: 80px;
-  }
-
-  .contact-button {
-    width: 100%;
-    margin-top: 20px;
-  }
-
-  .social a {
-    display: block; /* Coloca os links sociais em coluna */
-    margin-bottom: 10px; /* Adiciona espaçamento entre os links */
-  }
+    .footer-left{
+      margin-left: 0;
+      justify-content: center;
+    text-align: center;
+   
+    
+    }
+    .footer-right{
+      margin-left: 0;
+    }
+    .footer-right p, a{
+      justify-content: center;
+    text-align: center;
+    
+    }
+  
 }
