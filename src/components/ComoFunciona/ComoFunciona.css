@@ -97,7 +97,7 @@
 /* Ajustes específicos para mobile */
 @media (max-width: 768px) {
   .container {
-    padding: 0 !important;
+    padding: 0;
   }
 
   .image-coffe {

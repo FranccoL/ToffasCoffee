@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-
+import Header from './components/Header/Header'
 
 // PAGES
 
@@ -18,8 +18,9 @@ function App() {
   return (
     <>
     <Router>
-    
+
       <ScrollToTop />
+      <Header />
       <Routes>
         <Route path="/" element={<Inicio />} />
         <Route path="/produtos" element={<NossosProdutos />}/>
