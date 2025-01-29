@@ -58,6 +58,7 @@
     height: 40px;
     text-decoration: none;
     top: 100px;
+    text-align: center;
 }
 
 .btHero:hover {

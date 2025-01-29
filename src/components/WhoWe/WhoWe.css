@@ -28,6 +28,7 @@
     margin-top: 50px;
     width: 90%;
     margin-left: 70px;
+    font-weight: bold;
     
   }
   
@@ -148,6 +149,7 @@
     color: #555;
     margin-bottom: 20px;
     line-height: 1.6;
+    font-weight: bold;
   }
   
   .card-button {
@@ -176,7 +178,7 @@
     }
     .titleWho h1 {
       color: white;
-
+      margin: 0;
     }
    
   

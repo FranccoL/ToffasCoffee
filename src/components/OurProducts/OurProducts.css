@@ -94,8 +94,8 @@
 }
   
   .product-image {
-    width: 100px;
-  height: 150px; 
+    width: 200px;
+  height: 250px; 
   object-fit: cover;
   }
   
