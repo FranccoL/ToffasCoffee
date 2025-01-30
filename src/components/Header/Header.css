@@ -66,6 +66,9 @@ nav a:hover{
 
 
 @media (max-width: 768px){
+    .headAll{
+        position: relative;
+    }
     nav.open{
         display: flex;
         align-items: end;

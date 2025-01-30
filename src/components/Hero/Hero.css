@@ -69,7 +69,8 @@
 
 @media (max-width: 768px) {
     .hero {
-        height: 450px;     }
+        height: 450px;     
+    }
 
     .hero-text {
         bottom: 10px;         
@@ -102,8 +103,10 @@
     }
 
     .hero-text h1 {
-        font-size: 22px;     }
+        font-size: 22px;     
+    }
 
     .btHero {
-        padding: 8px 20px;     }
+        padding: 8px 20px;     
+    }
 }
