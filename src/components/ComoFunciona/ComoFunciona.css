@@ -83,11 +83,21 @@
   font-size: 18px;
   height: 25px;
   transition: all 0.3s ease;
-  position: relative;
   text-decoration: none;
-  top: 150px;
-  right: 700px;
   z-index: 20;
+  position: absolute;
+  right: 450px;  
+ 
+}
+.buttonHowM{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%; /* Ocupa a largura total */
+  height: auto;
+  margin-top: 300px;
+ position: relative;
 }
 
 .buttonHow:hover {
@@ -180,17 +190,18 @@
 
   .buttonHow {
     display: inline-block; /* Garante que o botão seja exibido */
-    width: 90%; /* Adapta a largura ao mobile */
-    padding: 12px; /* Ajusta o tamanho do botão */
+    width: 85%; /* Adapta a largura ao mobile */
+    padding: 10px; /* Ajusta o tamanho do botão */
     font-size: 16px; /* Reduz o texto no mobile */
     text-align: center; /* Centraliza o texto */
     background-color: #91490B; /* Cor do botão */
     color: white;
     border-radius: 5px;
     cursor: pointer;
-    top: 0;
+    top: 10;
     right: 0;
-    margin: 0 auto; 
+    margin-bottom: 10px;
+    margin-right: 10px;
   }
 
   .buttonHow:hover {

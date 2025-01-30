@@ -14,7 +14,7 @@ function Header() {
             <div className="container-header">
                 <div className="headAll d-flex al-center">
                     <Link to="/">
-                    <img src="/logoHeader.svg" alt="logo" className="imgHeader d-flex jc-flex-start al-center" />
+                    <img src="/newLogo.svg" alt="logo" className="imgHeader d-flex jc-flex-start al-center" />
                     </Link>
                     <div className="mobile-menu">
                         <button className="btMobile d-flex jc-flex-center al-center" onClick={toggleMenu}> Menu</button>

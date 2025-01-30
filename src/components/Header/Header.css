@@ -8,12 +8,14 @@
     height: auto;
     box-shadow: 0 20px 60px rgb(0, 0, 0);
     z-index: 1; 
-    position: relative; 
+    position: fixed; 
     overflow: visible;
 }
 .imgHeader{
     width: 180px;
     height: 80px;
+    margin-left: 60px;
+    
     
 }
 
@@ -27,11 +29,10 @@ nav{
      display: flex;   
 }
 nav ul{
-    margin-left: 700px;
+    margin-left: 600px;
 }
 nav a {     
     color: rgb(0, 0, 0);
-    
     font-size: 15px;
     text-decoration: none;
     margin-left: 40px;
