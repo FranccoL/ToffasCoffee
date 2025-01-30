@@ -68,14 +68,12 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); }
 
 @media (max-width: 768px) {
-    .hero {
-        height: 450px;     
-    }
-
+    
     .hero-text {
         bottom: 10px;         
         left: 20px;         
         gap: 10px;
+        top: 150px;
         animation: slideIn 1s ease-out;
     }
 
@@ -87,7 +85,7 @@
     .btHero {
         padding: 10px 25px;     
         margin-top: -50px;
-        margin-left: 20px;
+        
         text-align: center;
 
     }
