@@ -183,7 +183,8 @@
    
   
     .description p {
-      padding-left: 20px;
+      padding-left: 50px;
+      margin-left: -30px;
       padding-right: 50px;
       font-size: 18px;
     }
