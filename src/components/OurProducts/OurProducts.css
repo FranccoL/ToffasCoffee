@@ -139,15 +139,15 @@
   }
   .questions h2{
     text-decoration: underline;
-    font-size: 23px;
+    font-size: 28px !important;
   }
   .questions h1{
-    font-size: 23px;
+    font-size: 20px !important;
     margin-bottom: -10px;
   }
 
   .questions p{
-    font-size: 16px;
+    font-size: 16px !important;
     line-height: 160%;
     
   }
