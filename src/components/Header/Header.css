@@ -60,7 +60,6 @@ nav a:hover{
     
 }
 .btMobile:hover{
-    transform: rotate(90deg);
     background-color: #91490B;
 }
 
