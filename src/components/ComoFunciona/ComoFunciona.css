@@ -1,6 +1,8 @@
 .container-how {
   margin: 0 auto;
   width: 100%;
+  position: relative;
+    z-index: 1;
 }
 
 .tittleHow h1 {
@@ -18,7 +20,7 @@
   height: 100vh;
   position: relative;
   margin-left: 5vw;
-  overflow: visible
+  
 }
 
 .whiteCard {
