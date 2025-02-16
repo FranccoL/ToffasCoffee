@@ -67,6 +67,32 @@
     transform: scale(1.1);     
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); }
 
+    /* WhatsApp flutuante */
+.whatsapp-fly {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    padding: 12px;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.whatsapp-fly:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp-icon {
+    width: 40px;
+    height: 40px;
+}
+
+
 @media (max-width: 768px) {
     
     .hero-text {
@@ -108,4 +134,5 @@
         padding: 8px 20px;   
         width: 210px;  
     }
+    
 }
