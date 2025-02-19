@@ -21,7 +21,19 @@ function ContactForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_hryppuc', 'template_xbe3zq5', e.target, 'sGQWUhgfYKz3VOisR')
+    // Substituindo as quebras de linha por <br /> diretamente no campo de mensagem
+    const mensagemComQuebras = formData.mensagem.replace(/\n/g, '<br />');
+
+    // Criando um objeto com os valores que serão enviados ao EmailJS
+    const formDataToSend = {
+      from_name: formData.nome,
+      to_name: 'Destinatário', // Substitua pelo nome real se necessário
+      email: formData.email,
+      mensagem: mensagemComQuebras
+    };
+
+    // Enviando os dados ao EmailJS
+    emailjs.send('service_hryppuc', 'template_xbe3zq5', formDataToSend, 'sGQWUhgfYKz3VOisR')
       .then((result) => {
         console.log(result.text);
         setStatus('Mensagem enviada com sucesso!');
