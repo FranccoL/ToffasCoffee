@@ -21,7 +21,7 @@ function ContactForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('your_service_id', 'your_template_id', e.target, 'your_user_id')
+    emailjs.sendForm('service_hryppuc', 'template_xbe3zq5', e.target, 'sGQWUhgfYKz3VOisR')
       .then((result) => {
         console.log(result.text);
         setStatus('Mensagem enviada com sucesso!');
