@@ -84,6 +84,8 @@
         line-height: 1.4;
         margin-left: 10px;
         margin-right: 10px;
+        word-wrap: break-word; 
+        max-width: 100%;
     }
 
     .btAbout {
