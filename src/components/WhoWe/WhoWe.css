@@ -1,7 +1,7 @@
 .container-Who {
     width: 100%;
     margin: 0 auto;
-   
+    padding-top: 100px;
     background-color: #333;
   }
   
@@ -175,6 +175,10 @@
     @media (max-width: 768px) {
     .container {
       padding: 10px;
+      
+    }
+    .titleWho {
+      margin-top: -15px;
     }
     .titleWho h1 {
       color: white;

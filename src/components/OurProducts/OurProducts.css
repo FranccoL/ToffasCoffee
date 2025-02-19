@@ -1,6 +1,7 @@
 
 .container-products{
-    background-color: #303030
+    background-color: #303030;
+    padding-top: 100px;
 }
 
 .tittleProducts{
@@ -230,8 +231,13 @@
     .card-image{
       display: none;
     }
+
+    .tittleProducts{
+      margin-top: -15px;
+    }
    .tittleProducts h1{
           font-size: 28px;
+          
    }
     
     .lineFaq {
