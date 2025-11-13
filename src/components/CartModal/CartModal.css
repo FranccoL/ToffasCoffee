@@ -1,0 +1,243 @@
+/* 🖤 Fundo semitransparente */
+.cart-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: flex-end;
+  align-items: stretch;
+  z-index: 999999;
+  animation: fadeIn 0.3s ease;
+}
+
+/* 🛍️ Painel lateral */
+.cart-modal {
+  background-color: #fff;
+  width: 380px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 28px 22px 0;
+  box-shadow: -3px 0 20px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  animation: slideIn 0.35s ease forwards;
+  position: relative;
+}
+
+/* ✨ Animações */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideIn {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+/* Cabeçalho */
+.cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #f1e9dc;
+  padding-bottom: 12px;
+  margin-bottom: 18px;
+}
+
+.cart-header h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1e1e1e;
+}
+
+.close-cart {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #8b4513;
+  transition: color 0.3s;
+}
+
+.close-cart:hover {
+  color: #d4af37;
+}
+
+/* Produtos */
+.cart-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 10px;
+  margin-bottom: 14px;
+  border-bottom: 1px solid #eee;
+}
+
+.item-info {
+  max-width: 120px;
+}
+
+.item-info strong {
+  color: #2b2b2b;
+  font-size: 0.95rem;
+}
+
+.item-info span {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+.item-quantity {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.item-quantity button {
+  background: none;
+  border: 1px solid #ccc;
+  color: #8b4513;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 4px;
+  padding: 0 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.item-quantity button:hover {
+  border-color: #d4af37;
+  color: #d4af37;
+}
+
+.item-price {
+  text-align: right;
+}
+
+.item-price span {
+  color: #2b2b2b;
+  font-weight: 600;
+  display: block;
+}
+
+.remove-item {
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.remove-item:hover {
+  color: #c0392b;
+}
+
+/* Rodapé fixo */
+.cart-footer {
+  background: #fff;
+  border-top: 2px solid #f1e9dc;
+  padding-top: 12px;
+  padding-bottom: 18px;
+  position: sticky;
+  bottom: 0;
+  box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Total */
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #2b2b2b;
+  margin-bottom: 14px;
+}
+
+/* Botões */
+.cart-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.cart-actions button {
+  flex: 1;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.cart-actions .clear {
+  background-color: #eee;
+  color: #333;
+}
+
+.cart-actions .clear:hover {
+  background-color: #ddd;
+}
+
+.cart-actions .checkout {
+  background: linear-gradient(135deg, #8b4513, #d4af37);
+  color: white;
+}
+
+.cart-actions .checkout:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+}
+
+/* 🪶 Scroll suave */
+.cart-items::-webkit-scrollbar {
+  width: 6px;
+}
+.cart-items::-webkit-scrollbar-thumb {
+  background: #d4af37;
+  border-radius: 6px;
+}
+
+/* ⚡ Responsividade */
+@media (max-width: 768px) {
+  .cart-modal {
+    width: 100%;
+    max-width: 420px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cart-modal {
+    width: 100%;
+    padding: 20px 16px 0;
+  }
+
+  .cart-header h2 {
+    font-size: 1.2rem;
+  }
+
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .item-quantity {
+    justify-content: flex-start;
+  }
+
+  .cart-actions button {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+}

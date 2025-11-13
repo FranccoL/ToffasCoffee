@@ -1,0 +1,98 @@
+.aboutToffa {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    padding: 0 50px; 
+    gap: 20px;
+    box-sizing: border-box;
+}
+
+.cupCoffe {
+    background-image: url(/cup.svg);
+    background-repeat: no-repeat;
+    background-size: contain;     background-position: center;     width: 48%;     height: 350px;
+}
+
+.tittleSubAboutToffa {
+    width: 50%;     font-size: 20px;
+}
+
+.subTittleAboutSection {
+    line-height: 1.5;
+    font-size: 15px;
+    margin-top: 20px;
+    width: 400px;
+}
+
+.buttonAboutSection {
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+.btAbout {
+    padding: 12px 24px;
+    background-color: #91490B;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    width: 200px;
+    font-size: 18px;
+    height: 50px;
+    text-decoration: none; 
+    font-family: "Julius Sans One", serif;
+    transition: all 0.3s ease; 
+    text-align: center; 
+    align-items: center;
+}
+.buttonAboutSection a {
+    text-decoration: none;
+}
+
+.btAbout:hover {
+    
+    text-decoration: none; 
+    background-color: #91490B;
+    color: white;
+    transform: scale(1.05); }
+
+@media (max-width: 768px) {
+    .aboutToffa {
+        flex-direction: column;
+        height: auto;
+        text-align: center;
+        padding: 0px;
+    }
+
+    .cupCoffe {
+        display: none;
+
+    }
+
+    .tittleSubAboutToffa {
+        width: 100%; 
+        font-size: 16px;
+        margin-top: 20px;
+        align-items: center;
+    }
+
+    .subTittleAboutSection {
+        font-size: 14px;
+        line-height: 1.4;
+        margin-left: 10px;
+        margin-right: 10px;
+        word-wrap: break-word; 
+        max-width: 100%;
+    }
+
+    .btAbout {
+        width: 200px;
+        height: 45px;
+        font-size: 16px;
+        margin-bottom: 40px;         display: flex;
+        justify-content: center;         align-items: center;         margin: 0 auto;         margin-bottom: 20px;
+    }
+}

@@ -1,0 +1,204 @@
+.container-how {
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+    z-index: 1;
+}
+
+.tittleHow h1 {
+  font-size: 45px;
+  text-align: center;
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.image-coffe {
+  background-image: url('/imageCafe.svg');
+  background-size: cover;
+  background-position: center;
+  width: 90vw;
+  height: 100vh;
+  position: relative;
+  margin-left: 5vw;
+  z-index: 0;
+  
+}
+
+.whiteCard {
+  width: 70%;
+  height: 60%;
+  background-color: #FFFFFF;
+  padding: 20px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.iconsWithTitles {
+  width: 100%;
+  margin-top: 50px;
+}
+
+.iconWithTitle {
+  width: 100%;
+  margin-bottom: 20px;
+  margin-right: 190px;
+  margin-left: 50px;
+}
+
+.iconCoffe, .iconWhatsapp, .iconDelivery {
+  width: 70px;
+  height: 70px;
+  background-size: cover;
+  background-position: center;
+}
+
+.iconCoffe {
+  background-image: url(/iconCoffe.svg);
+}
+
+.iconWhatsapp {
+  background-image: url(/WhatsApp.svg);
+}
+
+.iconDelivery {
+  background-image: url(/Delivery.svg);
+}
+
+.tittleIcon {
+  font-size: 1rem;
+  text-align: center;
+  color: #000;
+  width: 100px;
+}
+
+.buttonHow {
+  padding: 12px 24px;
+  background-color: #91490B;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  width: 200px;
+  font-size: 18px;
+  height: 25px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  z-index: 20;
+  position: absolute;
+  right: 450px;  
+ 
+}
+.buttonHowM{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%; /* Ocupa a largura total */
+  height: auto;
+  margin-top: 300px;
+ position: relative;
+}
+
+.buttonHow:hover {
+  background-color: #7c3e09;
+  transform: scale(1.1);
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  
+}
+
+
+@media (max-width: 768px) {
+  
+  .container {
+    padding: 0;
+  }
+
+  .image-coffe {
+    width: 100%;
+    height: 650px;
+    margin: 0;
+  }
+
+  .whiteCard {
+    width: 80%;
+    height: auto;
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .iconsWithTitles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .iconWithTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+    position: relative;
+    margin-left: 200px;
+  }
+
+  .iconCoffe, .iconWhatsapp, .iconDelivery {
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 10px;
+  }
+
+  .tittleIcon {
+    font-size: 1rem;
+    text-align: center;
+    color: #000;
+    width: 100px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 0px;
+  }
+
+  .buttonHowM {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    width: 100%; 
+    margin-top: 20px; 
+  }
+
+  .buttonHow {
+    display: inline-block; 
+    width: 85%; 
+    padding: 10px; 
+    font-size: 16px; 
+    text-align: center; 
+    background-color: #91490B; 
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    top: 10;
+    right: 0;
+    margin-bottom: 30px;
+    margin-right: 10px;
+  }
+
+  .buttonHow:hover {
+    background-color: #7c3e09;
+    transform: scale(1.1);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+}

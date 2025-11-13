@@ -1,0 +1,341 @@
+/* 🌿 CATÁLOGO DE PRODUTOS */
+.store-catalog {
+  padding: 40px 20px 100px;
+  background: linear-gradient(180deg, #f9f7f4 0%, #f3eee7 100%);
+}
+
+/* GRID PRINCIPAL */
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+/* CARD DO PRODUTO */
+.produto-card {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.produto-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* IMAGEM DO PRODUTO */
+.produto-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: contain;
+  padding: 15px;
+  background-color: #fff;
+  transition: transform 0.3s ease;
+}
+
+.produto-card:hover img {
+  transform: scale(1.05);
+}
+
+/* INFORMAÇÕES */
+.produto-info {
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.produto-info h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2b2b2b;
+  margin-bottom: 6px;
+}
+
+.produto-info p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* OPÇÕES (TAMANHO) */
+.produto-opcoes {
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.produto-opcoes label {
+  font-size: 0.9rem;
+  color: #444;
+  font-weight: 500;
+}
+
+.produto-opcoes select {
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.produto-opcoes select:hover {
+  border-color: #8b4513;
+}
+
+/* RODAPÉ DO CARD */
+.produto-footer {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 12px;
+}
+
+.produto-footer span {
+  font-weight: 600;
+  color: #8b4513;
+  font-size: 1.05rem;
+}
+
+/* BOTÃO “ADICIONAR AO CARRINHO” */
+.produto-footer button {
+  background: #1e1e1e;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  font-weight: 500;
+}
+
+.produto-footer button:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #d4af37, #8b4513);
+  box-shadow: 0 6px 14px rgba(212, 175, 55, 0.4);
+}
+
+.produto-footer button svg {
+  transition: transform 0.35s ease;
+}
+
+.produto-footer button:hover svg {
+  transform: translateX(4px) scale(1.1);
+}
+
+/* 🛒 BOTÃO FLUTUANTE DO CARRINHO */
+.cart-button {
+  position: fixed;
+  width: 200px;
+  bottom: 60px;
+  right: 25px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #f5f5f5, #e8e4da);
+  color: #1e1e1e;
+  border: none;
+  border-radius: 35px;
+  padding: 14px 20px;
+  cursor: pointer;
+  z-index: 9999999;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  font-weight: 600;
+  transition: all 0.35s ease;
+  overflow: hidden;
+}
+
+/* ✨ Brilho dourado animado */
+.cart-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -80%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 215, 0, 0.45),
+    transparent
+  );
+  transform: skewX(-25deg);
+  transition: all 0.6s ease;
+  pointer-events: none;
+}
+
+.cart-button:hover::before {
+  left: 120%;
+}
+
+.cart-button:hover {
+  background: linear-gradient(135deg, #d4af37, #8b4513);
+  color: #fff;
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 20px rgba(139, 69, 19, 0.4);
+}
+
+.cart-button svg {
+  transition: transform 0.4s ease;
+}
+
+.cart-button:hover svg {
+  transform: rotate(-8deg) scale(1.1);
+}
+
+/* 🔢 Contador */
+.cart-count {
+  background-color: #d4af37;
+  color: #1e1e1e;
+  font-weight: 700;
+  font-size: 0.8rem;
+  border-radius: 50%;
+  padding: 4px 7px;
+  min-width: 20px;
+  text-align: center;
+  position: relative;
+  top: -2px;
+}
+
+/* ✨ Efeito de pulsar */
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 rgba(212, 175, 55, 0);
+  }
+  50% {
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+  }
+}
+
+.cart-button {
+  animation: pulseGlow 3s infinite ease-in-out;
+}
+
+/* 🧾 Rodapé do carrinho */
+.cart-footer {
+  position: sticky;
+  bottom: 0;
+  background: #fff;
+  padding-top: 12px;
+  padding-bottom: 15px;
+  border-top: 2px solid #f1e9dc;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 10;
+}
+
+/* 💰 Total */
+.cart-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #2b2b2b;
+}
+
+/* 🛒 Ações do carrinho */
+.cart-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.cart-actions button {
+  flex: 1;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-height: 40px;
+}
+
+.cart-actions .clear {
+  background-color: #eee;
+  color: #333;
+}
+
+.cart-actions .clear:hover {
+  background-color: #ddd;
+}
+
+.cart-actions .checkout {
+  background: linear-gradient(135deg, #8b4513, #d4af37);
+  color: white;
+}
+
+.cart-actions .checkout:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(212, 175, 55, 0.4);
+}
+
+/* 🌐 RESPONSIVIDADE */
+
+/* Tablets */
+@media (max-width: 1024px) {
+  .catalog-grid {
+    gap: 24px;
+  }
+
+  .produto-card img {
+    height: 220px;
+  }
+}
+
+/* Celulares grandes */
+@media (max-width: 768px) {
+  .catalog-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+  }
+
+  .produto-info h3 {
+    font-size: 1rem;
+  }
+
+  .produto-footer button {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+
+  .cart-button {
+    width: 160px;
+    padding: 12px 18px;
+  }
+}
+
+/* Celulares pequenos */
+@media (max-width: 480px) {
+  .produto-card img {
+    height: 200px;
+  }
+
+  .produto-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .cart-button {
+    width: 140px;
+    right: 15px;
+    bottom: 30px;
+  }
+}

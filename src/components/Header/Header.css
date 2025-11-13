@@ -1,0 +1,131 @@
+
+.headAll{
+    background-color: #ffffff; 
+    height: 80px; 
+    color: #fff; 
+    display: flex;
+    width: 100%;
+    height: auto;
+    box-shadow: 0 20px 60px rgb(0, 0, 0);
+    z-index: 99999999999; 
+    position: fixed; 
+    overflow: visible;
+    padding: 0 20px;
+}
+.imgHeader{
+    width: 80px;
+    height: 80px;
+    margin-left: 60px;
+}
+
+
+header ul, li {
+    list-style: none;
+    
+}
+
+nav{
+     display: flex;   
+}
+nav ul{
+    margin-left: 400px;
+}
+nav a {     
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    text-decoration: none;
+    margin-left: 40px;
+    font-weight: 600;
+}
+nav a:hover{
+    color: #91490B;
+}
+
+
+.mobile-menu {
+    display: none;
+}
+.btMobile{
+    color: white;
+    width: 70px;     height: 50px;     background-color: black;
+    font-family: "Julius Sans One", serif;
+    background-repeat: no-repeat;
+    background-size: contain;     background-position: center;     border: 0;
+    cursor: pointer;
+    margin-left: 100px;
+    border-radius: 50px;
+    
+    transition: background-color 0.3s ease;
+    
+}
+.btMobile:hover{
+    background-color: #91490B;
+}
+
+
+@media (max-width: 768px){
+   
+    nav.open{
+        display: flex;
+        align-items: end;
+    }
+
+    nav{
+        background-color: #303030;
+        border-left: 10px solid #91490B;
+        display: none;
+        flex-direction: column;
+        height: 100%;
+        padding: 37px;
+        position: fixed;
+        right: 0;
+        top: 0;
+        width: 60vw;
+        z-index: 999999999999;
+        box-shadow: -50vw 0px 0px 0px rgb(0,0,0,0.90);
+        border-top-left-radius: 50px;
+    }
+
+    nav ul{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li {
+        display: flex;
+    }
+
+    nav a {
+        border-bottom: 1px solid white;
+        color: white;
+        font-size: 20px;
+        margin: 30px 0 10px 0;
+        padding: 12px;
+        text-decoration: none;
+        width: 100%;
+    }
+
+    .mobile-menu{
+        display: block;
+    }
+
+    .close-btn{
+        background-color: #303030;
+        border: none;
+        color: white;
+        font-size: 25px;
+        margin: 0 0 12px;
+        padding: 12px;
+        width: fit-content;
+    }
+
+    .imgHeader {
+        margin-left: -25px;
+    }
+}
+
+
+
+
+
+
