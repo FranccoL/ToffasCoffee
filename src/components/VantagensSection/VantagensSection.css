@@ -1,0 +1,157 @@
+/* CONTAINER PRINCIPAL */
+.benefits-container {
+  display: flex;
+  flex-direction: column;  
+  align-items: center;     
+  justify-content: center; 
+  gap: 3rem;               
+  margin: 0 auto;
+  background-color: #f7f3ed;
+  padding: 50px 20px;
+}
+
+/* Responsivo: telas médias e grandes */
+@media (min-width: 768px) {
+  .benefits-container {
+    flex-direction: row;   
+    flex-wrap: wrap;       
+    justify-content: center; /* mantém centralizado mesmo com várias colunas */
+    gap: 2rem;
+    padding: 60px 40px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .benefits-container {
+    gap: 3rem;
+    padding: 80px 60px;
+  }
+}
+
+/* CARTÃO (Card) */
+.benefit-card {
+  background-color: #ffffff;
+  padding: 2.5rem;        
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border: 1px solid #f3f4f6;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;            
+  max-width: 900px;       
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.12);
+}
+
+/* Ícone */
+.icon-wrapper {
+  width: 4.5rem;
+  height: 4.5rem;          
+  background-color: #F3EBE3;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+  color: #3C2A21;
+}
+
+@media (min-width: 768px) {
+  .icon-wrapper {
+    width: 5rem;
+    height: 5rem;
+  }
+}
+
+/* TÍTULOS E TEXTOS */
+.benefit-card h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #3C2A21;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .benefit-card h2 {
+    font-size: 1.8rem;
+  }
+  
+}
+
+.description {
+  color: #4b5563;
+  margin-bottom: 1.8rem;
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+@media (min-width: 768px) {
+  .description {
+    font-size: 1.05rem;
+    max-width: 400px;
+     
+  }
+  
+  
+}
+
+@media (min-width: 1024px) {
+  .description {
+    font-size: 1.1rem;
+    max-width: 500px;
+    
+  }
+}
+
+/* LISTA DE BENEFÍCIOS */
+.benefit-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  align-items: center; 
+}
+
+.benefit-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #374151;
+  font-size: 1rem;
+}
+
+.check-icon {
+  color: #D4A373;
+  flex-shrink: 0;
+}
+
+/* RESPONSIVO MOBILE PEQUENO */
+@media (max-width: 480px) {
+  .benefits-container {
+    padding: 40px 15px;
+    gap: 2rem;
+  }
+  
+  .benefit-card {
+    max-width: 100%;
+    padding: 2rem;
+    width: 80%;
+  }
+  
+  .description {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  
+  .benefit-card h2 {
+    font-size: 1.4rem;
+  }
+}

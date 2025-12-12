@@ -1,0 +1,293 @@
+/* ===========================
+   BASE PAGE
+=========================== */
+.teas-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #faf8f5;
+  color: #1a1a1a;
+  overflow-x: hidden; /* evita scroll horizontal */
+  box-sizing: border-box;
+}
+
+/* ===========================
+   HERO
+=========================== */
+.teas-hero {
+  position: relative;
+  height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.teas-hero-image {
+  position: absolute;
+  inset: 0;
+}
+
+.teas-hero-image img {
+  width: 100%;
+  height: 120%;
+  object-fit: cover;
+  object-position: center 20%;
+  filter: brightness(0.65) saturate(1.1);
+}
+
+.teas-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 700px;
+  padding: 0 20px;
+  animation: fadeIn 1s ease;
+}
+
+.teas-hero-content h1 {
+  font-size: 3rem;
+  color: #fff;
+  margin-bottom: 15px;
+  font-weight: 700;
+  text-shadow: 0 3px 10px rgba(0,0,0,0.4);
+}
+
+.teas-hero-content p {
+  font-size: 1.2rem;
+  color: #f2f2f2;
+  line-height: 1.5;
+}
+
+/* ===========================
+   INTRO
+=========================== */
+.teas-intro {
+  padding: 70px 20px;
+  text-align: center;
+}
+
+.teas-intro-tag {
+  padding: 6px 14px;
+  background: #e6d5b8;
+  color: #6b4b1c;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.teas-intro h2 {
+  font-size: 2.2rem;
+  margin: 20px 0 10px;
+  color: #3a2a1a;
+}
+
+.teas-intro-text {
+  max-width: 700px;
+  margin: auto;
+  color: #6b6b6b;
+  line-height: 1.6;
+}
+
+/* ÍCONES GRID */
+.teas-icon.red { background: #e63946; }
+.teas-icon.yellow { background: #ffcc00; }
+.teas-icon.peach { background: #ff9e6f; }
+
+/* ===========================
+   GRID
+=========================== */
+.teas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  padding: 40px 20px 70px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.teas-grid-item {
+  background: #fff;
+  border-radius: 20px;
+  padding: 25px;
+  text-align: center;
+  transition: 0.3s;
+  border: 1px solid #eee;
+}
+
+.teas-grid-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.tea-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.teas-icon {
+  width: 70px;
+  height: 70px;
+  margin: auto;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+  color: #fff;
+}
+
+.teas-grid-item h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.teas-grid-item p {
+  color: #555;
+  line-height: 1.5;
+}
+
+/* ===========================
+   BENEFITS
+=========================== */
+.teas-benefits {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+  gap: 40px;
+  padding: 60px 20px 100px;
+}
+
+.teas-benefits-image {
+  flex: 1 1 400px;
+  border-radius: 20px;
+  overflow: hidden;
+  min-width: 300px;
+}
+
+.teas-benefits-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.teas-benefits-content {
+  flex: 1 1 400px;
+  min-width: 300px;
+}
+
+.teas-benefits-content h2 {
+  font-size: 2rem;
+  margin-bottom: 25px;
+  color: #3a2a1a;
+}
+
+.teas-benefit-item {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+  align-items: center;
+}
+
+.benefit-icon {
+  width: 45px;
+  height: 45px;
+  background: #e6d5b8;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.teas-benefits-content h4 {
+  font-size: 1.2rem;
+  margin-top: -1px;
+}
+
+.teas-benefits-content p {
+  color: #555;
+  margin-top: -10px;
+}
+
+.teas-button-wrap {
+  margin-top: 40px;
+}
+
+.teas-button {
+  background: #6b4b1c;
+  color: #fff;
+  padding: 12px 26px;
+  font-size: 1rem;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.3s;
+}
+
+.teas-button:hover {
+  background: #8a6230;
+  transform: translateY(-2px);
+}
+
+/* ===========================
+   ANIMATIONS
+=========================== */
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+@media (max-width: 1024px) {
+  .teas-benefits {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .teas-benefits-image, .teas-benefits-content {
+    min-width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .teas-hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .teas-hero {
+    height: 50vh;
+  }
+
+  .teas-grid {
+    grid-template-columns: 1fr; /* cada item ocupa a linha inteira */
+    gap: 20px;
+    padding: 30px 20px 50px;
+  }
+
+  .teas-benefits-image, .teas-benefits-content {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .teas-hero-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .teas-hero-content p {
+    font-size: 1rem;
+  }
+
+  .teas-button {
+    width: 100%;
+    justify-content: center;
+  }
+}

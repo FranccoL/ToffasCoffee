@@ -1,131 +1,380 @@
-
-.headAll{
-    background-color: #ffffff; 
-    height: 80px; 
-    color: #fff; 
+.headAll {
+    height: 80px;
+    color: #fff;
     display: flex;
     width: 100%;
     height: auto;
-    box-shadow: 0 20px 60px rgb(0, 0, 0);
-    z-index: 99999999999; 
-    position: fixed; 
+    z-index: 99999999999;
+    position: fixed;
     overflow: visible;
     padding: 0 20px;
-}
-.imgHeader{
-    width: 80px;
-    height: 80px;
-    margin-left: 60px;
+    top: 0;
+    align-items: center;
+
+    /* Adiciona transição para o efeito de background-color e box-shadow */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    /* Borda sutil */
 }
 
+/* NOVO: ESTILO PARA O HEADER NA PRIMEIRA SEÇÃO (TRANSPARENTE) */
+.headAll.transparent {
+    background-color: transparent;
+    box-shadow: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+.headAll.transparent .btMobile {
+    color: #000000;
+}
+/* NOVO: ESTILO PARA O HEADER APÓS ROLAR (BRANCO) */
+.headAll.scrolled {
+    background-color: #ffffff;
+    /* Fundo branco */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    /* Sombra para destacar */
+    border-bottom: 1px solid #f0f0f0;
+    /* Borda clara */
+}
 
-header ul, li {
+.imgHeader {
+    width: 100px;
+    height: auto;
+    /* Alterado de 80px para auto para manter proporção */
+    display: block;
+}
+
+/* REMOVIDO: margem e posição absoluta para facilitar flexbox */
+/* .imgHeader { ... } */
+
+header ul,
+li {
     list-style: none;
-    
 }
 
-nav{
-     display: flex;   
+nav {
+    display: flex;
+    flex-grow: 1;
+    /* Ocupa espaço disponível no desktop */
+    justify-content: center;
+    /* Centraliza menu no desktop */
 }
-nav ul{
-    margin-left: 400px;
+
+/* Ajuste o menu desktop */
+nav ul {
+    margin-left: 550px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 40px;
 }
-nav a {     
-    color: rgb(0, 0, 0);
+
+nav a {
     font-size: 15px;
     text-decoration: none;
-    margin-left: 40px;
     font-weight: 600;
+    padding: 10px 0;
+    transition: color 0.3s ease;
+    display: block;
 }
-nav a:hover{
+
+/* CORREÇÃO: Cor do link quando o header está transparente (BRANCO) */
+.headAll.transparent nav a {
+    color: #ffffff;
+}
+
+/* Cor do link quando o header fica branco (PRETO) */
+.headAll.scrolled nav a {
+    color: rgb(0, 0, 0);
+}
+
+nav a:hover {
     color: #91490B;
 }
 
+/* --- ESTILOS DO DROPDOWN --- */
+.dropdown-menu {
+    position: relative;
+    display: inline-block;
+}
 
+.dropdown-content {
+    /* Inicialmente oculto com opacidade e transformação para efeito suave */
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+
+    position: absolute;
+    background-color: #ffffff;
+    /* Fundo branco para os menus */
+    min-width: 180px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 100000;
+    border-radius: 5px;
+    padding: 10px 0;
+
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+}
+
+.dropdown-menu:hover .dropdown-content,
+.dropdown-content.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.dropdown-content a {
+    color: black !important;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-weight: 500;
+    margin: 0;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+    color: #91490B !important;
+}
+
+/* --- ESTILOS DOS ÍCONES DE UTILIDADE --- */
+.utility-icons {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-right: 50px;
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    transition: color 0.3s ease;
+}
+
+/* CORREÇÃO: Cor dos ícones quando o header está transparente (BRANCO) */
+.headAll.transparent .icon-btn {
+    color: #ffffff;
+}
+
+/* Cor dos ícones quando o header está branco (PRETO) */
+.headAll.scrolled .icon-btn {
+    color: rgb(0, 0, 0);
+}
+
+.icon-btn:hover {
+    color: #91490B;
+}
+
+/* --- ESTILOS DO MENU MOBILE --- */
 .mobile-menu {
     display: none;
 }
-.btMobile{
-    color: white;
-    width: 70px;     height: 50px;     background-color: black;
-    font-family: "Julius Sans One", serif;
-    background-repeat: no-repeat;
-    background-size: contain;     background-position: center;     border: 0;
+
+.btMobile {
+    background: none;
+    border: none;
     cursor: pointer;
-    margin-left: 100px;
-    border-radius: 50px;
-    
-    transition: background-color 0.3s ease;
-    
-}
-.btMobile:hover{
-    background-color: #91490B;
+    padding: 0;
+    transition: transform 0.3s ease, color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+.btMobile:hover {
+    color: #91490B;
+    transform: scale(1.1);
+}
 
-@media (max-width: 768px){
-   
-    nav.open{
+/* =============================== BUSCA DO HEADER =============================== */
+.search-box-header {
+    position: absolute;
+    top: 70px;
+    right: 18px;
+    width: 260px;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 12px;
+    border: 1px solid #e4dccd;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    z-index: 999999999;
+    animation: fadeInSearch 0.2s ease;
+}
+
+.search-input-header {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 15px;
+    border: 1px solid #c9b9a5;
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.search-results-header {
+    margin-top: 14px;
+    padding: 0;
+    list-style: none;
+}
+
+.search-results-header li a {
+    display: block;
+    background: #faf6f1;
+    padding: 12px 14px;
+    border-radius: 10px;
+    color: #3f2e21;
+    text-decoration: none;
+    font-weight: 600;
+    border: 1px solid #e6ddd1;
+    transition: background 0.2s, transform 0.15s ease;
+}
+
+.search-results-header li a:hover {
+    background: #e6d5bd;
+    transform: translateY(-2px);
+}
+
+/* ================================ MOBILE LAYOUT FIX ================================ */
+@media (max-width: 768px) {
+
+    /* Layout do Container */
+    .headAll {
+        justify-content: space-between;
+        padding: 10px 20px;
+        height: 70px;
+    }
+
+    /* 1. ESQUERDA: Ícones */
+    .utility-icons {
+        order: 1;
+        display: flex !important;
+        margin-left: 0;
+        gap: 12px;
+        flex: 0 0 auto;
+        /* Não esticar */
+    }
+
+    /* 2. CENTRO: Logo */
+    .logo-link {
+        order: 2;
+        flex: 1;
+        /* Ocupa o espaço central */
         display: flex;
-        align-items: end;
-    }
-
-    nav{
-        background-color: #303030;
-        border-left: 10px solid #91490B;
-        display: none;
-        flex-direction: column;
-        height: 100%;
-        padding: 37px;
-        position: fixed;
-        right: 0;
-        top: 0;
-        width: 60vw;
-        z-index: 999999999999;
-        box-shadow: -50vw 0px 0px 0px rgb(0,0,0,0.90);
-        border-top-left-radius: 50px;
-    }
-
-    nav ul{
-        flex-direction: column;
-        width: 100%;
-    }
-
-    nav ul li {
-        display: flex;
-    }
-
-    nav a {
-        border-bottom: 1px solid white;
-        color: white;
-        font-size: 20px;
-        margin: 30px 0 10px 0;
-        padding: 12px;
-        text-decoration: none;
-        width: 100%;
-    }
-
-    .mobile-menu{
-        display: block;
-    }
-
-    .close-btn{
-        background-color: #303030;
-        border: none;
-        color: white;
-        font-size: 25px;
-        margin: 0 0 12px;
-        padding: 12px;
-        width: fit-content;
+        justify-content: center;
+        /* Centraliza a imagem dentro do link */
     }
 
     .imgHeader {
-        margin-left: -25px;
+        margin: 0;
+        /* Remove margens antigas */
+        position: static;
+        transform: none;
+        width: 90px;
+        /* Tamanho ajustado para mobile */
+    }
+
+    /* 3. DIREITA: Menu */
+    .mobile-menu {
+        order: 3;
+        display: block !important;
+        flex: 0 0 auto;
+        /* Não esticar */
+        margin-right: 70px;
+    }
+
+    .btMobile {
+        margin-left: 0;
+    }
+
+    /* Esconde o menu de navegação padrão (desktop) */
+    nav {
+        display: none;
+    }
+
+    /* Menu Aberto (Mobile Navigation) */
+    nav.open {
+        display: flex;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.95);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000000;
+    }
+
+    nav.open ul {
+        flex-direction: column;
+        margin: 0;
+        gap: 20px;
+    }
+
+    nav.open a {
+        color: white !important;
+        font-size: 20px;
+    }
+
+    .close-btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: transparent;
+        border: 2px solid white;
+        color: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        font-size: 20px;
+        cursor: pointer;
+    }
+    .dropdown-content {
+        position: static; /* Flui naturalmente na lista */
+        background-color: transparent; /* Fundo transparente para misturar com o menu */
+        box-shadow: none; /* Remove a sombra */
+        transform: none; /* Remove transformação */
+        width: 100%; /* Largura total */
+        text-align: center;
+        padding: 0;
+        margin-top: 10px;
+        
+        /* Controla a exibição: height 0 quando fechado, auto quando aberto */
+        display: none; 
+    }
+    .dropdown-content.visible {
+        display: flex;
+        flex-direction: column;
+        animation: fadeInMobile 0.3s ease;
+    }
+
+    /* Estilo dos links dentro do dropdown no mobile */
+    .dropdown-content a {
+        color: rgba(255, 255, 255, 0.7) !important; /* Texto branco levemente transparente */
+        font-size: 16px; /* Um pouco menor que o item pai */
+        padding: 8px 0;
+        border-bottom: none;
+    }
+
+    .dropdown-content a:hover {
+        background-color: transparent;
+        color: #ffffff !important;
+    }
+
+    /* Ajuste nos itens da lista para centralizar */
+    nav.open ul li {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
 
+@keyframes fadeInMobile {
+    from { opacity: 0; transform: translateY(-5px); }
+    to { opacity: 1; transform: translateY(0); }
 
-
-
-
-
+}

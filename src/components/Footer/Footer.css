@@ -1,103 +1,156 @@
-.footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start; /* Alinha no topo para evitar que o conteúdo sobreponha */
-  background-color: #121212;
-  color: white;
-  padding: 20px 40px;
-  flex-wrap: wrap;
-  min-height: 200px; /* Garante uma altura mínima */
+/* CONTAINER PRINCIPAL DO FOOTER */
+.footer-section {
+    /* Cor de fundo baseada na imagem (Marrom escuro/Café) */
+    background-color: #3f2e21; 
+    color: #f0e6d6; /* Cor do texto (bege claro) */
+    padding-top: 50px;
+    font-size: 15px;
 }
 
-.footer-left,
-.footer-right {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 20px;
-  flex: 1;
-  margin-left: 100px;
-}
-
-.logo {
-  width: 140px;
-  height: 100px;
-  background-image: url('/newLogo.svg');
-  background-size: cover;
-  background-position: center;
-  margin-bottom: 15px;
-  margin-left: 50px;
-  
-}
-
-.contact-button {
-  padding: 10px 20px;
-  background-color: orange;
-  color: black;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-weight: bold;
-  text-transform: uppercase;
-  width: 200px;
-  text-decoration: none;
-}
-
-.contact-button:hover {
-  background-color: darkorange;
-}
-
-.info {
-  margin-bottom: 15px;
-}
-
-.social a {
-  color: white;
-  text-decoration: none;
-  margin-right: 10px;
-  font-weight: bold;
-}
-
-.social a:hover {
-  text-decoration: underline;
-}
-
-/* Responsividade mobile */
-@media (max-width: 768px) {
-  .footer {
-    flex-direction: column;
-    padding: 20px; /* Ajuste no padding */
-    align-items: center; /* Centraliza os itens no mobile */
-    height: 600px;
+/* CONTEÚDO PRINCIPAL (3 COLUNAS) */
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 40px; /* Padding inferior maior */
     display: flex;
-  }
+    justify-content: space-between;
+    gap: 40px;
+}
 
-  .logo{
+/* ESTILO DA LOGO */
+.footer-logo {
+    display: flex;
     align-items: center;
-    justify-content: center;
-  }
-  .logo h3, a{
-    align-items: center;
-    justify-content: center;
-  }
-  .contact-button{
-    align-items: center;
-    
-  }
+    gap: 8px;
+    margin-bottom: 20px;
+    font-size: 22px;
+    font-weight: 700;
+    color: #f0e6d6; 
+}
 
-    .footer-left{
-      margin-left: 0;
-      justify-content: center;
+/* ESTILO DAS COLUNAS */
+.footer-col h3 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #ffffff; /* Títulos em branco mais nítido */
+}
+
+/* COLUNA 1: SOBRE/DESCRIÇÃO */
+.footer-col.about {
+    max-width: 350px;
+    line-height: 1.6;
+}
+
+/* COLUNA 2: PRODUTOS (LINKS) */
+.footer-col.links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-col.links li {
+    margin-bottom: 10px;
+}
+
+.footer-col.links a {
+    color: #f0e6d6;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-col.links a:hover {
+    color: #d1b392; /* Tom de destaque/hover */
+}
+
+/* COLUNA 3: CONTATO */
+.footer-col.contact p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+/* RODAPÉ DE DIREITOS AUTORAIS */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Linha divisória fina */
+    padding: 20px 20px;
     text-align: center;
-   
-    
+    font-size: 13px;
+    color: #b0a498;
+}
+.contact-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #f0e6d6;
+    margin-bottom: 12px;
+}
+
+.contact-line svg {
+    color: #d1b392; /* dourado leve */
+}
+
+.contact-line.link {
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.contact-line.link:hover {
+    color: #d1b392;
+}
+
+.contact-line span {
+    font-size: 15px;
+}
+
+/* --- RESPONSIVIDADE --- */
+
+@media (max-width: 768px) {
+    /* Footer principal */
+    .footer-content {
+        flex-direction: column;  /* empilha colunas */
+        gap: 30px;
+        padding-bottom: 30px;
+        align-items: center;     /* centraliza horizontalmente */
+        text-align: center;      /* centraliza texto dentro das colunas */
     }
-    .footer-right{
-      margin-left: 0;
+    .footer-logo {
+        justify-content: center; /* centraliza logo */
     }
-    .footer-right p, a{
-      justify-content: center;
-    text-align: center;
-    
+    /* Colunas */
+    .footer-col {
+        max-width: 100%;         /* ocupa toda largura disponível */
+        margin-bottom: 20px;     /* espaçamento entre colunas */
     }
-  
+
+    /* Sobre / descrição */
+    .footer-col.about {
+        text-align: center;      /* centraliza o texto */
+    }
+
+    /* Produtos e links */
+    .footer-col.links ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;     /* centraliza os links */
+        gap: 10px;
+    }
+
+    .footer-col.links li {
+        margin-bottom: 0;        /* remove margens extras, gap cuida do espaçamento */
+    }
+
+    /* Contato */
+    .footer-col.contact {
+        display: flex;
+        flex-direction: column;
+        align-items: center;     /* centraliza ícones e texto */
+        text-align: center;
+    }
+
+    .contact-line {
+        justify-content: center; /* centraliza ícones e textos horizontalmente */
+    }
 }

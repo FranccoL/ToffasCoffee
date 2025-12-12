@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useCart } from "../../context/CartContext";
+import { apiPost } from "../../services/api";
 import "./Checkout.css";
 
 export default function Checkout() {
@@ -20,6 +21,7 @@ export default function Checkout() {
   const [frete, setFrete] = useState(null);
   const [carregandoFrete, setCarregandoFrete] = useState(false);
 
+  // Soma total dos produtos
   const totalProdutos = cart.reduce((sum, item) => {
     const valor = Number(item.price.replace(/[^\d,]/g, "").replace(",", "."));
     return sum + valor * item.quantity;
@@ -32,35 +34,105 @@ export default function Checkout() {
     setCliente((prev) => ({ ...prev, [name]: value }));
   };
 
-  const calcularFrete = () => {
+  // CALCULA MEDIDAS AUTOMATICAMENTE
+  const calcularMedidas = () => {
+    let pesoTotal = 0;
+    let altura = 0;
+    let largura = 0;
+    let comprimento = 0;
+
+    cart.forEach((item) => {
+      const qtd = item.quantity;
+
+      pesoTotal += (item.weight || 0.3) * qtd; // Peso mínimo
+      altura += item.height || 10;
+      largura = Math.max(largura, item.width || 20);
+      comprimento = Math.max(comprimento, item.length || 20);
+    });
+
+    return { pesoTotal, altura, largura, comprimento };
+  };
+
+  // CALCULAR FRETE VIA BACKEND
+  const calcularFrete = async () => {
     if (!cliente.cep) {
       alert("Digite um CEP para calcular o frete.");
       return;
     }
 
     setCarregandoFrete(true);
-    setTimeout(() => {
-      setFrete({
-        tipo: "Entrega Padrão",
-        valor: 19.9,
-        prazo: "3 a 5 dias úteis",
+    const medidas = calcularMedidas();
+
+    try {
+      const resposta = await apiPost("/frete/calcular", {
+        cepDestino: cliente.cep,
+        peso: medidas.pesoTotal,
+        altura: medidas.altura,
+        largura: medidas.largura,
+        comprimento: medidas.comprimento,
       });
-      setCarregandoFrete(false);
-    }, 1500);
+
+      if (!resposta) {
+        alert("Erro ao calcular frete.");
+        setCarregandoFrete(false);
+        return;
+      }
+
+      // Simples (com MelhorEnvio será diferente)
+      setFrete({
+        tipo: resposta.tipo,
+        valor: resposta.valor,
+        prazo: resposta.prazo,
+      });
+
+    } catch (err) {
+      console.error("Erro frete:", err);
+      alert("Erro ao calcular frete.");
+    }
+
+    setCarregandoFrete(false);
   };
 
-  const finalizarCompra = () => {
+  // FINALIZAR PEDIDO
+  const finalizarCompra = async () => {
     if (!cliente.nome || !cliente.email || !cliente.endereco) {
-      alert("Preencha todos os campos obrigatórios!");
+      alert("Preencha os campos obrigatórios!");
       return;
     }
 
-    alert(
-      `✅ Pedido confirmado!\n\nCliente: ${cliente.nome}\nTotal: R$ ${totalFinal.toFixed(
-        2
-      )}`
-    );
-    clearCart();
+    if (cart.length === 0) {
+      alert("O carrinho está vazio!");
+      return;
+    }
+
+    const medidas = calcularMedidas();
+
+    try {
+      const pedido = {
+        cliente,
+        itens: cart.map((item) => ({
+          id: item.id,
+          nome: item.nome,
+          tamanho: item.size,
+          quantidade: item.quantity,
+          preco: Number(item.price.replace(/[^\d,]/g, "").replace(",", ".")),
+          peso: item.weight,
+        })),
+        subtotal: totalProdutos,
+        frete: frete ? frete.valor : 0,
+        total: totalFinal,
+        medidas,
+      };
+
+      const resposta = await apiPost("/pedidos", pedido);
+
+      alert(`Pedido realizado com sucesso! 🧾\nID: ${resposta.pedidoId}`);
+      clearCart();
+
+    } catch (err) {
+      console.error("Erro ao finalizar pedido:", err);
+      alert("Erro ao finalizar pedido!");
+    }
   };
 
   return (
@@ -68,9 +140,11 @@ export default function Checkout() {
       <h2>Finalizar Compra</h2>
 
       <div className="checkout-container">
-        {/* 🧾 Resumo do Pedido */}
+
+        {/* RESUMO */}
         <div className="checkout-pedido">
           <h3>Seu Pedido</h3>
+
           {cart.length === 0 ? (
             <p>O carrinho está vazio.</p>
           ) : (
@@ -82,9 +156,7 @@ export default function Checkout() {
                       <strong>{item.nome}</strong> <br />
                       <small>{item.size}</small>
                     </div>
-                    <span>
-                      {item.quantity}x {item.price}
-                    </span>
+                    <span>{item.quantity}x {item.price}</span>
                   </li>
                 ))}
               </ul>
@@ -102,6 +174,7 @@ export default function Checkout() {
               )}
 
               <hr />
+
               <div className="resumo-total total">
                 <span>Total:</span>
                 <strong>R$ {totalFinal.toFixed(2).replace(".", ",")}</strong>
@@ -110,99 +183,50 @@ export default function Checkout() {
           )}
         </div>
 
-        {/* 👤 Dados do Cliente */}
+        {/* DADOS DO CLIENTE */}
         <div className="checkout-form">
           <h3>Dados do Cliente</h3>
+
           <form>
-            <input
-              type="text"
-              name="nome"
-              placeholder="Nome completo *"
-              value={cliente.nome}
-              onChange={handleChange}
-              required
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="E-mail *"
-              value={cliente.email}
-              onChange={handleChange}
-              required
-            />
-            <input
-              type="tel"
-              name="telefone"
-              placeholder="Telefone"
-              value={cliente.telefone}
-              onChange={handleChange}
-            />
+            <input type="text" name="nome" placeholder="Nome *"
+              value={cliente.nome} onChange={handleChange} required />
+
+            <input type="email" name="email" placeholder="E-mail *"
+              value={cliente.email} onChange={handleChange} required />
+
+            <input type="tel" name="telefone" placeholder="Telefone"
+              value={cliente.telefone} onChange={handleChange} />
 
             <div className="cep-container">
-              <input
-                type="text"
-                name="cep"
-                placeholder="CEP *"
-                value={cliente.cep}
-                onChange={handleChange}
-                required
-              />
-              <button
-                type="button"
-                onClick={calcularFrete}
-                disabled={carregandoFrete}
-              >
-                {carregandoFrete ? "Calculando..." : "Calcular Frete"}
+              <input type="text" name="cep" placeholder="CEP *"
+                value={cliente.cep} onChange={handleChange} required />
+
+              <button type="button" onClick={calcularFrete} disabled={carregandoFrete}>
+                {carregandoFrete ? "Calculando..." : "Frete"}
               </button>
             </div>
 
-            <input
-              type="text"
-              name="endereco"
-              placeholder="Endereço *"
-              value={cliente.endereco}
-              onChange={handleChange}
-              required
-            />
-            <input
-              type="text"
-              name="numero"
-              placeholder="Número *"
-              value={cliente.numero}
-              onChange={handleChange}
-              required
-            />
-            <input
-              type="text"
-              name="bairro"
-              placeholder="Bairro"
-              value={cliente.bairro}
-              onChange={handleChange}
-            />
-            <input
-              type="text"
-              name="cidade"
-              placeholder="Cidade"
-              value={cliente.cidade}
-              onChange={handleChange}
-            />
-            <input
-              type="text"
-              name="estado"
-              placeholder="Estado"
-              value={cliente.estado}
-              onChange={handleChange}
-            />
+            <input type="text" name="endereco" placeholder="Endereço *"
+              value={cliente.endereco} onChange={handleChange} required />
 
-            <button
-              type="button"
-              className="finalizar-btn"
-              onClick={finalizarCompra}
-            >
+            <input type="text" name="numero" placeholder="Número *"
+              value={cliente.numero} onChange={handleChange} required />
+
+            <input type="text" name="bairro" placeholder="Bairro"
+              value={cliente.bairro} onChange={handleChange} />
+
+            <input type="text" name="cidade" placeholder="Cidade"
+              value={cliente.cidade} onChange={handleChange} />
+
+            <input type="text" name="estado" placeholder="Estado"
+              value={cliente.estado} onChange={handleChange} />
+
+            <button type="button" className="finalizar-btn" onClick={finalizarCompra}>
               Finalizar Pedido
             </button>
           </form>
         </div>
+
       </div>
     </section>
   );

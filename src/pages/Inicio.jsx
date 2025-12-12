@@ -1,8 +1,9 @@
 
 import Hero from "../components/Hero/Hero"
-import PqNos from "../components/PqNos/PqNos"
-import ComoFunciona from "../components/ComoFunciona/ComoFunciona"
-import SectionInfo from "../components/SectionInfo/SectionInfo"
+import CategorySection from "../components/CategorySection/CategorySection"
+import EnterpriseSection from "../components/EnterpriseSection/EnterpriseSection"
+
+
 import SectionAboutToffa from "../components/SectionAboutToffa/SectionAboutToffa"
 import Footer from "../components/Footer/Footer"
 
@@ -11,9 +12,8 @@ function Inicio () {
         <>
         
         <Hero />
-        <PqNos />
-        <ComoFunciona />
-        <SectionInfo />
+        <CategorySection />
+        <EnterpriseSection />
         <SectionAboutToffa />
         <Footer />
         </>

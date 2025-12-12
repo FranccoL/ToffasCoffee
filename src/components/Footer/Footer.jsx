@@ -1,37 +1,85 @@
-import "./Footer.css";
+import React from 'react';
+import './Footer.css';
+import { Link } from 'react-router-dom';
+import { Mail, Phone, InstagramIcon, Linkedin } from "lucide-react";
 
-const Footer = () => {
-  return (
-    <footer className="footer">
-      <div className="footer-left">
-        <div className="logo"></div>
-        <h3>SEJA NOSSO PARCEIRO</h3>
-        <a 
-  href="https://wa.me/5511915387618?text=Olá,%20tudo%20bem?%20Gostaria%20de%20conversar%20sobre%20a%20possibilidade%20de%20uma%20parceria.%20Poderia%20me%20passar%20mais%20informações%20sobre%20como%20podemos%20colaborar?%20Estou%20à%20disposição!" 
-  className="contact-button" 
-  target="_blank" 
-  rel="noopener noreferrer"
->
-  ENTRE EM CONTATO
-</a>
-        
-      </div>
-      <div className="footer-right">
-        <div className="info">
-          <p>+55 (11) 91538-7618</p>
-          <p>toffascoffee@gmail.com</p>
-        </div>
-        <div className="social">
-          <p>SIGA</p>
-          
-          <a href="https://www.instagram.com/toffascoffee/" target="_blank">INSTAGRAM</a>
-          <a href="#">TIK TOK</a>
-          
-          
-        </div>
-      </div>
-    </footer>
-  );
-};
+function Footer() {
+    const products = [
+        { name: "Cafés", link: "/cafe" },
+        { name: "Chás Premium", link: "/cha" },
+        { name: "Bebidas Quentes", link: "/bebidasQuentes" },
+        { name: "Aluguel de Máquinas", link: "/aluguel" },
+    ];
+
+    return (
+        <footer className="footer-section">
+            <div className="footer-content container-center">
+
+                {/* Logo + texto */}
+                <div className="footer-col about">
+                    <div className="footer-logo">
+                        <img src="/logoF.svg" alt="Toffa's Coffee" className="footer-logo-img" />
+                    </div>
+                    <p>
+                        Levando a melhor experiência de café para sua casa ou empresa. 
+                        Grãos selecionados, produtos premium e as melhores máquinas do mercado.
+                    </p>
+                </div>
+
+                {/* Produtos */}
+                <div className="footer-col links">
+                    <h3>PRODUTOS</h3>
+                    <ul>
+                        {products.map((item, index) => (
+                            <li key={index}>
+                                <Link to={item.link}>{item.name}</Link>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+
+                {/* Contato */}
+                <div className="footer-col contact">
+                    <h3>CONTATO</h3>
+
+                    <p className="contact-line">
+                        <Mail size={18} />
+                        <span>toffascoffee@gmail.com</span>
+                    </p>
+
+                    <p className="contact-line">
+                        <Phone size={18} />
+                        <span>+55 (11) 91538-7618</span>
+                    </p>
+
+                    <a
+                        className="contact-line link"
+                        href="https://www.instagram.com/toffascoffee/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <InstagramIcon size={18} />
+                        <span>@toffascoffee</span>
+                    </a>
+
+                    <a
+                        className="contact-line link"
+                        href="https://linkedin.com/in/seuLinkedin"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <Linkedin size={18} />
+                        <span>LinkedIn</span>
+                    </a>
+
+                </div>
+            </div>
+
+            <div className="footer-bottom">
+                <p>© 2025 Toffa's Coffee. Todos os direitos reservados.</p>
+            </div>
+        </footer>
+    );
+}
 
 export default Footer;

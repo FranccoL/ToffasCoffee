@@ -1,0 +1,129 @@
+/* CONTAINER PRINCIPAL */
+.enterprise-section {
+    background-color: #614639;
+    padding: 80px 20px;
+    color: #ffffff;
+}
+
+/* CONTEÚDO */
+.enterprise-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* TEXTO */
+.text-container {
+    max-width: 500px;
+    z-index: 2;
+}
+
+.text-container h1 {
+    font-size: 38px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.text-container p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* BOTÃO */
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 30px;
+    background-color: #d1b392;
+    color: #303030;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #e2c09c;
+    transform: translateY(-1px);
+}
+
+/* LOGO DE FUNDO (sempre aparece) */
+.background-logo {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 300px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.background-logo .enterprise-icon {
+    color: #000000;
+    opacity: 0.15;
+}
+
+/* ===============================
+   RESPONSIVIDADE
+================================ */
+
+@media (max-width: 900px) {
+    .enterprise-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .text-container {
+        max-width: 100%;
+    }
+
+    .text-container h1 {
+        font-size: 32px;
+    }
+
+    /* ÍCONE aparece abaixo quando mobile */
+    .background-logo {
+        position: relative;
+        transform: none;
+        margin-top: 30px;
+        width: 200px;
+        height: 200px;
+    }
+
+    .background-logo .enterprise-icon {
+        width: 200px;
+        height: 200px;
+        opacity: 0.12;
+    }
+}
+
+@media (max-width: 500px) {
+    .enterprise-section {
+        padding: 50px 15px;
+    }
+
+    .text-container h1 {
+        font-size: 28px;
+    }
+
+    .background-logo {
+        width: 160px;
+        height: 160px;
+    }
+
+    .background-logo .enterprise-icon {
+        width: 160px;
+        height: 160px;
+        opacity: 0.10;
+    }
+}

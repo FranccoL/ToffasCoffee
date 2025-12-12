@@ -1,0 +1,117 @@
+/* CONTAINER PRINCIPAL DA SEÇÃO */
+.category-section {
+    padding: 60px 20px;
+    max-width: 1200px; /* Limite a largura da seção para não ocupar 100% da tela */
+    margin: 0 auto; /* Centraliza o container */
+}
+
+/* HEADER (Título e Link "Ver tudo") */
+.category-header .subtitle {
+    color: #91490B; /* Cor da Toffa's */
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.category-header h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.category-header .title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end; /* Alinha o link com o título */
+    margin-bottom: 30px;
+}
+
+.category-header .view-all-link {
+    color: #000000;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.category-header .view-all-link:hover {
+    color: #91490B;
+}
+
+/* GRID DOS CARDS */
+.category-grid {
+    display: grid;
+    /* 4 colunas em telas grandes */
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 20px;
+}
+
+/* ESTILO INDIVIDUAL DO CARD */
+.category-card {
+    display: flex;
+    justify-content: flex-start; /* Alinha o texto na parte inferior esquerda */
+    align-items: flex-end;
+    padding: 20px;
+    height: 300px; /* Altura fixa dos cards */
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    text-decoration: none;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* O TÍTULO DENTRO DO CARD */
+.category-card .card-title {
+    font-size: 18px;
+    font-weight: 600;
+    z-index: 2; /* Fica acima da overlay */
+    padding: 5px 10px;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.4); /* Fundo semi-transparente para legibilidade */
+}
+
+/* OVERLAY ESCURA PARA GARANTIR LEITURA DO TEXTO BRANCO SOBRE A IMAGEM */
+.category-card .card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 50%);
+    z-index: 1;
+}
+
+/* --- RESPONSIVIDADE (Tablets e Mobile) --- */
+@media (max-width: 1024px) {
+    .category-grid {
+        /* 2 colunas em tablets */
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media (max-width: 600px) {
+    .category-grid {
+        /* 1 coluna em celulares */
+        grid-template-columns: 1fr; 
+    }
+    
+    .category-section {
+        padding: 40px 15px;
+    }
+
+    .category-card {
+        height: 250px;
+    }
+}
