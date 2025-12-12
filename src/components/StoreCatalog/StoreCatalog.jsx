@@ -2,6 +2,7 @@ import React, { useState, useMemo } from "react";
 import "./StoreCatalog.css";
 import { ShoppingBag, Search, Filter } from "lucide-react";
 import { useCart } from "../../context/CartContext";
+import { Link } from "react-router-dom";
 
 export default function StoreCatalog() {
   const [search, setSearch] = useState("");
@@ -23,6 +24,7 @@ export default function StoreCatalog() {
       nome: "Café Toffa's torrado em grãos",
       descricao: "Blend 100% arábica.",
       imagem: "/grao1.svg",
+      route: "/cafeGrao",
       precos: { "250g": "R$ 24,90", "500g": "R$ 44,90", "1kg": "R$ 79,90" },
     },
     {
@@ -31,6 +33,7 @@ export default function StoreCatalog() {
       nome: "Café Toffa's Torrado e moído",
       descricao: "Blend 100% arábica.",
       imagem: "/cafemoido.svg",
+      route: "/cafeMoido",
       precos: { "500g": "R$ 49,90" },
     },
     {
@@ -39,6 +42,7 @@ export default function StoreCatalog() {
       nome: "Café Toffa's Premium",
       descricao: "Seleção especial de grãos de altitude.",
       imagem: "/premium.svg",
+      route: "/cafePremium",
       precos: { "250g": "R$ 26,90", "500g": "R$ 47,90", "1kg": "R$ 84,90" },
     },
     {
@@ -47,6 +51,7 @@ export default function StoreCatalog() {
       nome: "Chocolate Toffa's Coffee",
       descricao: "Produto solúvel.",
       imagem: "/chocolate1.svg",
+      route: "/chocolate",
       precos: { "250g": "R$ 16,90", "500g": "R$ 29,90", "1kg": "R$ 52,90" },
     },
     {
@@ -55,6 +60,7 @@ export default function StoreCatalog() {
       nome: "Cappuccino Toffa's Coffee",
       descricao: "Produto solúvel.",
       imagem: "/grao 1.svg",
+      route: "/cappuccino",
       precos: { "250g": "R$ 15,90", "500g": "R$ 27,90", "1kg": "R$ 49,90" },
     },
     {
@@ -63,6 +69,7 @@ export default function StoreCatalog() {
       nome: "Chá Mate de Limão Toffa's",
       descricao: "Blend aromático e revigorante.",
       imagem: "/limao.svg",
+      route: "/chaL",
       precos: { "250g": "R$ 18,90", "500g": "R$ 32,90", "1kg": "R$ 56,90" },
     },
     {
@@ -71,6 +78,7 @@ export default function StoreCatalog() {
       nome: "Chá Mate de Pêssego Toffa's",
       descricao: "Blend aromático e revigorante.",
       imagem: "/pessego.svg",
+      route: "/chaP",
       precos: { "250g": "R$ 18,90", "500g": "R$ 32,90", "1kg": "R$ 56,90" },
     },
     {
@@ -79,6 +87,7 @@ export default function StoreCatalog() {
       nome: "Chá Preto de Frutas Vermelhas Toffa's",
       descricao: "Blend aromático e revigorante.",
       imagem: "/frutas.svg",
+      route: "/chaV",
       precos: { "250g": "R$ 18,90", "500g": "R$ 32,90", "1kg": "R$ 56,90" },
     },
     {
@@ -87,6 +96,7 @@ export default function StoreCatalog() {
       nome: "Cappuccino Toffa's Coffee - Sem Açúcar",
       descricao: "Produto solúvel.",
       imagem: "/capp.svg",
+      route: "/cappuccinoSA",
       precos: { "250g": "R$ 15,90", "500g": "R$ 27,90", "1kg": "R$ 49,90" },
     },
   ];
@@ -164,7 +174,9 @@ export default function StoreCatalog() {
                 <img className="produto-img" src={item.imagem} alt={item.nome} />
 
                 <div className="produto-info">
-                  <h3 className="produto-nome">{item.nome}</h3>
+                  <Link to={item.route} className="produto-nome">
+                    {item.nome}
+                  </Link>
                   <p className="produto-desc">{item.descricao}</p>
 
                   {/* PESO - BOTÕES CLICÁVEIS */}

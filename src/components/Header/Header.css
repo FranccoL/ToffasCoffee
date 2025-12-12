@@ -41,6 +41,7 @@
     height: auto;
     /* Alterado de 80px para auto para manter proporção */
     display: block;
+    margin-left: 50px;
 }
 
 /* REMOVIDO: margem e posição absoluta para facilitar flexbox */
@@ -244,6 +245,7 @@ nav a:hover {
         justify-content: space-between;
         padding: 10px 20px;
         height: 70px;
+        
     }
 
     /* 1. ESQUERDA: Ícones */
@@ -258,13 +260,12 @@ nav a:hover {
 
     /* 2. CENTRO: Logo */
     .logo-link {
-        order: 2;
-        flex: 1;
-        /* Ocupa o espaço central */
-        display: flex;
-        justify-content: center;
-        /* Centraliza a imagem dentro do link */
-    }
+    position: absolute;
+    left: 46%;
+    transform: translateX(-50%);
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
 
     .imgHeader {
         margin: 0;

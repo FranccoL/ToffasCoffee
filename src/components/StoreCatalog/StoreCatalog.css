@@ -57,6 +57,12 @@
   font-weight: 600;
   color: #2b2b2b;
   margin-bottom: 6px;
+  text-decoration: none;
+  color: #2b2b2b;
+}
+.produto-nome:hover {
+  text-decoration: none;
+  color: #8b4513; /* opcional, só para dar charme no hover */
 }
 
 .produto-desc {
@@ -234,6 +240,8 @@
   color: #777;
   font-size: 1.1rem;
 }
+
+
 
 /* RESPONSIVO */
 @media (max-width: 768px) {
