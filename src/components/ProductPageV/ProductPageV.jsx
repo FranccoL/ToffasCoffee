@@ -1,41 +1,39 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; 
-import { useCart } from "../../context/CartContext"; // ✅ Importar useCart
+import { useCart } from "../../context/CartContext";
 import "./ProductPageV.css";
 
 export default function ProductPageV() {
   const [activeTab, setActiveTab] = useState("descricao");
-  const { addToCart } = useCart(); // ✅ função do contexto
+  const { addToCart } = useCart();
   const navigate = useNavigate();
 
   const preparoText = `
 Coloque 3 a 4 colheres de sopa de Toffa’s Chá de Frutas Vermelhas.
 Adicione 300mL de água fria com gelo ou quente.
 Misture bem com uma colher ou mixer (recomendado).
-Pronto! Agora é só saborear seu chá refrescante e cheio de sabor. 
+Pronto! Agora é só saborear seu chá refrescante e cheio de sabor.
   `;
 
+  // 🔥 INGREDIENTES ATUALIZADOS
   const ingredientesText = `
-Folhas de chá preto selecionado, hibisco, framboesa desidratada,
-amora, morango, aroma natural de frutas vermelhas.
+Açúcar, maltodextrina, extrato de chá preto, sal,
+sucos desidratados de frutas vermelhas (morango, cereja e framboesa),
+vitamina C (ácido ascórbico), acidulante ácido cítrico,
+antiumectante dióxido de silício e aromatizante.
+NÃO CONTÉM GLÚTEN.
   `;
 
-  const goBack = () => {
-    navigate(-1);
-  };
+  const goBack = () => navigate(-1);
 
-  // Pesos disponíveis
   const pesosDisponiveis = ["250g", "500g", "1kg"];
   const [selectedWeight, setSelectedWeight] = useState("250g");
 
   const precoPorPeso = {
-    "250g": "R$ 12.50",
-    "500g": "R$ 22.50",
-    "1kg": "R$ 42.50",
+    "250g": "R$ 12,50",
+    "500g": "R$ 22,50",
+    "1kg": "R$ 42,50",
   };
-
-  // Quantidade
-  const [quantidade, setQuantidade] = useState(1);
 
   const produto = {
     id: "cha-frutas",
@@ -46,37 +44,32 @@ amora, morango, aroma natural de frutas vermelhas.
 
   return (
     <div className="product-page">
-
-      {/* Voltar */}
       <button className="back-link" onClick={goBack}>
         ← Voltar
       </button>
 
       <div className="product-content">
-        
-        {/* IMG */}
         <div className="product-image-box">
           <img src={produto.imagem} alt={produto.nome} />
         </div>
 
-        {/* INFO */}
         <div className="product-info">
           <span className="product-tag">CHÁ</span>
           <h1>{produto.nome}</h1>
           <h2>{precoPorPeso[selectedWeight]}</h2>
 
           <p className="product-desc">
-            Blend refrescante com notas suaves e adocicadas. Uma bebida leve,
-            saborosa e perfeita para qualquer momento do dia.
+            Blend refrescante com notas frutadas intensas.
+            Uma bebida equilibrada, aromática e perfeita para qualquer momento.
           </p>
 
-          {/* Seleção de peso */}
           <div className="peso-badges-inline">
             {pesosDisponiveis.map((peso) => (
               <button
                 key={peso}
-                type="button"
-                className={`peso-badge-btn ${selectedWeight === peso ? "active" : ""}`}
+                className={`peso-badge-btn ${
+                  selectedWeight === peso ? "active" : ""
+                }`}
                 onClick={() => setSelectedWeight(peso)}
               >
                 {peso}
@@ -84,17 +77,15 @@ amora, morango, aroma natural de frutas vermelhas.
             ))}
           </div>
 
-          
-
-          {/* Adicionar ao carrinho */}
           <button
             className="add-cart-btn"
-            onClick={() => addToCart(
-              { ...produto, peso: selectedWeight },
-              selectedWeight,
-              precoPorPeso[selectedWeight],
-              quantidade
-            )}
+            onClick={() =>
+              addToCart(
+                { ...produto, peso: selectedWeight },
+                selectedWeight,
+                precoPorPeso[selectedWeight]
+              )
+            }
           >
             Adicionar ao Carrinho
           </button>
@@ -123,15 +114,20 @@ amora, morango, aroma natural de frutas vermelhas.
         >
           Ingredientes
         </button>
+
+        <button
+          className={`tab ${activeTab === "tabela" ? "active" : ""}`}
+          onClick={() => setActiveTab("tabela")}
+        >
+          Tabela Nutricional
+        </button>
       </div>
 
-      {/* TEXT CONTENT */}
+      {/* CONTEÚDO */}
       <div className="text-section">
         {activeTab === "descricao" && (
           <p>
-            A Toffa’s traz para você uma seleção de Mates com blends de flores
-            e frutas. O chá preparado com mate é naturalmente doce, aromático e
-            perfeito para quem busca uma bebida leve e saborosa.
+            Chá Preto de Frutas Vermelhas solúvel, com sabor equilibrado, que combina com o chá preto com notas frutadas de morango, cereja e framboesa. Desenvolvido para dissolver facilmente em água quente ou fria, proporciona uma bebida prática, aromática e refrescante.
           </p>
         )}
 
@@ -141,6 +137,31 @@ amora, morango, aroma natural de frutas vermelhas.
 
         {activeTab === "ingredientes" && (
           <p className="formatted-text">{ingredientesText}</p>
+        )}
+
+        {activeTab === "tabela" && (
+          <table className="nutrition-table">
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Quantidade</th>
+                <th>%VD</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Valor Energético</td><td>386 kcal</td><td>—</td></tr>
+              <tr><td>Carboidratos</td><td>96 g</td><td>—</td></tr>
+              <tr><td>Açúcares Totais</td><td>83 g</td><td>—</td></tr>
+              <tr><td>Açúcares Adicionados</td><td>83 g</td><td>—</td></tr>
+              <tr><td>Proteínas</td><td>0,2 g</td><td>—</td></tr>
+              <tr><td>Gorduras Totais</td><td>0,0 g</td><td>—</td></tr>
+              <tr><td>Gorduras Saturadas</td><td>0,0 g</td><td>—</td></tr>
+              <tr><td>Gorduras Trans</td><td>0,0 g</td><td>—</td></tr>
+              <tr><td>Fibra Alimentar</td><td>0,0 g</td><td>—</td></tr>
+              <tr><td>Sódio</td><td>287 mg</td><td>—</td></tr>
+              <tr><td>Vitamina C</td><td>150 mg</td><td>—</td></tr>
+            </tbody>
+          </table>
         )}
       </div>
     </div>

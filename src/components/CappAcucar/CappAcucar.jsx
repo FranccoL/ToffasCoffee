@@ -5,74 +5,76 @@ import "./CappAcucar.css";
 
 export default function CappAcucar() {
   const [activeTab, setActiveTab] = useState("descricao");
-  const { addToCart } = useCart(); // função do contexto
+  const { addToCart } = useCart();
   const navigate = useNavigate();
 
   const preparoText = `
-Coloque 3 a 4 colheres de sopa de Toffa’s Chá de Limão.
-Adicione 300mL de água quente.
+Coloque 2 colheres de sopa de Cappuccino Zero Açúcar Toffa’s.
+Adicione 100mL de água quente.
 Misture bem com uma colher ou mixer (recomendado).
-Pronto! Agora é só saborear seu chá refrescante e cheio de sabor. 
+Pronto! Agora é só aproveitar um cappuccino cremoso e equilibrado.
   `;
 
   const ingredientesText = `
-Folhas de chá mate selecionado, limão desidratado,
-erva-cidreira, aroma natural de limão.
+Composto lácteo (leite integral e/ou leite integral reconstituído, 
+soro de leite e/ou soro de leite reconstituído, leitelho, creme de leite, 
+creme de soro de leite, mix de vitaminas e minerais – vitaminas A, C, D e ferro); 
+soro de leite em pó parcialmente desmineralizado; café solúvel; leite em pó integral; 
+cacau em pó alcalino; canela em pó; sal; regulador de acidez bicarbonato de sódio; 
+antiumectantes dióxido de silício e fosfato tricálcico; espessante carboximetilcelulose sódica; 
+emulsificante lecitina de soja; edulcorantes acessulfame de potássio e aspartame.
+CONTÉM LACTOSE. ALÉRGICOS: CONTÉM LEITE E DERIVADOS DE LEITE E SOJA.
+NÃO CONTÉM GLÚTEN.
   `;
 
-  const goBack = () => {
-    navigate(-1);
-  };
+  const goBack = () => navigate(-1);
 
-  // Pesos disponíveis
   const pesosDisponiveis = ["250g", "500g", "1kg"];
   const [selectedWeight, setSelectedWeight] = useState("250g");
 
   const precoPorPeso = {
-    "250g": "R$ 27.50",
-    "500g": "R$ 50.00",
-    "1kg": "R$ 99.95",
+    "250g": "R$ 27,50",
+    "500g": "R$ 50,00",
+    "1kg": "R$ 99,95",
   };
 
   const produto = {
-    id: "cappuccino",
-    nome: "Cappuccino sem Açucar Toffa's",
+    id: "cappuccino-zero",
+    nome: "Cappuccino Zero Açúcar Toffa's",
     categoria: "cap",
     imagem: "/cappA.svg",
   };
 
   return (
     <div className="product-page">
-
-      {/* Voltar */}
       <button className="back-link" onClick={goBack}>
         ← Voltar
       </button>
-        
+
       <div className="product-content">
-        {/* IMG */}
         <div className="product-image-box">
           <img src={produto.imagem} alt={produto.nome} />
         </div>
 
-        {/* INFO */}
         <div className="product-info">
-          <span className="product-tag">Bebidas Quentes</span>
+          <span className="product-tag">BEBIDAS QUENTES</span>
           <h1>{produto.nome}</h1>
           <h2>{precoPorPeso[selectedWeight]}</h2>
 
           <p className="product-desc">
-            Blend refrescante com notas suaves e adocicadas. Uma bebida leve,
-            saborosa e perfeita para qualquer momento do dia.
+            Cappuccino solúvel zero açúcar, desenvolvido para oferecer sabor
+            equilibrado, cremosidade e praticidade. Ideal para quem busca uma
+            bebida quente com menos açúcar, sem abrir mão do aroma do café
+            e da suavidade do leite.
           </p>
 
-          {/* Seleção de peso */}
           <div className="peso-badges-inline">
             {pesosDisponiveis.map((peso) => (
               <button
                 key={peso}
-                type="button"
-                className={`peso-badge-btn ${selectedWeight === peso ? "active" : ""}`}
+                className={`peso-badge-btn ${
+                  selectedWeight === peso ? "active" : ""
+                }`}
                 onClick={() => setSelectedWeight(peso)}
               >
                 {peso}
@@ -80,15 +82,13 @@ erva-cidreira, aroma natural de limão.
             ))}
           </div>
 
-          {/* Adicionar ao carrinho */}
           <button
             className="add-cart-btn"
             onClick={() =>
               addToCart(
                 { ...produto, peso: selectedWeight },
                 selectedWeight,
-                precoPorPeso[selectedWeight],
-                1 // quantidade padrão = 1
+                precoPorPeso[selectedWeight]
               )
             }
           >
@@ -119,15 +119,23 @@ erva-cidreira, aroma natural de limão.
         >
           Ingredientes
         </button>
+
+        <button
+          className={`tab ${activeTab === "tabela" ? "active" : ""}`}
+          onClick={() => setActiveTab("tabela")}
+        >
+          Tabela Nutricional
+        </button>
       </div>
 
-      {/* TEXT CONTENT */}
+      {/* CONTEÚDO */}
       <div className="text-section">
         {activeTab === "descricao" && (
           <p>
-            A Toffa’s traz para você uma seleção de Mates com blends de flores
-            e frutas. O chá preparado com mate é naturalmente doce, aromático e
-            perfeito para quem busca uma bebida leve e saborosa.
+            O Cappuccino Zero Açúcar Toffa’s é uma bebida solúvel prática
+            e saborosa, ideal para o dia a dia. Sua fórmula garante
+            cremosidade e equilíbrio nutricional em um preparo rápido
+            e simples.
           </p>
         )}
 
@@ -137,6 +145,31 @@ erva-cidreira, aroma natural de limão.
 
         {activeTab === "ingredientes" && (
           <p className="formatted-text">{ingredientesText}</p>
+        )}
+
+        {activeTab === "tabela" && (
+          <table className="nutrition-table">
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Quantidade (20g)</th>
+                <th>%VD</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Valor Energético</td><td>77 kcal</td><td>4%</td></tr>
+              <tr><td>Carboidratos</td><td>11 g</td><td>4%</td></tr>
+              <tr><td>Açúcares Totais</td><td>10 g</td><td>—</td></tr>
+              <tr><td>Açúcares Adicionados</td><td>0 g</td><td>0%</td></tr>
+              <tr><td>Proteínas</td><td>3 g</td><td>6%</td></tr>
+              <tr><td>Gorduras Totais</td><td>2,2 g</td><td>3%</td></tr>
+              <tr><td>Gorduras Saturadas</td><td>1,4 g</td><td>7%</td></tr>
+              <tr><td>Gorduras Trans</td><td>0 g</td><td>0%</td></tr>
+              <tr><td>Fibra Alimentar</td><td>0 g</td><td>0%</td></tr>
+              <tr><td>Sódio</td><td>199 mg</td><td>10%</td></tr>
+              <tr><td>Cálcio</td><td>200 mg</td><td>20%</td></tr>
+            </tbody>
+          </table>
         )}
       </div>
     </div>

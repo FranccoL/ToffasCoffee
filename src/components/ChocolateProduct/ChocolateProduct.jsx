@@ -1,78 +1,75 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; 
-import { useCart } from "../../context/CartContext"; // ✅ Importar useCart
+import { useCart } from "../../context/CartContext";
 import "./ChocolateProduct.css";
 
 export default function ChocolateProduct() {
   const [activeTab, setActiveTab] = useState("descricao");
-  const { addToCart } = useCart(); // função do contexto
+  const { addToCart } = useCart();
   const navigate = useNavigate();
 
   const preparoText = `
-Coloque 3 a 4 colheres de sopa de Toffa’s Chá de Limão.
-Adicione 300mL de água quente.
+Coloque 3 a 4 colheres de sopa de Chocolate Toffa’s.
+Adicione 200mL de água quente.
 Misture bem com uma colher ou mixer (recomendado).
-Pronto! Agora é só saborear seu chá refrescante e cheio de sabor. 
+Pronto! Agora é só saborear um chocolate cremoso e aconchegante.
   `;
 
   const ingredientesText = `
-Folhas de chá mate selecionado, limão desidratado,
-erva-cidreira, aroma natural de limão.
+Açúcar; leite em pó integral; maltodextrina; cacau em pó; sal; canela; 
+antiumectante dióxido de silício; espessantes carboximetilcelulose e 
+goma xantana e aromatizantes.
+NÃO CONTÉM GLÚTEN.
   `;
 
-  const goBack = () => {
-    navigate(-1);
-  };
+  const goBack = () => navigate(-1);
 
-  // Pesos disponíveis
   const pesosDisponiveis = ["250g", "500g", "1kg"];
   const [selectedWeight, setSelectedWeight] = useState("250g");
 
   const precoPorPeso = {
-    "250g": "R$ 12.50",
-    "500g": "R$ 22.50",
-    "1kg": "R$ 42.50",
+    "250g": "R$ 12,50",
+    "500g": "R$ 22,50",
+    "1kg": "R$ 42,50",
   };
 
   const produto = {
-    id: "cappuccino",
-    nome: "Cappuccino Toffa's",
-    categoria: "cap",
+    id: "chocolate",
+    nome: "Chocolate Toffa's",
+    categoria: "hot",
     imagem: "/chocolate1.svg",
   };
 
   return (
     <div className="product-page">
-
-      {/* Voltar */}
       <button className="back-link" onClick={goBack}>
         ← Voltar
       </button>
-        
+
       <div className="product-content">
-        {/* IMG */}
         <div className="product-image-box">
           <img src={produto.imagem} alt={produto.nome} />
         </div>
 
-        {/* INFO */}
         <div className="product-info">
-          <span className="product-tag">Bebidas Quentes</span>
+          <span className="product-tag">BEBIDAS QUENTES</span>
           <h1>{produto.nome}</h1>
           <h2>{precoPorPeso[selectedWeight]}</h2>
 
           <p className="product-desc">
-            Blend refrescante com notas suaves e adocicadas. Uma bebida leve,
-            saborosa e perfeita para qualquer momento do dia.
+            Chocolate solúvel com sabor intenso de cacau e textura cremosa.
+            Desenvolvido para dissolver facilmente em água quente, entrega uma
+            bebida encorpada, reconfortante e perfeita para qualquer momento
+            do dia.
           </p>
 
-          {/* Seleção de peso */}
           <div className="peso-badges-inline">
             {pesosDisponiveis.map((peso) => (
               <button
                 key={peso}
-                type="button"
-                className={`peso-badge-btn ${selectedWeight === peso ? "active" : ""}`}
+                className={`peso-badge-btn ${
+                  selectedWeight === peso ? "active" : ""
+                }`}
                 onClick={() => setSelectedWeight(peso)}
               >
                 {peso}
@@ -80,15 +77,13 @@ erva-cidreira, aroma natural de limão.
             ))}
           </div>
 
-          {/* Adicionar ao carrinho */}
           <button
             className="add-cart-btn"
             onClick={() =>
               addToCart(
                 { ...produto, peso: selectedWeight },
                 selectedWeight,
-                precoPorPeso[selectedWeight],
-                1 // quantidade padrão = 1
+                precoPorPeso[selectedWeight]
               )
             }
           >
@@ -119,15 +114,23 @@ erva-cidreira, aroma natural de limão.
         >
           Ingredientes
         </button>
+
+        <button
+          className={`tab ${activeTab === "tabela" ? "active" : ""}`}
+          onClick={() => setActiveTab("tabela")}
+        >
+          Tabela Nutricional
+        </button>
       </div>
 
-      {/* TEXT CONTENT */}
+      {/* CONTEÚDO */}
       <div className="text-section">
         {activeTab === "descricao" && (
           <p>
-            A Toffa’s traz para você uma seleção de Mates com blends de flores
-            e frutas. O chá preparado com mate é naturalmente doce, aromático e
-            perfeito para quem busca uma bebida leve e saborosa.
+            O Chocolate Toffa’s é uma bebida solúvel prática e saborosa,
+            ideal para quem busca conforto e intensidade de sabor.
+            Seu preparo rápido garante cremosidade e aroma marcante
+            em poucos segundos.
           </p>
         )}
 
@@ -137,6 +140,28 @@ erva-cidreira, aroma natural de limão.
 
         {activeTab === "ingredientes" && (
           <p className="formatted-text">{ingredientesText}</p>
+        )}
+
+        {activeTab === "tabela" && (
+          <table className="nutrition-table">
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Quantidade</th>
+                <th>%VD</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Valor Energético</td><td>168 kcal</td><td>8%</td></tr>
+              <tr><td>Carboidratos</td><td>27 g</td><td>9%</td></tr>
+              <tr><td>Proteínas</td><td>4,7 g</td><td>6%</td></tr>
+              <tr><td>Gorduras Totais</td><td>4,5 g</td><td>8%</td></tr>
+              <tr><td>Gorduras Saturadas</td><td>2,0 g</td><td>9%</td></tr>
+              <tr><td>Gorduras Trans</td><td>0 g</td><td>—</td></tr>
+              <tr><td>Fibra Alimentar</td><td>1,0 g</td><td>4%</td></tr>
+              <tr><td>Sódio</td><td>120 mg</td><td>5%</td></tr>
+            </tbody>
+          </table>
         )}
       </div>
     </div>

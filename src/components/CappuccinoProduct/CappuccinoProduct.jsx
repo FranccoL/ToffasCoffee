@@ -1,37 +1,38 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; 
-import { useCart } from "../../context/CartContext"; 
+import { useCart } from "../../context/CartContext";
 import "./CappuccinoProduct.css";
 
 export default function CappuccinoProduct() {
   const [activeTab, setActiveTab] = useState("descricao");
-  const { addToCart } = useCart(); // função do contexto
+  const { addToCart } = useCart();
   const navigate = useNavigate();
 
   const preparoText = `
-Coloque 3 a 4 colheres de sopa de Toffa’s Chá de Limão.
-Adicione 300mL de água quente.
+Coloque 3 a 4 colheres de sopa de Cappuccino Toffa’s.
+Adicione 200mL de água quente.
 Misture bem com uma colher ou mixer (recomendado).
-Pronto! Agora é só saborear seu chá refrescante e cheio de sabor. 
+Pronto! Agora é só aproveitar um cappuccino cremoso e saboroso.
   `;
 
   const ingredientesText = `
-Folhas de chá mate selecionado, limão desidratado,
-erva-cidreira, aroma natural de limão.
+Açúcar; soro de leite desmineralizado; leite integral em pó; 
+café solúvel; cacau em pó; canela em pó; espessante goma guar; 
+regulador de acidez bicarbonato de sódio; antiumectante dióxido 
+de silício e aromatizante.
+ALÉRGICOS: CONTÉM LEITE E DERIVADOS. CONTÉM LACTOSE.
+NÃO CONTÉM GLÚTEN.
   `;
 
-  const goBack = () => {
-    navigate(-1);
-  };
+  const goBack = () => navigate(-1);
 
-  // Pesos disponíveis
   const pesosDisponiveis = ["250g", "500g", "1kg"];
   const [selectedWeight, setSelectedWeight] = useState("250g");
 
   const precoPorPeso = {
-    "250g": "R$ 12.50",
-    "500g": "R$ 22.50",
-    "1kg": "R$ 42.50",
+    "250g": "R$ 12,50",
+    "500g": "R$ 22,50",
+    "1kg": "R$ 42,50",
   };
 
   const produto = {
@@ -43,36 +44,34 @@ erva-cidreira, aroma natural de limão.
 
   return (
     <div className="product-page">
-
-      {/* Voltar */}
       <button className="back-link" onClick={goBack}>
         ← Voltar
       </button>
-        
+
       <div className="product-content">
-        {/* IMG */}
         <div className="product-image-box">
           <img src={produto.imagem} alt={produto.nome} />
         </div>
 
-        {/* INFO */}
         <div className="product-info">
-          <span className="product-tag">Bebidas Quentes</span>
+          <span className="product-tag">BEBIDAS QUENTES</span>
           <h1>{produto.nome}</h1>
           <h2>{precoPorPeso[selectedWeight]}</h2>
 
           <p className="product-desc">
-            Blend refrescante com notas suaves e adocicadas. Uma bebida leve,
-            saborosa e perfeita para qualquer momento do dia.
+            Cappuccino solúvel com textura cremosa e sabor equilibrado de café,
+            cacau e um toque suave de canela. Possui preparo rápido e fácil,
+            dissolvendo perfeitamente em água quente, ideal para aquecer seus
+            momentos com praticidade e conforto.
           </p>
 
-          {/* Seleção de peso */}
           <div className="peso-badges-inline">
             {pesosDisponiveis.map((peso) => (
               <button
                 key={peso}
-                type="button"
-                className={`peso-badge-btn ${selectedWeight === peso ? "active" : ""}`}
+                className={`peso-badge-btn ${
+                  selectedWeight === peso ? "active" : ""
+                }`}
                 onClick={() => setSelectedWeight(peso)}
               >
                 {peso}
@@ -80,15 +79,13 @@ erva-cidreira, aroma natural de limão.
             ))}
           </div>
 
-          {/* Adicionar ao carrinho */}
           <button
             className="add-cart-btn"
             onClick={() =>
               addToCart(
                 { ...produto, peso: selectedWeight },
                 selectedWeight,
-                precoPorPeso[selectedWeight],
-                1 // quantidade padrão = 1
+                precoPorPeso[selectedWeight]
               )
             }
           >
@@ -119,15 +116,23 @@ erva-cidreira, aroma natural de limão.
         >
           Ingredientes
         </button>
+
+        <button
+          className={`tab ${activeTab === "tabela" ? "active" : ""}`}
+          onClick={() => setActiveTab("tabela")}
+        >
+          Tabela Nutricional
+        </button>
       </div>
 
-      {/* TEXT CONTENT */}
+      {/* CONTEÚDO */}
       <div className="text-section">
         {activeTab === "descricao" && (
           <p>
-            A Toffa’s traz para você uma seleção de Mates com blends de flores
-            e frutas. O chá preparado com mate é naturalmente doce, aromático e
-            perfeito para quem busca uma bebida leve e saborosa.
+            O Cappuccino Toffa’s é uma bebida solúvel pensada para quem busca
+            praticidade sem abrir mão de sabor e cremosidade. Ideal para o
+            consumo diário, proporciona uma experiência aconchegante com
+            preparo rápido e aroma marcante.
           </p>
         )}
 
@@ -137,6 +142,28 @@ erva-cidreira, aroma natural de limão.
 
         {activeTab === "ingredientes" && (
           <p className="formatted-text">{ingredientesText}</p>
+        )}
+
+        {activeTab === "tabela" && (
+          <table className="nutrition-table">
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Quantidade</th>
+                <th>%VD</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Valor Energético</td><td>157 kcal</td><td>8%</td></tr>
+              <tr><td>Carboidratos</td><td>30,0 g</td><td>10%</td></tr>
+              <tr><td>Proteínas</td><td>4,1 g</td><td>6%</td></tr>
+              <tr><td>Gorduras Totais</td><td>2,4 g</td><td>4%</td></tr>
+              <tr><td>Gorduras Saturadas</td><td>1,1 g</td><td>5%</td></tr>
+              <tr><td>Gorduras Trans</td><td>0 g</td><td>—</td></tr>
+              <tr><td>Fibra Alimentar</td><td>1,0 g</td><td>4%</td></tr>
+              <tr><td>Sódio</td><td>280 mg</td><td>12%</td></tr>
+            </tbody>
+          </table>
         )}
       </div>
     </div>

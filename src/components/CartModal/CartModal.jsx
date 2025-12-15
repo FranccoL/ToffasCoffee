@@ -6,8 +6,9 @@ export default function CartModal({ onClose }) {
   const navigate = useNavigate();
   const { cart, removeFromCart, updateQuantity, clearCart } = useCart();
 
+  // Função para calcular o total corretamente
   const total = cart.reduce((sum, item) => {
-    const numeric = Number(item.price.replace(/[^\d,]/g, "").replace(",", "."));
+    const numeric = parseFloat(item.price.replace("R$", "").replace(",", "."));
     return sum + numeric * item.quantity;
   }, 0);
 
