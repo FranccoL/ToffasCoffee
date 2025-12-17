@@ -1,226 +1,297 @@
-/* CONTAINER GERAL DO HERO */
+/* ================= CONTAINER ================= */
 .hero-container {
-    width: 100%;
-    height: 100vh;
-    position: relative;
-    overflow: hidden;
-    margin-top: 0;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
 }
 
-/* SWIPER */
+/* ================= SWIPER ================= */
 .mySwiper {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
-/* CADA SLIDE */
+/* ================= SLIDE ================= */
 .hero-slide {
-    width: 100%;
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    position: relative;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  align-items: center;
+  position: relative;
 }
 
-/* BLOCO DE TEXTO */
+/* ================= TEXTO ================= */
 .hero-text {
-    position: absolute;
-    z-index: 10;
-    color: #fff;
-    left: 80px;
-    top: 50%;
-    transform: translateY(-50%);
+  position: absolute;
+  z-index: 10;
+  left: 80px;
+  top: 50%;
+  transform: translateY(-50%);
 
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
 
-    max-width: 600px;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+  max-width: 650px;
+  color: #ffffff;
+  text-shadow: 0 3px 8px rgba(0,0,0,0.55);
+
+  
 }
 
-/* TÍTULO PADRÃO */
 .hero-text h1 {
-    font-size: 42px;
-    line-height: 150%;
-    font-weight: 700;
+  font-size: 42px;
+  line-height: 1.4;
+  font-weight: 700;
 }
 
-/* BOTÃO (PADRÃO OCULTO) */
+/* ================= BOTÃO (PADRÃO) ================= */
 .btHero {
-    display: none !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #c89b3c;
+  color: #ffffff;
+  padding: 14px 36px;
+  border-radius: 6px;
+
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+
+  transition: all 0.3s ease;
+  width: fit-content;
 }
+
+.btHero:hover {
+  background-color: #a87f2d;
+  transform: translateY(-2px);
+}
+
 
 /* ================= SLIDE 1 ================= */
+.slide-1 {
+  background-position: bottom 15% center;
+  }
+
+
 .slide-1 .hero-text h1 {
-    color: #ffffff;
+  font-size: 46px;
+  font-weight: 800;
+  line-height: 1.25;
+
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+
+  color: #ffffff;
+  text-shadow:
+    0 4px 12px rgba(0,0,0,0.55),
+    0 0 30px rgba(255,255,255,0.15);
+    
+}
+
+.slide-1 .btHero {
+  background-color: #ffffff;
+  color: #1a1a1a;
 }
 
 /* ================= SLIDE 2 ================= */
+
 .slide-2 .hero-text h1 {
-    color: #f5f5f5;
-    font-size: 40px;
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 1.35;
+
+  letter-spacing: 0.4px;
+
+  color: #f3f3f3;
+  max-width: 620px;
+
+  text-shadow: 0 3px 8px rgba(0,0,0,0.45);
+}
+
+.slide-2 .btHero {
+  background-color: #201e1d;
 }
 
 /* ================= SLIDE 3 ================= */
+
+
 .slide-3 .hero-text h1 {
-    color: #ffffff;
-    font-family: 'Sans-serif';;
-    font-size: 68px;
-    letter-spacing: 1px;
-    margin-top: 300px;
-    width: 900px;
-    
+font-size: 62px;
+  font-weight: 500;
+  line-height: 1.15;
+
+  letter-spacing: 1.4px;
+
+  color: #ffffff;
+
+  text-shadow:
+    0 6px 18px rgba(0,0,0,0.55);
 }
 
-/* Se quiser botão só no slide 3 */
 .slide-3 .btHero {
-    display: inline-block !important;
-    background-color: #c89b3c;
-    color: #ffffff;
-    padding: 14px 36px;
-    border-radius: 6px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    width: fit-content;
-    margin-top: -50px;
+  background-color: #e65b0a;
 }
 
-.slide-3 .btHero:hover {
-    background-color: #a87f2d;
-}
-
-/* BOTÕES DO SWIPER */
+/* ================= CONTROLES ================= */
 .swiper-button-prev,
 .swiper-button-next {
-    color: #fff !important;
+  color: #ffffff !important;
 }
 
 .swiper-pagination-bullet-active {
-    background: #91490B !important;
+  background: #91490B !important;
 }
 
-/* WHATSAPP FLUTUANTE */
+/* ================= WHATSAPP ================= */
 .whatsapp-fly {
-    z-index: 99999;
-    position: fixed;
-    bottom: 150px;
-    right: 35px;
+  position: fixed;
+  left: 35px;
+  bottom: 50px;
+  z-index: 99999;
 
-    background-color: #25d366;
-    padding: 12px;
-    border-radius: 50%;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  background-color: #25d366;
+  padding: 12px;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .whatsapp-fly:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .whatsapp-icon {
-    width: 40px;
-    height: 40px;
+  width: 40px;
+  height: 40px;
+}
+
+/* ================= TABLET ================= */
+@media (max-width: 900px) {
+  .hero-text {
+    left: 40px;
+    max-width: 80%;
+  }
+
+  .hero-text h1 {
+    font-size: 32px;
+  }
 }
 
 /* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  .hero-slide {
+    justify-content: center;
+  }
 
-@media (max-width: 900px) {
-    .hero-text {
-        left: 40px;
-        max-width: 80%;
-    }
 
-    .hero-text h1 {
-        font-size: 30px;
-    }
+  .hero-text {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    align-items: center;
+    text-align: center;
+    width: 90%;
+  }
 
-    .slide-3 .hero-text h1 {
-        font-size: 34px;
-    }
+  /* ================= SLIDE 1 ================= */
+
+.slide-1 .hero-text h1 {
+  font-size: 26px;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-top: 450px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+
+  color: #ffffff;
+  text-shadow:
+    0 4px 12px rgba(0,0,0,0.55),
+    0 0 30px rgba(255,255,255,0.15);
+    
 }
 
-@media (max-width: 768px) {
-    .hero-slide {
-        justify-content: center;
-    }
+.slide-1 .btHero {
+  background-color: #ffffff;
+  color: #1a1a1a;
+}
+.slide-1 {
+  background-position: right 40% center;
+  height: 750px;
+  }
 
-    .hero-text {
-        width: 90%;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        text-align: center;
-        align-items: center;
-        gap: 18px;
-    }
+/* ================= SLIDE 2 ================= */
 
-    .hero-text h1 {
-        font-size: 26px;
-    }
+.slide-2 .hero-text h1 {
+  font-size: 35px;
+  font-weight: 600;
+  line-height: 1.35;
+  margin-top: 400px;
+  letter-spacing: 0.4px;
 
-    .slide-3 .hero-text h1 {
-        font-size: 30px;
-    }
+  color: #f3f3f3;
+  max-width: 620px;
 
-    .whatsapp-fly {
-        bottom: 110px;
-        right: 20px;
-    }
+  text-shadow: 0 3px 8px rgba(0,0,0,0.45);
+}
+
+.slide-2 .btHero {
+  background-color: #201e1d;
+}
+
+.slide-2 {
+  background-position: right 20% center;
+  
+  }
+
+/* ================= SLIDE 3 ================= */
+
+
+.slide-3 .hero-text h1 {
+font-size: 35px;
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 350px;
+  letter-spacing: 1.4px;
+  width: 380px;
+  color: #ffffff;
+
+  text-shadow:
+    0 6px 18px rgba(0,0,0,0.55);
+}
+
+.slide-3 .btHero {
+  background-color: #e65b0a;
+  font-size: 20px;
+}
+
+  .whatsapp-fly {
+    left: 20px;
+    bottom: 30px;
+  }
 }
 
 @media (max-width: 480px) {
-    .hero-text h1 {
-        font-size: 22px;
-    }
-
-     .slide-3 .hero-text {
-    width: 100%;
-    max-width: 520px;
-    padding: 0 20px;
-    margin-top: 50px;
-    text-align: center;
-    align-items: center;
+  .hero-text h1 {
+    font-size: 22px;
   }
 
-  .slide-3 .hero-text h1 {
-    font-size: 28px;
-    line-height: 1.45;
-    font-weight: 600;
-    max-width: 90%;
-    
-    color: #ffffff;
-    letter-spacing: 0.3px;
-    text-shadow: 0 2px 6px rgba(0,0,0,0.45);
+  .whatsapp-icon {
+    width: 34px;
+    height: 34px;
   }
 
-  .slide-3 .btHero {
-    display: inline-flex !important;
-    align-items: center;
-    justify-content: center;
-    margin-top: 12px;
-    font-size: 13px;
-    font-weight: 500;
-    padding: 11px 20px;
-    border-radius: 8px;
-    background-color: rgba(255,255,255,0.92);
-    color: #1a1a1a;
-    
-  }
-
-
-    .whatsapp-icon {
-        width: 35px;
-        height: 35px;
-    }
+  
 }

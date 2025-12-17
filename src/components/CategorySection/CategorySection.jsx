@@ -44,9 +44,7 @@ function CategorySection() {
                 <span className="subtitle">NOSSA SELEÇÃO</span>
                 <div className="title-row">
                     <h2>Categorias em Destaque</h2>
-                    <Link to="/produtos" className="view-all-link">
-                        Ver tudo <span className="arrow">→</span>
-                    </Link>
+                    
                 </div>
             </header>
             
