@@ -1,0 +1,52 @@
+.pedido {
+  max-width: 700px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+.pedido-box {
+  background: #fff;
+  padding: 24px;
+  border-radius: 8px;
+}
+
+.pedido ul {
+  list-style: none;
+  padding: 0;
+}
+
+.pedido li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.status {
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.status.AGUARDANDO_PAGAMENTO {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.status.PAGO {
+  background: #d4edda;
+  color: #155724;
+}
+
+.aviso {
+  margin-top: 20px;
+  background: #fff3cd;
+  padding: 12px;
+  border-radius: 6px;
+}
+
+.sucesso {
+  margin-top: 20px;
+  background: #d4edda;
+  padding: 12px;
+  border-radius: 6px;
+}

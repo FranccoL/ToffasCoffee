@@ -48,9 +48,19 @@
 .checkout-pedido li {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
   padding: 10px 0;
   border-bottom: 1px solid #eee;
   font-size: 0.95rem;
+}
+
+.checkout-pedido li div {
+  max-width: 70%;
+}
+
+.checkout-pedido li span {
+  white-space: nowrap;
 }
 
 /* Totais */
@@ -67,18 +77,54 @@
   font-weight: 700;
 }
 
+/* Frete */
+.frete-opcoes {
+  margin-top: 20px;
+}
+
+.frete-opcao {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.frete-opcao:hover {
+  border-color: #d4af37;
+  background: #faf7f2;
+}
+
+.frete-opcao input {
+  cursor: pointer;
+}
+
+/* Separador */
+.checkout-pedido hr {
+  margin: 20px 0;
+  border: none;
+  border-top: 1px solid #eee;
+}
+
 /* Formulário */
-.checkout-form form {
+.checkout-form {
   display: flex;
   flex-direction: column;
-  gap: 12px;
 }
 
 .checkout-form input {
+  display: block;
+  width: 100%;
   padding: 12px;
   border-radius: 8px;
   border: 1px solid #ccc;
   font-size: 1rem;
+  margin-bottom: 12px;
   transition: border-color 0.3s ease;
 }
 
@@ -91,6 +137,11 @@
 .cep-container {
   display: flex;
   gap: 10px;
+  margin-bottom: 12px;
+}
+
+.cep-container input {
+  flex: 1;
 }
 
 .cep-container button {
@@ -102,6 +153,7 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
+  height: 42px;
 }
 
 .cep-container button:hover {
@@ -129,7 +181,81 @@
   box-shadow: 0 6px 14px rgba(212, 175, 55, 0.4);
 }
 
-/* ⚡ Responsividade */
+/* =========================
+   CUPOM
+========================= */
+
+.cupom-area {
+  margin-top: 18px;
+  display: flex;
+  gap: 10px;
+  align-items: stretch;
+}
+
+.cupom-area input {
+  flex: 1;
+  padding: 12px 14px;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  background-color: #fafafa;
+}
+
+.cupom-area input:focus {
+  outline: none;
+  border-color: #6f4e37; /* tom café */
+  background-color: #fff;
+  box-shadow: 0 0 0 2px rgba(111, 78, 55, 0.1);
+}
+
+.cupom-area button {
+  padding: 0 18px;
+  background-color: #6f4e37; /* marrom café */
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.cupom-area button:hover {
+  background-color: #5a3f2d;
+  transform: translateY(-1px);
+}
+
+.cupom-area button:active {
+  transform: translateY(0);
+  opacity: 0.9;
+}
+
+/* Linha de desconto */
+.resumo-total span {
+  font-size: 14px;
+}
+
+.resumo-total strong {
+  font-size: 15px;
+}
+
+/* Desconto destacado */
+.resumo-total strong:has(+ .desconto) {
+  color: #2e7d32;
+}
+
+/* Se quiser destacar o desconto */
+.resumo-total strong {
+  color: #333;
+}
+
+.resumo-total strong:where(:not(.total strong)) {
+  color: #2e7d32;
+}
+
+/* Responsividade */
 @media (max-width: 900px) {
   .checkout-container {
     grid-template-columns: 1fr;
@@ -164,5 +290,74 @@
 
   .finalizar-btn {
     width: 100%;
+  }
+
+  .checkout-pedido li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .checkout-pedido li span {
+    margin-top: 4px;
+    font-weight: 600;
+  }
+}
+/* =========================
+   ANIMAÇÃO CUPOM APLICADO
+========================= */
+
+/* Anima o campo inteiro */
+.cupom-area.aplicado {
+  animation: pulseSuccess 0.6s ease;
+}
+
+/* Botão ganha efeito sucesso */
+.cupom-area.aplicado button {
+  background-color: #2e7d32;
+  animation: bounceButton 0.5s ease;
+}
+
+/* Linha de desconto aparece suave */
+.desconto-animado {
+  animation: slideFadeIn 0.5s ease;
+  color: #2e7d32;
+}
+
+/* =========================
+   KEYFRAMES
+========================= */
+
+@keyframes pulseSuccess {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes bounceButton {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes slideFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

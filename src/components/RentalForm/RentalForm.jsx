@@ -2,38 +2,52 @@ import React, { useState } from 'react';
 import './RentalForm.css';
 import { CheckCircle } from 'lucide-react';
 
-/**
- * Componente do formulário de aluguel com abas, estilizado via CSS.
- * @param {string} backgroundColor - Cor de fundo do container externo.
- */
 export default function RentalForm({ backgroundColor = '#f7f3ed' }) {
   const [activeTab, setActiveTab] = useState('company');
   const [successMessage, setSuccessMessage] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    const formType = activeTab === 'company' ? 'Empresarial' : 'Pessoal';
-    setSuccessMessage(`Obrigado pelo interesse! Seu orçamento ${formType} foi solicitado.`);
 
-    e.target.reset();
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData.entries());
 
-    setTimeout(() => {
-      setSuccessMessage('');
-    }, 10000);
+    data.tipo = activeTab === 'company' ? 'Empresarial' : 'Pessoal';
+
+    try {
+      const res = await fetch("http://localhost:3000/api/send-email", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data)
+      });
+
+      if (!res.ok) {
+        throw new Error("Erro ao enviar");
+      }
+
+      setSuccessMessage(`Obrigado! Seu orçamento ${data.tipo} foi enviado.`);
+
+      e.target.reset();
+
+      setTimeout(() => setSuccessMessage(''), 10000);
+
+    } catch (error) {
+      console.error(error);
+      alert("Erro ao enviar formulário. Tente novamente.");
+    }
   };
 
   const handlePhoneInput = (e) => {
-    // Permite apenas números
     e.target.value = e.target.value.replace(/\D/g, '');
   };
 
   return (
     <div style={{ backgroundColor: backgroundColor }} className="outer-background-wrapper">
       <div className="rental-form-container">
+
         <div className="rental-form-header">
           <h2>Solicite um Orçamento</h2>
-          <p>Preencha o formulário abaixo e nossos especialistas entrarão em contato para ajudar a escolher a melhor solução para você.</p>
+          <p>Preencha o formulário abaixo e nossos especialistas entrarão em contato.</p>
         </div>
 
         <div className="rental-tabs">
@@ -52,46 +66,56 @@ export default function RentalForm({ backgroundColor = '#f7f3ed' }) {
         </div>
 
         <div className="rental-form-content">
+
+          {/* FORMULÁRIO EMPRESA */}
           {activeTab === 'company' ? (
             <form onSubmit={handleSubmit} className="form-body form-company">
+
               <div className="form-grid">
                 <div className="form-group">
                   <label>Nome da Empresa</label>
-                  <input type="text" placeholder="Sua empresa" required />
+                  <input type="text" name="empresa" placeholder="Sua empresa" required />
                 </div>
+
                 <div className="form-group">
                   <label>Nome do Responsável</label>
-                  <input type="text" placeholder="Seu nome" required />
+                  <input type="text" name="responsavel" placeholder="Seu nome" required />
                 </div>
               </div>
+
               <div className="form-grid">
                 <div className="form-group">
                   <label>E-mail Corporativo</label>
-                  <input type="email" placeholder="email@empresa.com" required />
+                  <input type="email" name="email" placeholder="email@empresa.com" required />
                 </div>
+
                 <div className="form-group">
-                  <label>Telefone / WhatsApp (apenas números)</label>
+                  <label>Telefone / WhatsApp</label>
                   <input 
                     type="text" 
-                    placeholder="(11) 999999999" 
-                    required 
+                    name="telefone"
+                    placeholder="11999999999"
+                    required
                     onInput={handlePhoneInput}
                     maxLength={11}
                   />
                 </div>
               </div>
+
               <div className="form-group">
                 <label>Número de Colaboradores</label>
-                <input type="number" placeholder="Ex: 50" />
+                <input type="number" name="colaboradores" placeholder="Ex: 50" />
               </div>
+
               <div className="form-group">
                 <label>Mensagem (Opcional)</label>
-                <textarea placeholder="Conte-nos mais sobre o que precisa..."></textarea>
+                <textarea name="mensagem" placeholder="Conte-nos mais sobre o que precisa..."></textarea>
               </div>
+
               <button type="submit" className="submit-btn btn-primary">
                 Solicitar Orçamento Empresarial
               </button>
-              
+
               {successMessage && (
                 <div className="success-message">
                   <CheckCircle size={20} />
@@ -99,39 +123,45 @@ export default function RentalForm({ backgroundColor = '#f7f3ed' }) {
                 </div>
               )}
             </form>
-          ) : (
+          ) : null}
+
+          {/* FORMULÁRIO PESSOA FÍSICA */}
+          {activeTab === 'person' ? (
             <form onSubmit={handleSubmit} className="form-body form-person">
+
               <div className="form-group">
                 <label>Nome Completo</label>
-                <input type="text" placeholder="Seu nome" required />
+                <input type="text" name="nome" placeholder="Seu nome" required />
               </div>
+
               <div className="form-grid">
                 <div className="form-group">
                   <label>E-mail</label>
-                  <input type="email" placeholder="seu@email.com" required />
+                  <input type="email" name="email" placeholder="email@email.com" required />
                 </div>
+
                 <div className="form-group">
-                  <label>Telefone / WhatsApp (apenas números)</label>
+                  <label>Telefone / WhatsApp</label>
                   <input 
                     type="text" 
-                    placeholder="(11) 999999999" 
-                    required 
+                    name="telefone"
+                    placeholder="11999999999"
+                    required
                     onInput={handlePhoneInput}
                     maxLength={11}
                   />
                 </div>
               </div>
-              <div className="form-group">
-                
-              </div>
+
               <div className="form-group">
                 <label>Mensagem (Opcional)</label>
-                <textarea placeholder="Dúvidas ou preferências..."></textarea>
+                <textarea name="mensagem" placeholder="Dúvidas, preferências ou necessidade..."></textarea>
               </div>
+
               <button type="submit" className="submit-btn btn-secondary">
                 Solicitar Orçamento Pessoal
               </button>
-              
+
               {successMessage && (
                 <div className="success-message">
                   <CheckCircle size={20} />
@@ -139,7 +169,8 @@ export default function RentalForm({ backgroundColor = '#f7f3ed' }) {
                 </div>
               )}
             </form>
-          )}
+          ) : null}
+
         </div>
       </div>
     </div>

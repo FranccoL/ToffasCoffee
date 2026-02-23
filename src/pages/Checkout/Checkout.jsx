@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useCart } from "../../context/CartContext";
-import { apiPost } from "../../services/api";
+import { apiPost, apiGet } from "../../services/api";
 import "./Checkout.css";
 
 export default function Checkout() {
@@ -18,120 +18,180 @@ export default function Checkout() {
     estado: "",
   });
 
-  const [frete, setFrete] = useState(null);
+  const [fretes, setFretes] = useState([]);
+  const [freteSelecionado, setFreteSelecionado] = useState(null);
   const [carregandoFrete, setCarregandoFrete] = useState(false);
+  const [preferenceId, setPreferenceId] = useState(null);
 
-  // Soma total dos produtos
+  // 🔹 CUPOM
+  const [cupom, setCupom] = useState("");
+  const [desconto, setDesconto] = useState(0);
+
+  // 🔹 TOTAL PRODUTOS
   const totalProdutos = cart.reduce((sum, item) => {
-    const valor = Number(item.price.replace(/[^\d,]/g, "").replace(",", "."));
-    return sum + valor * item.quantity;
+    const valor = Number(
+      item.price?.replace(/[^\d,]/g, "").replace(",", ".")
+    );
+    return sum + valor * (Number(item.quantity) || 1);
   }, 0);
 
-  const totalFinal = frete ? totalProdutos + frete.valor : totalProdutos;
+  const freteValor = Number(
+  String(freteSelecionado?.valor ?? 0).replace(",", ".")
+) || 0;
+
+const descontoValor = Number(desconto) || 0;
+
+const totalComFrete = totalProdutos + freteValor;
+
+const totalFinal = Math.max(totalComFrete - descontoValor, 0);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setCliente((prev) => ({ ...prev, [name]: value }));
   };
 
-  // CALCULA MEDIDAS AUTOMATICAMENTE
-  const calcularMedidas = () => {
-    let pesoTotal = 0;
-    let altura = 0;
-    let largura = 0;
-    let comprimento = 0;
+  // 🔹 APLICAR CUPOM
+  const aplicarCupom = async () => {
+  if (!cupom) return;
 
-    cart.forEach((item) => {
-      const qtd = item.quantity;
+  if (!cliente.email) {
+    alert("Informe o e-mail antes de aplicar o cupom.");
+    return;
+  }
 
-      pesoTotal += (item.weight || 0.3) * qtd; // Peso mínimo
-      altura += item.height || 10;
-      largura = Math.max(largura, item.width || 20);
-      comprimento = Math.max(comprimento, item.length || 20);
+  try {
+    const response = await apiPost("/cupom/validar", {
+      codigo: cupom,
+      subtotal: totalProdutos,
+      clienteEmail: cliente.email,
+      frete: freteSelecionado?.valor || 0
     });
 
-    return { pesoTotal, altura, largura, comprimento };
+    setDesconto(Number(response.desconto) || 0);
+
+    // Se for frete grátis
+    if (response.frete_gratis) {
+      setFreteSelecionado(prev => ({
+        ...prev,
+        valor: 0
+      }));
+    }
+
+    alert("Cupom aplicado com sucesso!");
+  } catch (err) {
+    setDesconto(0);
+    alert(err.response?.data?.error || "Cupom inválido.");
+  }
+};
+
+  // 🔹 CRIAR PREFERÊNCIA
+  const criarPreferencia = async () => {
+    const response = await fetch(
+      "http://localhost:4000/api/pagamento/criar-preferencia",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          produtos: cart,
+          cliente,
+          frete: freteValor,
+          total: totalFinal,
+          cupom,
+        }),
+      }
+    );
+
+    const data = await response.json();
+    return data.id;
   };
 
-  // CALCULAR FRETE VIA BACKEND
-  const calcularFrete = async () => {
-    if (!cliente.cep) {
-      alert("Digite um CEP para calcular o frete.");
+  const iniciarPagamento = async () => {
+    if (!cliente.nome || !cliente.email || !cliente.endereco || !cliente.numero) {
+      alert("Preencha os dados obrigatórios.");
       return;
     }
+
+    if (!freteSelecionado) {
+      alert("Selecione uma opção de frete.");
+      return;
+    }
+
+    const id = await criarPreferencia();
+    window.location.href = `https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=${id}`;
+  };
+
+  // 🔹 BUSCAR CLIENTE
+  const buscarClientePorEmail = async (email) => {
+    if (!email) return;
+    try {
+      const clienteExistente = await apiGet(`/clientes/email/${email}`);
+      if (clienteExistente) {
+        setCliente((prev) => ({ ...prev, ...clienteExistente }));
+      }
+    } catch {}
+  };
+
+  // 🔹 CEP
+  const buscarEnderecoPorCep = async (cep) => {
+    const cepLimpo = cep.replace(/\D/g, "");
+    if (cepLimpo.length !== 8) return;
+
+    try {
+      const response = await fetch(
+        `https://viacep.com.br/ws/${cepLimpo}/json/`
+      );
+      const data = await response.json();
+
+      if (data.erro) return;
+
+      setCliente((prev) => ({
+        ...prev,
+        endereco: data.logradouro || "",
+        bairro: data.bairro || "",
+        cidade: data.localidade || "",
+        estado: data.uf || "",
+      }));
+    } catch {}
+  };
+
+  const formatarCep = (value) => {
+    const apenasNumeros = value.replace(/\D/g, "").slice(0, 8);
+    if (apenasNumeros.length <= 5) return apenasNumeros;
+    return `${apenasNumeros.slice(0, 5)}-${apenasNumeros.slice(5)}`;
+  };
+
+  // 🔹 CALCULAR FRETE
+  const calcularFrete = async () => {
+    if (!cliente.cep || cart.length === 0) return;
 
     setCarregandoFrete(true);
-    const medidas = calcularMedidas();
 
     try {
+      const produtosPayload = cart.map((item) => {
+        let pesoEmGramas = 250;
+        const size = item.size?.toLowerCase();
+
+        if (size?.includes("250")) pesoEmGramas = 250;
+        else if (size?.includes("500")) pesoEmGramas = 500;
+        else if (size?.includes("1")) pesoEmGramas = 1000;
+
+        return {
+          pesoEmGramas,
+          quantidade: Number(item.quantity) || 1,
+        };
+      });
+
       const resposta = await apiPost("/frete/calcular", {
-        cepDestino: cliente.cep,
-        peso: medidas.pesoTotal,
-        altura: medidas.altura,
-        largura: medidas.largura,
-        comprimento: medidas.comprimento,
+        cepDestino: cliente.cep.replace(/\D/g, ""),
+        produtos: produtosPayload,
       });
 
-      if (!resposta) {
-        alert("Erro ao calcular frete.");
-        setCarregandoFrete(false);
-        return;
-      }
-
-      // Simples (com MelhorEnvio será diferente)
-      setFrete({
-        tipo: resposta.tipo,
-        valor: resposta.valor,
-        prazo: resposta.prazo,
-      });
-
+      setFretes(resposta.slice(0, 3));
+      setFreteSelecionado(resposta[0]);
     } catch (err) {
-      console.error("Erro frete:", err);
-      alert("Erro ao calcular frete.");
-    }
-
-    setCarregandoFrete(false);
-  };
-
-  // FINALIZAR PEDIDO
-  const finalizarCompra = async () => {
-    if (!cliente.nome || !cliente.email || !cliente.endereco) {
-      alert("Preencha os campos obrigatórios!");
-      return;
-    }
-
-    if (cart.length === 0) {
-      alert("O carrinho está vazio!");
-      return;
-    }
-
-    const medidas = calcularMedidas();
-
-    try {
-      const pedido = {
-        cliente,
-        itens: cart.map((item) => ({
-          id: item.id,
-          nome: item.nome,
-          tamanho: item.size,
-          quantidade: item.quantity,
-          preco: Number(item.price.replace(/[^\d,]/g, "").replace(",", ".")),
-          peso: item.weight,
-        })),
-        subtotal: totalProdutos,
-        frete: frete ? frete.valor : 0,
-        total: totalFinal,
-        medidas,
-      };
-
-      const resposta = await apiPost("/pedidos", pedido);
-
-      alert(`Pedido realizado com sucesso! 🧾\nID: ${resposta.pedidoId}`);
-      clearCart();
-
-    } catch (err) {
-      console.error("Erro ao finalizar pedido:", err);
-      alert("Erro ao finalizar pedido!");
+      console.error(err);
+    } finally {
+      setCarregandoFrete(false);
     }
   };
 
@@ -140,93 +200,118 @@ export default function Checkout() {
       <h2>Finalizar Compra</h2>
 
       <div className="checkout-container">
-
         {/* RESUMO */}
         <div className="checkout-pedido">
           <h3>Seu Pedido</h3>
 
-          {cart.length === 0 ? (
-            <p>O carrinho está vazio.</p>
-          ) : (
-            <>
-              <ul>
-                {cart.map((item) => (
-                  <li key={`${item.id}-${item.size}`}>
-                    <div>
-                      <strong>{item.nome}</strong> <br />
-                      <small>{item.size}</small>
-                    </div>
-                    <span>{item.quantity}x {item.price}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <div className="resumo-total">
-                <span>Subtotal:</span>
-                <strong>R$ {totalProdutos.toFixed(2).replace(".", ",")}</strong>
-              </div>
-
-              {frete && (
-                <div className="resumo-total">
-                  <span>Frete ({frete.tipo}):</span>
-                  <strong>R$ {frete.valor.toFixed(2).replace(".", ",")}</strong>
+          <ul>
+            {cart.map((item) => (
+              <li key={`${item.id}-${item.size}`}>
+                <div>
+                  <strong>{item.nome}</strong>
+                  <br />
+                  <small>{item.size}</small>
                 </div>
-              )}
+                <span>
+                  {item.quantity}x {item.price}
+                </span>
+              </li>
+            ))}
+          </ul>
 
-              <hr />
+          <div className="resumo-total">
+            <span>Subtotal:</span>
+            <strong>
+              R$ {totalProdutos.toFixed(2).replace(".", ",")}
+            </strong>
+          </div>
 
-              <div className="resumo-total total">
-                <span>Total:</span>
-                <strong>R$ {totalFinal.toFixed(2).replace(".", ",")}</strong>
-              </div>
-            </>
+          {/* CUPOM */}
+          <div className="cupom-area">
+            <input
+              type="text"
+              placeholder="Cupom de desconto"
+              value={cupom}
+              onChange={(e) => setCupom(e.target.value.toUpperCase())}
+            />
+            <button type="button" onClick={aplicarCupom}>
+              Aplicar
+            </button>
+          </div>
+
+          {desconto > 0 && (
+            <div className="resumo-total">
+              <span>Desconto:</span>
+              <strong>
+                - R$ {desconto.toFixed(2).replace(".", ",")}
+              </strong>
+            </div>
           )}
+
+          {fretes.length > 0 && (
+            <div className="frete-opcoes">
+              <h4>Escolha o envio</h4>
+              {fretes.map((f) => (
+                <label key={f.id} className="frete-opcao">
+                  <input
+                    type="radio"
+                    checked={freteSelecionado?.id === f.id}
+                    onChange={() => setFreteSelecionado(f)}
+                  />
+                  <span>{f.metodo} • {f.prazo}</span>
+                  <strong>
+                    R$ {(f.valor ?? 0).toFixed(2).replace(".", ",")}
+                  </strong>
+                </label>
+              ))}
+            </div>
+          )}
+
+          <div className="resumo-total total">
+            <span>Total:</span>
+            <strong>
+              R$ {totalFinal.toFixed(2).replace(".", ",")}
+            </strong>
+          </div>
         </div>
 
-        {/* DADOS DO CLIENTE */}
+        {/* FORM */}
         <div className="checkout-form">
           <h3>Dados do Cliente</h3>
 
-          <form>
-            <input type="text" name="nome" placeholder="Nome *"
-              value={cliente.nome} onChange={handleChange} required />
+          <input name="nome" placeholder="Nome *" value={cliente.nome} onChange={handleChange} />
+          <input name="email" placeholder="E-mail *" value={cliente.email} onChange={handleChange} onBlur={(e) => buscarClientePorEmail(e.target.value)} />
+          <input name="telefone" placeholder="Telefone" value={cliente.telefone} onChange={handleChange} />
 
-            <input type="email" name="email" placeholder="E-mail *"
-              value={cliente.email} onChange={handleChange} required />
+          <div className="cep-container">
+            <input
+              name="cep"
+              placeholder="CEP *"
+              value={cliente.cep}
+              onChange={(e) => {
+                const cepFormatado = formatarCep(e.target.value);
+                setCliente((prev) => ({ ...prev, cep: cepFormatado }));
 
-            <input type="tel" name="telefone" placeholder="Telefone"
-              value={cliente.telefone} onChange={handleChange} />
-
-            <div className="cep-container">
-              <input type="text" name="cep" placeholder="CEP *"
-                value={cliente.cep} onChange={handleChange} required />
-
-              <button type="button" onClick={calcularFrete} disabled={carregandoFrete}>
-                {carregandoFrete ? "Calculando..." : "Frete"}
-              </button>
-            </div>
-
-            <input type="text" name="endereco" placeholder="Endereço *"
-              value={cliente.endereco} onChange={handleChange} required />
-
-            <input type="text" name="numero" placeholder="Número *"
-              value={cliente.numero} onChange={handleChange} required />
-
-            <input type="text" name="bairro" placeholder="Bairro"
-              value={cliente.bairro} onChange={handleChange} />
-
-            <input type="text" name="cidade" placeholder="Cidade"
-              value={cliente.cidade} onChange={handleChange} />
-
-            <input type="text" name="estado" placeholder="Estado"
-              value={cliente.estado} onChange={handleChange} />
-
-            <button type="button" className="finalizar-btn" onClick={finalizarCompra}>
-              Finalizar Pedido
+                if (cepFormatado.replace(/\D/g, "").length === 8) {
+                  buscarEnderecoPorCep(cepFormatado);
+                }
+              }}
+            />
+            <button type="button" onClick={calcularFrete}>
+              {carregandoFrete ? "Calculando..." : "Frete"}
             </button>
-          </form>
-        </div>
+          </div>
 
+          <input name="endereco" placeholder="Endereço *" value={cliente.endereco} onChange={handleChange} />
+          <input name="numero" placeholder="Número *" value={cliente.numero} onChange={handleChange} />
+          <input name="bairro" placeholder="Bairro" value={cliente.bairro} onChange={handleChange} />
+          <input name="cidade" placeholder="Cidade" value={cliente.cidade} onChange={handleChange} />
+          <input name="estado" placeholder="Estado" value={cliente.estado} onChange={handleChange} />
+
+          <button className="finalizar-btn" onClick={iniciarPagamento}>
+            Ir para pagamento
+          </button>
+        </div>
       </div>
     </section>
   );

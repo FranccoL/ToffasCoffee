@@ -1,0 +1,68 @@
+
+
+.admin-dashboard {
+  padding: 24px;
+}
+
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.dashboard-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.dashboard-card span {
+  font-size: 14px;
+  color: #666;
+}
+
+.dashboard-card strong {
+  font-size: 22px;
+  display: block;
+  margin-top: 6px;
+}
+
+.dashboard-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.dashboard-table th,
+.dashboard-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+}
+
+.status {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.status.aguardando_pagamento {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.status.pago {
+  background: #d4edda;
+  color: #155724;
+}
+
+.status.enviado {
+  background: #cce5ff;
+  color: #004085;
+}
+
+.status.entregue {
+  background: #e2e3e5;
+  color: #383d41;
+}

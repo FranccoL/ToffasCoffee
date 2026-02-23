@@ -7,7 +7,7 @@ const categoriesData = [
     {
         name: "Cafés Especiais",
         link: "/cafe",
-        image: "/coffeePq.jpg", // Substitua pelo caminho real
+        image: "/coffeePq.jpg", 
         // O fundo parece escuro na imagem, vamos definir uma cor de texto clara
         textColor: 'white',
         alt: "Moedor de café e grãos"
@@ -15,7 +15,7 @@ const categoriesData = [
     {
         name: "Chás",
         link: "/cha",
-        image: "/teaPq.jpg", // Substitua pelo caminho real
+        image: "/teaPq.jpg", 
         // O fundo parece claro/rosado na imagem, vamos definir uma cor de texto escura
         textColor: 'white',
         alt: "Pacote de chá e copo"
@@ -23,7 +23,7 @@ const categoriesData = [
     {
         name: "Bebidas Quentes",
         link: "/bebidasQuentes",
-        image: "/hotPq.jpg", // Substitua pelo caminho real
+        image: "/hotPq.jpg", 
         // O fundo é um cappuccino, vamos definir uma cor de texto clara/escura
         textColor: 'white',
         alt: "Cappuccino com arte"

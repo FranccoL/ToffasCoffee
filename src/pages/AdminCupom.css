@@ -1,0 +1,74 @@
+.admin-cupom-page {
+  min-height: 100vh;          /* garante que ocupe a altura da tela inteira */
+  background-color: #7b3f00;  /* cor do fundo que você quiser */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.admin-cupom-container {
+  background-color: #fff;      /* fundo do próprio container do formulário */
+  padding: 30px 50px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 500px;
+}
+
+.admin-cupom-title {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.admin-cupom-input,
+.admin-cupom-select {
+  width: 100%;
+  padding: 10px 12px;
+  margin: 7px 0;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #7b3f00;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.admin-cupom-input:focus,
+.admin-cupom-select:focus {
+  border-color: #ffc07d;
+}
+
+.admin-cupom-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.admin-cupom-date-label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 0.95rem;
+  color: #555;
+  gap: 5px;
+}
+
+.admin-cupom-button {
+  padding: 12px;
+  background-color: #7b3f00;
+  color: #fff;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.admin-cupom-button:hover {
+  background-color: #a0561b;
+}

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "./HotDrinks.css";
 
 // Ícones para as bebidas quentes
-import { GiCoffeeCup, GiCupcake, GiChocolateBar } from "react-icons/gi";
+import { GiCoffeeCup, GiCupcake, GiChocolateBar, GiMilkCarton } from "react-icons/gi";
 
 export default function HotDrinks() {
   return (
@@ -55,7 +55,7 @@ export default function HotDrinks() {
       <div className="hotdrinks-icon green">
         <GiCupcake size={36} />
       </div>
-      <h3>Cappuccino Sem Açúcar</h3>
+      <h3>Cappuccino sem Açúcar</h3>
       <p>Perfeito para quem deseja aproveitar o sabor sem adição de açúcar.</p>
     </Link>
   </div>
@@ -68,6 +68,17 @@ export default function HotDrinks() {
       </div>
       <h3>Chocolate Solúvel</h3>
       <p>Delicioso e cremoso, ideal para qualquer hora do dia.</p>
+    </Link>
+  </div>
+
+  {/* LEITE */}
+  <div className="hotdrinks-grid-item">
+    <Link to="/leite" className="hotdrink-link">
+      <div className="hotdrinks-icon leite">
+        <GiMilkCarton size={36} />
+      </div>
+      <h3>Leite em Pó</h3>
+      <p>Perfeito para aquecer seu dia com um sabor suave e cremoso.</p>
     </Link>
   </div>
 

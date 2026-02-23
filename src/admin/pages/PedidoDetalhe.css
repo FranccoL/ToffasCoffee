@@ -1,0 +1,62 @@
+.pedido-detalhe-container {
+  padding: 30px;
+  max-width: 900px;
+}
+
+.voltar {
+  background: none;
+  border: none;
+  color: #3182ce;
+  cursor: pointer;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.bloco {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.bloco h2 {
+  margin-bottom: 10px;
+}
+
+.status {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.status.pendente {
+  background: #ffeaa7;
+}
+
+.status.enviado {
+  background: #bee3f8;
+}
+
+.status.entregue {
+  background: #c6f6d5;
+}
+
+.itens-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.itens-table th,
+.itens-table td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+.total {
+  text-align: right;
+  margin-top: 15px;
+  font-size: 18px;
+}

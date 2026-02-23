@@ -174,6 +174,7 @@ function Header() {
                                     <Link to="/cappuccino" onClick={handleLinkClick}>Cappuccino</Link>
                                     <Link to="/cappuccinoSA" onClick={handleLinkClick}>Cappuccino s/ Açúcar</Link>
                                     <Link to="/chocolate" onClick={handleLinkClick}>Chocolate</Link>
+                                    <Link to="/leite" onClick={handleLinkClick}>Leite em Pó</Link>
                                 </div>
                             </li>
 
