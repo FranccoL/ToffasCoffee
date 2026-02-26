@@ -4,9 +4,9 @@ import './VantagensSection.css';
 
 export default function VantagensSection() {
   const companyBenefits = [
-    "Máquinas profissionais de alta capacidade",
+    "Máquinas automáticas de alta capacidade",
     "Abastecimento recorrente de grãos e insumos",
-    "Manutenção preventiva e corretiva inclusa",
+    "Manutenção preventiva inclusa",
     "Treinamento de uso para colaboradores",
     "Faturamento mensal simplificado"
   ];
