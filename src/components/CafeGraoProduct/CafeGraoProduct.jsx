@@ -15,7 +15,7 @@ Um café torrado em grãos cuidadosamente selecionado para oferecer um sabor enc
 `;
 
   const preparoText = `
-Moagem: moa os grãos na hora para garantir frescor e aroma intenso.
+Moagem: Moa os grãos na hora para garantir frescor e aroma intenso.
 Quantidade: use aproximadamente 1 a 2 colheres de sopa de café para cada 100 ml de água, ajustando conforme a intensidade desejada.
 Água: prefira água filtrada ou mineral, aquecida a cerca de 90–95°C (não deixe ferver).
 Extração: prepare no método escolhido — coador, prensa francesa, cafeteira italiana ou espresso.
@@ -35,9 +35,9 @@ Não contém glúten, lactose ou aditivos.
   const [selectedWeight, setSelectedWeight] = useState("250g");
 
   const precoPorPeso = {
-    "250g": "R$ 12.50",
-    "500g": "R$ 22.50",
-    "1kg": "R$ 42.50",
+    "250g": "R$ 25,97",
+    "500g": "R$ 47,44",
+    "1kg": "R$ 90,59",
   };
 
   const [quantidade, setQuantidade] = useState(1);

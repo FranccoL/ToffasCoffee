@@ -279,6 +279,9 @@
   .checkout h2 {
     font-size: 1.8rem;
   }
+  .checkout-form input {
+    width: 93%;
+  }
 
   .cep-container {
     flex-direction: column;

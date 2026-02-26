@@ -38,6 +38,7 @@
   padding: 15px;
   background-color: #fff;
   transition: transform 0.3s ease;
+  margin-left: -15px;
 }
 
 .produto-card:hover .produto-img {
@@ -247,8 +248,10 @@
 @media (max-width: 768px) {
   .catalog-grid {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    
   }
   .produto-img {
-    height: 220px;
+    height: 320px;
+    margin-left: -15px;
   }
 }

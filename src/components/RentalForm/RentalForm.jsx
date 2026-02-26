@@ -12,10 +12,10 @@ export default function RentalForm({ backgroundColor = '#f7f3ed' }) {
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData.entries());
 
-    data.tipo = activeTab === 'company' ? 'Empresarial' : 'Pessoal';
+    data.tipo = activeTab === 'company' ? 'empresarial' : 'pessoal';
 
     try {
-      const res = await fetch("http://localhost:3000/api/send-email", {
+      const res = await fetch("http://localhost:4000/api/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data)

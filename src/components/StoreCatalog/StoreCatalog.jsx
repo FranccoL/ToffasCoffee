@@ -25,7 +25,7 @@ export default function StoreCatalog() {
       descricao: "Blend 100% arábica.",
       imagem: "/grao1.svg",
       route: "/cafeGrao",
-      precos: { "250g": "R$ 24,90", "500g": "R$ 44,90", "1kg": "R$ 79,90" },
+      precos: { "250g": "R$ 25,97", "500g": "R$ 47,44", "1kg": "R$ 90,59" },
     },
     {
       id: 2,
@@ -34,7 +34,7 @@ export default function StoreCatalog() {
       descricao: "Blend 100% arábica.",
       imagem: "/cafemoido.svg",
       route: "/cafeMoido",
-      precos: { "500g": "R$ 28,70" },
+      precos: { "500g": "R$ 30,39" },
     },
     {
       id: 3,
@@ -43,7 +43,7 @@ export default function StoreCatalog() {
       descricao: "Seleção especial de grãos de altitude.",
       imagem: "/premium.svg",
       route: "/cafePremium",
-      precos: { "250g": "R$ 26,90", "500g": "R$ 47,90", "1kg": "R$ 84,90" },
+      precos: { "250g": "R$ 28,60", "500g": "R$ 52,70", "1kg": "R$ 100,38" },
     },
     {
       id: 4,
@@ -52,7 +52,7 @@ export default function StoreCatalog() {
       descricao: "Produto solúvel.",
       imagem: "/chocolate1.svg",
       route: "/chocolate",
-      precos: { "250g": "R$ 16,90", "500g": "R$ 29,90", "1kg": "R$ 52,90" },
+      precos: { "250g": "R$ 17,45", "500g": "R$ 34,71", "1kg": "R$ 68,60" },
     },
     {
       id: 5,
@@ -61,7 +61,7 @@ export default function StoreCatalog() {
       descricao: "Produto solúvel.",
       imagem: "/grao 1.svg",
       route: "/cappuccino",
-      precos: { "250g": "R$ 15,90", "500g": "R$ 27,90", "1kg": "R$ 49,90" },
+      precos: { "250g": "R$ 17,03", "500g": "R$ 33,87", "1kg": "R$ 63,33" },
     },
     {
       id: 6,
@@ -70,7 +70,7 @@ export default function StoreCatalog() {
       descricao: "Blend aromático e revigorante.",
       imagem: "/limao.svg",
       route: "/chaL",
-      precos: { "250g": "R$ 18,90", "500g": "R$ 32,90", "1kg": "R$ 56,90" },
+      precos: { "250g": "R$ 11,66", "500g": "R$ 25,97", "1kg": "R$ 47,55" },
     },
     {
       id: 7,
@@ -79,7 +79,7 @@ export default function StoreCatalog() {
       descricao: "Blend aromático e revigorante.",
       imagem: "/pessego.svg",
       route: "/chaP",
-      precos: { "250g": "R$ 18,90", "500g": "R$ 32,90", "1kg": "R$ 56,90" },
+      precos: { "250g": "R$ 11,66", "500g": "R$ 25,97", "1kg": "R$ 47,55" },
     },
     {
       id: 8,
@@ -88,7 +88,7 @@ export default function StoreCatalog() {
       descricao: "Blend aromático e revigorante.",
       imagem: "/frutas.svg",
       route: "/chaV",
-      precos: { "250g": "R$ 18,90", "500g": "R$ 32,90", "1kg": "R$ 56,90" },
+      precos: { "250g": "R$ 11,66", "500g": "R$ 25,97", "1kg": "R$ 47,55" },
     },
     {
       id: 9,
@@ -97,7 +97,7 @@ export default function StoreCatalog() {
       descricao: "Produto solúvel.",
       imagem: "/capp.svg",
       route: "/cappuccinoSA",
-      precos: { "250g": "R$ 15,90", "500g": "R$ 27,90", "1kg": "R$ 49,90" },
+      precos: { "250g": "R$ 29,13", "500g": "R$ 52,81", "1kg": "R$ 105,38" },
     },
     {
       id: 10,

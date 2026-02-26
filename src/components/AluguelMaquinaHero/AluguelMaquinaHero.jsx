@@ -11,13 +11,15 @@ import { Link } from 'react-router-dom';
  */
 function AluguelMaquina({ title, subtitle, videoUrl, posterUrl }) {
     
-    // Define a navegação de migalhas (Breadcrumb)
-    const breadcrumb = subtitle || (
-        <p className="breadcrumb">
-            <h1>Aluguel de Máquinas</h1>
-            <h2>A solução para ter café expresso de qualidade sempre à mão, seja em seu escritório ou na sua casa.</h2>
-        </p>
-    );
+   const breadcrumb = subtitle || (
+    <div className="breadcrumb">
+        <h1>Aluguel de Máquinas</h1>
+        <h2>
+            A solução para ter café expresso de qualidade sempre à mão,
+            seja em seu escritório ou na sua casa.
+        </h2>
+    </div>
+);
 
     // Defina um URL de vídeo padrão, caso não seja passado
     const finalVideoUrl = videoUrl || '/videoMaquina.mp4'; 

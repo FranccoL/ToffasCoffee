@@ -33,7 +33,7 @@ Não contém glúten, lactose ou aditivos.
   const [selectedWeight, setSelectedWeight] = useState("500g");
 
   const precoPorPeso = {
-    "500g": "R$28.70",
+    "500g": "R$30,39",
   };
 
   // Quantidade

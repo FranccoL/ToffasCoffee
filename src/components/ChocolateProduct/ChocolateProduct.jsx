@@ -28,9 +28,9 @@ NÃO CONTÉM GLÚTEN.
   const [selectedWeight, setSelectedWeight] = useState("250g");
 
   const precoPorPeso = {
-    "250g": "R$ 12,50",
-    "500g": "R$ 22,50",
-    "1kg": "R$ 42,50",
+    "250g": "R$ 17,45",
+    "500g": "R$ 34,71",
+    "1kg": "R$ 68,60",
   };
 
   const produto = {
