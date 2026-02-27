@@ -45,7 +45,7 @@ function App() {
         <ScrollToTop />
 
         <Routes>
-          {/* 🛒 STORE */}
+          {/* STORE */}
           <Route element={<StoreLayout />}>
             <Route path="/" element={<Inicio />} />
             <Route path="/cafe" element={<Cafe />} />

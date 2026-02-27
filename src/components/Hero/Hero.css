@@ -208,28 +208,37 @@ font-size: 62px;
 
   /* ================= SLIDE 1 ================= */
 
-.slide-1 .hero-text h1 {
-  font-size: 26px;
-  font-weight: 800;
-  line-height: 1.25;
-  margin-top: 450px;
-  text-transform: uppercase;
-  letter-spacing: 1.2px;
+@media (max-width: 768px) {
+  
+ 
+  .slide-1 .hero-text {
+    height: 80vh; 
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center;
+    padding: 20px 0;
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -50%);
+  }
 
-  color: #ffffff;
-  text-shadow:
-    0 4px 12px rgba(0,0,0,0.55),
-    0 0 30px rgba(255,255,255,0.15);
-    
+  /* Remove margens fixas que estavam atrapalhando */
+  .slide-1 .hero-text h1 {
+    margin: 0 !important;
+    font-size: 28px;
+  }
+  
+  .slide-1 .btHero {
+    margin: 0 0 40px 0 !important;
+  }
+
+  /* O restante do seu código mobile continua igual, sem afetar o Slide 2 ou 3 */
 }
 
-.slide-1 .btHero {
-  background-color: #ffffff;
-  color: #1a1a1a;
-}
-.slide-1 {
-  background-position: right 40% center;
-  height: 750px;
+
   }
 
 /* ================= SLIDE 2 ================= */
@@ -281,7 +290,7 @@ font-size: 35px;
     left: 20px;
     bottom: 30px;
   }
-}
+
 
 @media (max-width: 480px) {
   .hero-text h1 {
@@ -294,4 +303,28 @@ font-size: 35px;
   }
 
   
+}
+/* No seu @media (max-width: 768px) */
+@media (max-width: 768px) {
+  
+  /* Use !important se necessário para forçar a substituição do estilo inline */
+  .slide-1 {
+    background-image: url('/cafemb.svg') !important;
+    background-size: cover;
+    background-position: center !important;
+  }
+
+  .slide-2 {
+    background-image: url('/bannerCelular.png') !important; /* Ajuste o nome do arquivo */
+    background-size: cover;
+    background-position: center !important;
+  }
+
+  .slide-3 {
+    background-image: url('/bannerChaa.svg') !important; /* Ajuste o nome do arquivo */
+    background-size: cover;
+    background-position: center !important;
+  }
+
+  /* ... restante do seu código mobile ... */
 }
