@@ -29,6 +29,7 @@ import HotDrinks from "./pages/BebidasQuentes";
 import Cappuccino from "./pages/Cappuccino";
 import CappuccinoSA from "./pages/CappuccinoSA";
 import Chocolate from "./pages/Chocolate";
+import LeitePo from "./pages/LeitePo";
 import NossosProdutos from "./pages/NossosProdutos";
 import QuemSomos from "./pages/QuemSomos";
 import Contato from "./pages/Contato";
@@ -59,6 +60,7 @@ function App() {
             <Route path="/cappuccino" element={<Cappuccino />} />
             <Route path="/cappuccinoSA" element={<CappuccinoSA />} />
             <Route path="/chocolate" element={<Chocolate />} />
+            <Route path="/leitePo" element={<LeitePo />} />
             <Route path="/produtos" element={<NossosProdutos />} />
             <Route path="/quemSomos" element={<QuemSomos />} />
             <Route path="/contato" element={<Contato />} />

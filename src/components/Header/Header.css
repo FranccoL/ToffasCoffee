@@ -44,8 +44,9 @@
     margin-left: 50px;
 }
 
-/* REMOVIDO: margem e posição absoluta para facilitar flexbox */
-/* .imgHeader { ... } */
+.profile-btn {
+    display: none;
+}
 
 header ul,
 li {
@@ -191,9 +192,9 @@ nav a:hover {
 
 /* =============================== BUSCA DO HEADER =============================== */
 .search-box-header {
-    position: absolute;
-    top: 70px;
-    right: 18px;
+    position: fixed;
+    top: 80px;
+    right: 40px;
     width: 260px;
     background: #ffffff;
     border-radius: 12px;

@@ -104,8 +104,8 @@ export default function StoreCatalog() {
       category: "bebidasquentes",
       nome: "Leite Toffa's Coffee",
       descricao: "Produto solúvel.",
-      imagem: "/capp.svg",
-      route: "/cappuccinoSA",
+      imagem: "/leite.png",
+      route: "/LeitePo",
       precos: { "250g": "R$ 15,90", "500g": "R$ 27,90", "1kg": "R$ 49,90" },
     },
   ];
