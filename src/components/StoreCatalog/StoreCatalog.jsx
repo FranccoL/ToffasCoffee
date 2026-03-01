@@ -21,7 +21,7 @@ export default function StoreCatalog() {
     {
       id: 1,
       category: "coffee",
-      nome: "Café Toffa's torrado em grãos",
+      nome: "Café Toffa's Torrado em Grãos",
       descricao: "Blend 100% arábica.",
       imagem: "/grao1.svg",
       route: "/cafeGrao",
@@ -30,7 +30,7 @@ export default function StoreCatalog() {
     {
       id: 2,
       category: "coffee",
-      nome: "Café Toffa's Torrado e moído",
+      nome: "Café Toffa's Torrado e Moído",
       descricao: "Blend 100% arábica.",
       imagem: "/cafemoido.svg",
       route: "/cafeMoido",
@@ -65,6 +65,24 @@ export default function StoreCatalog() {
     },
     {
       id: 6,
+      category: "bebidasquentes",
+      nome: "Cappuccino Toffa's Coffee - Zero Açúcar",
+      descricao: "Produto solúvel.",
+      imagem: "/capp.svg",
+      route: "/cappuccinoSA",
+      precos: { "250g": "R$ 29,13", "500g": "R$ 52,81", "1kg": "R$ 105,38" },
+    },
+    {
+      id: 7,
+      category: "bebidasquentes",
+      nome: "Leite em Pó Toffa's Coffee",
+      descricao: "Produto solúvel.",
+      imagem: "/leite.png",
+      route: "/LeitePo",
+      precos: { "250g": "R$ 15,90", "500g": "R$ 27,90", "1kg": "R$ 49,90" },
+    },
+    {
+      id: 8,
       category: "tea",
       nome: "Chá Mate de Limão Toffa's",
       descricao: "Blend aromático e revigorante.",
@@ -73,7 +91,7 @@ export default function StoreCatalog() {
       precos: { "250g": "R$ 11,66", "500g": "R$ 25,97", "1kg": "R$ 47,55" },
     },
     {
-      id: 7,
+      id: 9,
       category: "tea",
       nome: "Chá Mate de Pêssego Toffa's",
       descricao: "Blend aromático e revigorante.",
@@ -82,32 +100,15 @@ export default function StoreCatalog() {
       precos: { "250g": "R$ 11,66", "500g": "R$ 25,97", "1kg": "R$ 47,55" },
     },
     {
-      id: 8,
+      id: 10,
       category: "tea",
       nome: "Chá Preto de Frutas Vermelhas Toffa's",
       descricao: "Blend aromático e revigorante.",
       imagem: "/frutas.svg",
       route: "/chaV",
       precos: { "250g": "R$ 11,66", "500g": "R$ 25,97", "1kg": "R$ 47,55" },
-    },
-    {
-      id: 9,
-      category: "bebidasquentes",
-      nome: "Cappuccino Toffa's Coffee - Sem Açúcar",
-      descricao: "Produto solúvel.",
-      imagem: "/capp.svg",
-      route: "/cappuccinoSA",
-      precos: { "250g": "R$ 29,13", "500g": "R$ 52,81", "1kg": "R$ 105,38" },
-    },
-    {
-      id: 10,
-      category: "bebidasquentes",
-      nome: "Leite Toffa's Coffee",
-      descricao: "Produto solúvel.",
-      imagem: "/leite.png",
-      route: "/LeitePo",
-      precos: { "250g": "R$ 15,90", "500g": "R$ 27,90", "1kg": "R$ 49,90" },
-    },
+    }
+    
   ];
 
   // guarda o peso selecionado por produto (padrão 250g)

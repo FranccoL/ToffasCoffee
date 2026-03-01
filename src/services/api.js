@@ -1,4 +1,4 @@
-export const API_URL = "http://localhost:4000";
+export const API_URL = "https://toffas-backend.onrender.com";
 
 export async function apiPost(path, body) {
   const res = await fetch(API_URL + path, {
