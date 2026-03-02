@@ -3,8 +3,6 @@ import { useCart } from "../../context/CartContext";
 import { apiPost, apiGet } from "../../services/api";
 import "./Checkout.css";
 
-const API_URL = "https://toffas-backend.onrender.com";
-
 export default function Checkout() {
   const { cart, clearCart } = useCart();
 
@@ -34,21 +32,21 @@ export default function Checkout() {
     return sum + valor * (Number(item.quantity) || 1);
   }, 0);
 
-  const freteValor = Number(
-    String(freteSelecionado?.valor ?? 0).replace(",", ".")
-  ) || 0;
+  const freteValor =
+    Number(String(freteSelecionado?.valor ?? 0).replace(",", ".")) || 0;
 
+  const descontoValor = Number(desconto) || 0;
   const totalComFrete = totalProdutos + freteValor;
-  const totalFinal = Math.max(totalComFrete - desconto, 0);
+  const totalFinal = Math.max(totalComFrete - descontoValor, 0);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setCliente((prev) => ({ ...prev, [name]: value }));
   };
 
-  // 🔹 CUPOM
   const aplicarCupom = async () => {
     if (!cupom) return;
+
     if (!cliente.email) {
       alert("Informe o e-mail antes de aplicar o cupom.");
       return;
@@ -59,13 +57,16 @@ export default function Checkout() {
         codigo: cupom,
         subtotal: totalProdutos,
         clienteEmail: cliente.email,
-        frete: freteValor
+        frete: freteSelecionado?.valor || 0,
       });
 
       setDesconto(Number(response.desconto) || 0);
 
-      if (response.frete_gratis && freteSelecionado) {
-        setFreteSelecionado(prev => ({ ...prev, valor: 0 }));
+      if (response.frete_gratis) {
+        setFreteSelecionado((prev) => ({
+          ...prev,
+          valor: 0,
+        }));
       }
 
       alert("Cupom aplicado com sucesso!");
@@ -75,7 +76,31 @@ export default function Checkout() {
     }
   };
 
-  // 🔹 PAGAMENTO (CORRIGIDO AQUI)
+ 
+  const criarPreferencia = async () => {
+    const response = await fetch(
+      "https://toffas-backend.onrender.com/api/pagamento/criar-preferencia",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          produtos: cart,
+          cliente,
+          frete: freteValor,
+          total: totalFinal,
+          cupom,
+        }),
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error("Erro ao criar preferência");
+    }
+
+    const data = await response.json();
+    return data.id;
+  };
+
   const iniciarPagamento = async () => {
     if (!cliente.nome || !cliente.email || !cliente.endereco || !cliente.numero) {
       alert("Preencha os dados obrigatórios.");
@@ -88,38 +113,52 @@ export default function Checkout() {
     }
 
     try {
-      const response = await fetch(
-        `${API_URL}/api/pagamento/criar-preferencia`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            produtos: cart,
-            cliente,
-            frete: freteValor,
-            total: totalFinal,
-            cupom,
-          }),
-        }
-      );
-
-      const data = await response.json();
-
-      if (data.init_point) {
-        window.location.href = data.init_point;
-      } else if (data.id) {
-        window.location.href = `https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=${data.id}`;
-      } else {
-        alert("Erro ao iniciar pagamento.");
-      }
-
+      const id = await criarPreferencia();
+      window.location.href = `https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=${id}`;
     } catch (error) {
-      console.error("Erro no pagamento:", error);
-      alert("Erro ao conectar com o servidor.");
+      console.error(error);
+      alert("Erro ao iniciar pagamento.");
     }
   };
 
-  // 🔹 FRETE
+  const buscarClientePorEmail = async (email) => {
+    if (!email) return;
+    try {
+      const clienteExistente = await apiGet(`/clientes/email/${email}`);
+      if (clienteExistente) {
+        setCliente((prev) => ({ ...prev, ...clienteExistente }));
+      }
+    } catch {}
+  };
+
+  const buscarEnderecoPorCep = async (cep) => {
+    const cepLimpo = cep.replace(/\D/g, "");
+    if (cepLimpo.length !== 8) return;
+
+    try {
+      const response = await fetch(
+        `https://viacep.com.br/ws/${cepLimpo}/json/`
+      );
+      const data = await response.json();
+
+      if (data.erro) return;
+
+      setCliente((prev) => ({
+        ...prev,
+        endereco: data.logradouro || "",
+        bairro: data.bairro || "",
+        cidade: data.localidade || "",
+        estado: data.uf || "",
+      }));
+    } catch {}
+  };
+
+  const formatarCep = (value) => {
+    const apenasNumeros = value.replace(/\D/g, "").slice(0, 8);
+    if (apenasNumeros.length <= 5) return apenasNumeros;
+    return `${apenasNumeros.slice(0, 5)}-${apenasNumeros.slice(5)}`;
+  };
+
   const calcularFrete = async () => {
     if (!cliente.cep || cart.length === 0) return;
 
@@ -147,10 +186,8 @@ export default function Checkout() {
 
       setFretes(resposta.slice(0, 3));
       setFreteSelecionado(resposta[0]);
-
     } catch (err) {
       console.error(err);
-      alert("Erro ao calcular frete.");
     } finally {
       setCarregandoFrete(false);
     }
@@ -181,12 +218,16 @@ export default function Checkout() {
 
           <div className="resumo-total">
             <span>Subtotal:</span>
-            <strong>R$ {totalProdutos.toFixed(2).replace(".", ",")}</strong>
+            <strong>
+              R$ {totalProdutos.toFixed(2).replace(".", ",")}
+            </strong>
           </div>
 
           <div className="resumo-total total">
             <span>Total:</span>
-            <strong>R$ {totalFinal.toFixed(2).replace(".", ",")}</strong>
+            <strong>
+              R$ {totalFinal.toFixed(2).replace(".", ",")}
+            </strong>
           </div>
         </div>
 
@@ -194,21 +235,33 @@ export default function Checkout() {
           <h3>Dados do Cliente</h3>
 
           <input name="nome" placeholder="Nome *" value={cliente.nome} onChange={handleChange} />
-          <input name="email" placeholder="E-mail *" value={cliente.email} onChange={handleChange} />
+          <input name="email" placeholder="E-mail *" value={cliente.email} onChange={handleChange} onBlur={(e) => buscarClientePorEmail(e.target.value)} />
           <input name="telefone" placeholder="Telefone" value={cliente.telefone} onChange={handleChange} />
 
-          <input name="cep" placeholder="CEP *" value={cliente.cep}
-            onChange={(e) =>
-              setCliente((prev) => ({ ...prev, cep: e.target.value }))
-            }
-          />
+          <div className="cep-container">
+            <input
+              name="cep"
+              placeholder="CEP *"
+              value={cliente.cep}
+              onChange={(e) => {
+                const cepFormatado = formatarCep(e.target.value);
+                setCliente((prev) => ({ ...prev, cep: cepFormatado }));
 
-          <button type="button" onClick={calcularFrete}>
-            {carregandoFrete ? "Calculando..." : "Calcular Frete"}
-          </button>
+                if (cepFormatado.replace(/\D/g, "").length === 8) {
+                  buscarEnderecoPorCep(cepFormatado);
+                }
+              }}
+            />
+            <button type="button" onClick={calcularFrete}>
+              {carregandoFrete ? "Calculando..." : "Frete"}
+            </button>
+          </div>
 
           <input name="endereco" placeholder="Endereço *" value={cliente.endereco} onChange={handleChange} />
-          <input name="numero" placeholder="Número *" value={cliente.numero} onChange={handleChange} />
+          <input name="numero" placeholder="Número e Complemento *" value={cliente.numero} onChange={handleChange} />
+          <input name="bairro" placeholder="Bairro" value={cliente.bairro} onChange={handleChange} />
+          <input name="cidade" placeholder="Cidade" value={cliente.cidade} onChange={handleChange} />
+          <input name="estado" placeholder="Estado" value={cliente.estado} onChange={handleChange} />
 
           <button className="finalizar-btn" onClick={iniciarPagamento}>
             Ir para pagamento
