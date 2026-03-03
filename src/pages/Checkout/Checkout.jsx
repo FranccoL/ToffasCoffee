@@ -73,25 +73,36 @@ export default function Checkout() {
     }
   };
 
-  const criarPreferencia = async () => {
-    const response = await fetch(
-      `${BACKEND_URL}/api/pagamento/criar-preferencia`,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          produtos: cart,
-          cliente,
-          frete: freteValor,
-          total: totalFinal,
-          cupom,
-        }),
-      }
-    );
+  const criarPedido = async () => {
+  const response = await fetch(
+    `${BACKEND_URL}/api/pedidos`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        cliente,
+        itens: cart.map(item => ({
+          id: item.id,
+          quantidade: item.quantity,
+          tamanho: item.size
+        })),
+        frete: {
+          id: freteSelecionado.id,
+          metodo: freteSelecionado.metodo,
+          prazo: freteSelecionado.prazo,
+          valor: freteSelecionado.valor
+        }
+      }),
+    }
+  );
 
-    const data = await response.json();
-    return data.id;
-  };
+  if (!response.ok) {
+    throw new Error("Erro ao criar pedido");
+  }
+
+  const data = await response.json();
+  return data.pagamento.redirect_url;
+};
 
   const iniciarPagamento = async () => {
     if (!cliente.nome || !cliente.email || !cliente.cpf || !cliente.endereco || !cliente.numero) {
@@ -104,10 +115,14 @@ export default function Checkout() {
       return;
     }
 
-    const id = await criarPreferencia();
-
-    window.location.href = `https://www.mercadopago.com.br/checkout/v1/redirect?pref_id=${id}`;
-  };
+    try {
+    const redirectUrl = await criarPedido();
+    window.location.href = redirectUrl;
+  } catch (error) {
+    console.error(error);
+    alert("Erro ao iniciar pagamento.");
+  }
+}
 
   const buscarClientePorEmail = async (email) => {
     if (!email) return;
