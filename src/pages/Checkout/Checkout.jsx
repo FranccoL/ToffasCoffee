@@ -75,7 +75,7 @@ export default function Checkout() {
 
   const criarPedido = async () => {
   const response = await fetch(
-    `${BACKEND_URL}/api/pedidos`,
+    `${BACKEND_URL}/pedidos`,
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },
