@@ -12,7 +12,7 @@ export default function Checkout() {
     nome: "",
     email: "",
     cpf: "",
-    celular: "",
+    telefone: "",
     cep: "",
     endereco: "",
     numero: "",
@@ -129,7 +129,12 @@ export default function Checkout() {
     try {
       const clienteExistente = await apiGet(`/clientes/email/${email}`);
       if (clienteExistente) {
-        setCliente((prev) => ({ ...prev, ...clienteExistente }));
+        setCliente((prev) => ({
+  ...prev,
+  ...Object.fromEntries(
+    Object.entries(clienteExistente).map(([k, v]) => [k, v ?? ""])
+  ),
+}));
       }
     } catch {}
   };
