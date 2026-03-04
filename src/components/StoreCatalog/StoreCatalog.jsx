@@ -18,104 +18,141 @@ export default function StoreCatalog() {
   ];
 
   const produtos = [
-    {
-      id: 1,
-      category: "coffee",
-      nome: "Café Toffa's Torrado em Grãos",
-      descricao: "Blend 100% arábica.",
-      imagem: "/grao1.svg",
-      route: "/cafeGrao",
-      precos: { "250g": "R$ 25,97", "500g": "R$ 47,44", "1kg": "R$ 90,59" },
+  {
+    id: "cafe-graos",
+    category: "coffee",
+    nome: "Café Toffa's Torrado em Grãos",
+    descricao: "Blend 100% arábica.",
+    imagem: "/grao1.svg",
+    route: "/cafeGrao",
+    variantes: {
+      "250g": { preco: "R$ 25,97", dbId: 2 },
+      "500g": { preco: "R$ 47,44", dbId: 3 },
+      "1kg":  { preco: "R$ 90,59", dbId: 4 },
     },
-    {
-      id: 2,
-      category: "coffee",
-      nome: "Café Toffa's Torrado e Moído",
-      descricao: "Blend 100% arábica.",
-      imagem: "/cafemoido.svg",
-      route: "/cafeMoido",
-      precos: { "500g": "R$ 30,39" },
+  },
+  {
+    id: "cafe-moido",
+    category: "coffee",
+    nome: "Café Toffa's Torrado e Moído",
+    descricao: "Blend 100% arábica.",
+    imagem: "/cafemoido.svg",
+    route: "/cafeMoido",
+    variantes: {
+      "500g": { preco: "R$ 30,39", dbId: 5 },
     },
-    {
-      id: 3,
-      category: "coffee",
-      nome: "Café Toffa's Premium",
-      descricao: "Seleção especial de grãos de altitude.",
-      imagem: "/premium.svg",
-      route: "/cafePremium",
-      precos: { "250g": "R$ 28,60", "500g": "R$ 52,70", "1kg": "R$ 100,38" },
+  },
+  {
+    id: "cafe-premium",
+    category: "coffee",
+    nome: "Café Toffa's Premium",
+    descricao: "Seleção especial de grãos de altitude.",
+    imagem: "/premium.svg",
+    route: "/cafePremium",
+    variantes: {
+      "250g": { preco: "R$ 28,60", dbId: 6 },
+      "500g": { preco: "R$ 52,70", dbId: 7 },
+      "1kg":  { preco: "R$ 100,38", dbId: 8 },
     },
-    {
-      id: 4,
-      category: "bebidasquentes",
-      nome: "Chocolate Toffa's Coffee",
-      descricao: "Produto solúvel.",
-      imagem: "/chocolate1.svg",
-      route: "/chocolate",
-      precos: { "250g": "R$ 17,45", "500g": "R$ 34,71", "1kg": "R$ 68,60" },
+  },
+  {
+    id: "chocolate",
+    category: "bebidasquentes",
+    nome: "Chocolate Toffa's Coffee",
+    descricao: "Produto solúvel.",
+    imagem: "/chocolate1.svg",
+    route: "/chocolate",
+    variantes: {
+      "250g": { preco: "R$ 17,45", dbId: 9 },
+      "500g": { preco: "R$ 34,71", dbId: 10 },
+      "1kg":  { preco: "R$ 68,60", dbId: 11 },
     },
-    {
-      id: 5,
-      category: "bebidasquentes",
-      nome: "Cappuccino Toffa's Coffee",
-      descricao: "Produto solúvel.",
-      imagem: "/grao 1.svg",
-      route: "/cappuccino",
-      precos: { "250g": "R$ 17,03", "500g": "R$ 33,87", "1kg": "R$ 63,33" },
+  },
+  {
+    id: "cappuccino",
+    category: "bebidasquentes",
+    nome: "Cappuccino Toffa's Coffee",
+    descricao: "Produto solúvel.",
+    imagem: "/grao 1.svg",
+    route: "/cappuccino",
+    variantes: {
+      "250g": { preco: "R$ 17,03", dbId: 12 },
+      "500g": { preco: "R$ 33,87", dbId: 13 },
+      "1kg":  { preco: "R$ 63,33", dbId: 14 },
     },
-    {
-      id: 6,
-      category: "bebidasquentes",
-      nome: "Cappuccino Toffa's Coffee - Zero Açúcar",
-      descricao: "Produto solúvel.",
-      imagem: "/capp.svg",
-      route: "/cappuccinoSA",
-      precos: { "250g": "R$ 29,13", "500g": "R$ 52,81", "1kg": "R$ 105,38" },
+  },
+  {
+    id: "cappuccino-zero",
+    category: "bebidasquentes",
+    nome: "Cappuccino Toffa's Coffee - Zero Açúcar",
+    descricao: "Produto solúvel.",
+    imagem: "/capp.svg",
+    route: "/cappuccinoSA",
+    variantes: {
+      "250g": { preco: "R$ 29,13", dbId: 15 },
+      "500g": { preco: "R$ 52,81", dbId: 16 },
+      "1kg":  { preco: "R$ 105,38", dbId: 17 },
     },
-    {
-      id: 7,
-      category: "bebidasquentes",
-      nome: "Leite em Pó Toffa's Coffee",
-      descricao: "Produto solúvel.",
-      imagem: "/leite.png",
-      route: "/LeitePo",
-      precos: { "250g": "R$ 15,90", "500g": "R$ 27,90", "1kg": "R$ 49,90" },
+  },
+  {
+    id: "leite-po",
+    category: "bebidasquentes",
+    nome: "Leite em Pó Toffa's Coffee",
+    descricao: "Produto solúvel.",
+    imagem: "/leite.png",
+    route: "/LeitePo",
+    variantes: {
+      "250g": { preco: "R$ 15,90", dbId: 18 },
+      "500g": { preco: "R$ 27,90", dbId: 19 },
+      "1kg":  { preco: "R$ 49,90", dbId: 20 },
     },
-    {
-      id: 8,
-      category: "tea",
-      nome: "Chá Mate de Limão Toffa's",
-      descricao: "Blend aromático e revigorante.",
-      imagem: "/limao.svg",
-      route: "/chaL",
-      precos: { "250g": "R$ 11,66", "500g": "R$ 25,97", "1kg": "R$ 47,55" },
+  },
+  {
+    id: "cha-limao",
+    category: "tea",
+    nome: "Chá Mate de Limão Toffa's",
+    descricao: "Blend aromático e revigorante.",
+    imagem: "/limao.svg",
+    route: "/chaL",
+    variantes: {
+      "250g": { preco: "R$ 11,66", dbId: 21 },
+      "500g": { preco: "R$ 25,97", dbId: 22 },
+      "1kg":  { preco: "R$ 47,55", dbId: 23 },
     },
-    {
-      id: 9,
-      category: "tea",
-      nome: "Chá Mate de Pêssego Toffa's",
-      descricao: "Blend aromático e revigorante.",
-      imagem: "/pessego.svg",
-      route: "/chaP",
-      precos: { "250g": "R$ 11,66", "500g": "R$ 25,97", "1kg": "R$ 47,55" },
+  },
+  {
+    id: "cha-pessego",
+    category: "tea",
+    nome: "Chá Mate de Pêssego Toffa's",
+    descricao: "Blend aromático e revigorante.",
+    imagem: "/pessego.svg",
+    route: "/chaP",
+    variantes: {
+      "250g": { preco: "R$ 11,66", dbId: 24 },
+      "500g": { preco: "R$ 25,97", dbId: 25 },
+      "1kg":  { preco: "R$ 47,55", dbId: 26 },  // ⚠️ CONFIRME este ID no banco
     },
-    {
-      id: 10,
-      category: "tea",
-      nome: "Chá Preto de Frutas Vermelhas Toffa's",
-      descricao: "Blend aromático e revigorante.",
-      imagem: "/frutas.svg",
-      route: "/chaV",
-      precos: { "250g": "R$ 11,66", "500g": "R$ 25,97", "1kg": "R$ 47,55" },
-    }
-    
-  ];
+  },
+  {
+    id: "cha-frutas",
+    category: "tea",
+    nome: "Chá Preto de Frutas Vermelhas Toffa's",
+    descricao: "Blend aromático e revigorante.",
+    imagem: "/frutas.svg",
+    route: "/chaV",
+    variantes: {
+      "250g": { preco: "R$ 11,66", dbId: 27 },  // ⚠️ CONFIRME este ID no banco
+      "500g": { preco: "R$ 25,97", dbId: 28 },  // ⚠️ CONFIRME este ID no banco
+      "1kg":  { preco: "R$ 47,55", dbId: 29 },  // ⚠️ CONFIRME este ID no banco
+    },
+  },
+];
 
   // guarda o peso selecionado por produto (padrão 250g)
   const [selectedWeights, setSelectedWeights] = useState(
     () =>
       produtos.reduce((acc, p) => {
-        acc[p.id] = "250g";
+        acc[p.id] = Object.keys(p.variantes)[0];
         return acc;
       }, {})
   );
@@ -177,7 +214,7 @@ export default function StoreCatalog() {
         <div className="catalog-grid">
           {filteredProducts.map((item) => {
             const selected = selectedWeights[item.id] || "250g";
-            const precoAtual = item.precos[selected];
+            const precoAtual = item.variantes[selected]?.preco ?? "—";
 
             return (
               <div key={item.id} className="produto-card">
@@ -191,7 +228,7 @@ export default function StoreCatalog() {
 
                   {/* PESO - BOTÕES CLICÁVEIS */}
                   <div className="peso-badges-inline">
-                    {Object.keys(item.precos).map((peso) => (
+                    {Object.keys(item.variantes).map((peso) => (
                       <button
                         key={peso}
                         type="button"
@@ -209,7 +246,11 @@ export default function StoreCatalog() {
 
                     <button
                       className="produto-btn"
-                      onClick={() => addToCart(item, selected, precoAtual)}
+                      onClick={() => addToCart(
+                        { ...item, id: item.variantes[selected].dbId },
+                        selected,
+                        precoAtual
+                      )}
                     >
                       <ShoppingBag size={18} /> Adicionar
                     </button>
