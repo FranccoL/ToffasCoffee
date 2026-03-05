@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useCart } from "../../context/CartContext";
 import { apiPost, apiGet } from "../../services/api";
 import "./Checkout.css";
@@ -24,6 +24,7 @@ export default function Checkout() {
   const [fretes, setFretes] = useState([]);
   const [freteSelecionado, setFreteSelecionado] = useState(null);
   const [carregandoFrete, setCarregandoFrete] = useState(false);
+  const freteOpcoesRef = useRef(null);
 
   const [cupom, setCupom] = useState("");
   const [desconto, setDesconto] = useState(0);
@@ -237,6 +238,13 @@ const validarCpf = (cpf) => {
 
       setFretes(resposta.slice(0, 3));
       setFreteSelecionado(resposta[0]);
+      
+       setTimeout(() => {
+        if (window.innerWidth <= 900 && freteOpcoesRef.current) {
+          freteOpcoesRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 100);
+      
     } catch (err) {
       console.error(err);
     } finally {
@@ -296,7 +304,7 @@ const validarCpf = (cpf) => {
           )}
 
           {fretes.length > 0 && (
-            <div className="frete-opcoes">
+            <div className="frete-opcoes" ref={freteOpcoesRef}>
               <h4>Escolha o envio</h4>
               {fretes.map((f) => (
                 <label key={f.id} className="frete-opcao">
