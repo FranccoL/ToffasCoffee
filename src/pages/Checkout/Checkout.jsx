@@ -92,7 +92,8 @@ export default function Checkout() {
           metodo: freteSelecionado.metodo,
           prazo: freteSelecionado.prazo,
           valor: freteSelecionado.valor
-        }
+        },
+        cupom: cupom || null
       }),
     }
   );
@@ -244,7 +245,7 @@ const validarCpf = (cpf) => {
           freteOpcoesRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
         }
       }, 100);
-      
+
     } catch (err) {
       console.error(err);
     } finally {
