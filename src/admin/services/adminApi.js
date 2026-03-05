@@ -1,7 +1,9 @@
 import axios from "axios";
 
 const adminApi = axios.create({
-  baseURL: "http://localhost:4000/admin",
+  baseURL: import.meta.env.VITE_BACKEND_URL
+    ? `${import.meta.env.VITE_BACKEND_URL}/admin`
+    : "https://toffas-backend.onrender.com/admin",
 });
 
 // interceptor para token

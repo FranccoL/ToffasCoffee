@@ -24,7 +24,7 @@ export default function Pedidos() {
 
   async function atualizarStatus(id, status) {
     try {
-      await adminApi.patch(`/admin/pedidos/${id}/status`, { status });
+      await adminApi.patch(`/pedidos/${id}/status`, { status });
       carregarPedidos();
     } catch (err) {
       alert("Erro ao atualizar status");
@@ -82,7 +82,7 @@ export default function Pedidos() {
               <td>{pedido.data_entrega || "-"}</td>
 
               <td className="acoes">
-                {pedido.status === "PENDENTE" && (
+                {pedido.status === "PAGO" && (
                   <button
                     className="btn enviar"
                     onClick={() => atualizarStatus(pedido.id, "ENVIADO")}

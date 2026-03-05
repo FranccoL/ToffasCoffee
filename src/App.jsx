@@ -38,6 +38,13 @@ import Loja from "./pages/Loja";
 import Checkout from "./pages/Checkout/Checkout";
 import AdminCupom from "./pages/AdminCupom";
 
+
+//BACK_URLS
+import PedidoSucesso from "./pages/PedidoSucesso";
+import PedidoFalha from "./pages/PedidoFalha";
+import PedidoPendente from "./pages/PedidoPendente";
+
+
 function App() {
   return (
     <CartProvider>
@@ -68,6 +75,9 @@ function App() {
             <Route path="/loja" element={<Loja />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="cupom" element={<AdminCupom />} />
+            <Route path="/pedido/sucesso" element={<PedidoSucesso />} />
+            <Route path="/pedido/falha" element={<PedidoFalha />} />
+            <Route path="/pedido/pendente" element={<PedidoPendente />} />
           </Route>
 
           {/* ADMIN */}
