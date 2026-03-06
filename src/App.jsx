@@ -75,7 +75,7 @@ function App() {
             <Route path="/aluguel" element={<AluguelMaquinaPage />} />
             <Route path="/loja" element={<Loja />} />
             <Route path="/checkout" element={<Checkout />} />
-            <Route path="cupom" element={<AdminCupom />} />
+            <Route path="/cupom" element={<AdminCupom />} />
             <Route path="/pedido/sucesso" element={<PedidoSucesso />} />
             <Route path="/pedido/falha" element={<PedidoFalha />} />
             <Route path="/pedido/pendente" element={<PedidoPendente />} />
@@ -83,16 +83,9 @@ function App() {
             </Route>
 
           {/* ADMIN */}
-          <Route path="/admin/login" element={<AdminLogin />} />
+            <Route path="/admin/login" element={<AdminLogin />} />
          
-          <Route
-            path="/admin"
-            element={
-              <ProtectedRoute>
-                <AdminLayout />
-              </ProtectedRoute>
-            }
-          >
+            <Route path="/admin"element={<ProtectedRoute><AdminLayout /></ProtectedRoute>}>
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="pedidos" element={<Pedidos />} />
             <Route path="pedidos/:id" element={<PedidoDetalhe />} />
