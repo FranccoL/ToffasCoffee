@@ -37,7 +37,7 @@ import AluguelMaquinaPage from "./pages/AluguelMaquinaPage";
 import Loja from "./pages/Loja";
 import Checkout from "./pages/Checkout/Checkout";
 import AdminCupom from "./pages/AdminCupom";
-
+import CookieConsent from "./components/CookieConsent/CookieConsent";
 
 //BACK_URLS
 import PedidoSucesso from "./pages/PedidoSucesso";
@@ -48,6 +48,7 @@ import PedidoPendente from "./pages/PedidoPendente";
 function App() {
   return (
     <CartProvider>
+      
       <Router>
         <ScrollToTop />
 
@@ -78,7 +79,8 @@ function App() {
             <Route path="/pedido/sucesso" element={<PedidoSucesso />} />
             <Route path="/pedido/falha" element={<PedidoFalha />} />
             <Route path="/pedido/pendente" element={<PedidoPendente />} />
-          </Route>
+            
+            </Route>
 
           {/* ADMIN */}
           <Route path="/admin/login" element={<AdminLogin />} />
@@ -100,6 +102,7 @@ function App() {
           
           <Route path="*" element={<h1>Página não encontrada</h1>} />
         </Routes>
+        <CookieConsent />
       </Router>
     </CartProvider>
   );

@@ -16,6 +16,7 @@ export default function Checkout() {
     cep: "",
     endereco: "",
     numero: "",
+    complemento: "",
     bairro: "",
     cidade: "",
     estado: "",
@@ -106,9 +107,21 @@ export default function Checkout() {
   return data.pagamento.redirect_url;
 };
 
+const formatarTelefone = (value) => {
+    const numeros = value.replace(/\D/g, "").slice(0, 11);
+    if (numeros.length <= 2) return numeros;
+    if (numeros.length <= 7)
+      return `(${numeros.slice(0, 2)}) ${numeros.slice(2)}`;
+    return `(${numeros.slice(0, 2)}) ${numeros.slice(2, 7)}-${numeros.slice(7)}`;
+  };
+
   const iniciarPagamento = async () => {
     if (!cliente.nome || !cliente.email || !cliente.cpf || !cliente.endereco || !cliente.numero) {
       alert("Preencha os dados obrigatórios.");
+      return;
+    }
+    if (!validarCpf(cliente.cpf)) {
+      alert("CPF inválido. Verifique e tente novamente.");
       return;
     }
 
@@ -337,7 +350,7 @@ const validarCpf = (cpf) => {
           <input name="nome" placeholder="Nome Completo *" value={cliente.nome} onChange={handleChange} />
           <input name="email" placeholder="E-mail *" value={cliente.email} onChange={handleChange} onBlur={(e) => buscarClientePorEmail(e.target.value)} />
           <input name="cpf" placeholder="CPF *"value={cliente.cpf} onChange={(e) =>setCliente((prev) => ({...prev,cpf: formatarCpf(e.target.value),}))}/>
-          <input name="telefone" placeholder="Telefone/Celular" value={cliente.telefone} onChange={handleChange} />
+          <input name="telefone" placeholder="Telefone/Celular" value={cliente.telefone} onChange={(e) => setCliente((prev) => ({ ...prev, telefone: formatarTelefone(e.target.value) }))} />
           
 
               {cliente.cpf && !validarCpf(cliente.cpf) && (<small style={{ color: "red" }}>CPF inválido</small>)}
@@ -361,7 +374,8 @@ const validarCpf = (cpf) => {
           </div>
 
           <input name="endereco" placeholder="Endereço *" value={cliente.endereco} onChange={handleChange} />
-          <input name="numero" placeholder="Número/Complemento *" value={cliente.numero} onChange={handleChange} />
+          <input name="numero" placeholder="Número *" value={cliente.numero} onChange={handleChange} />
+          <input name="complemento" placeholder="Complemento (apto, bloco, etc.)" value={cliente.complemento} onChange={handleChange} />
           <input name="bairro" placeholder="Bairro" value={cliente.bairro} onChange={handleChange} />
           <input name="cidade" placeholder="Cidade" value={cliente.cidade} onChange={handleChange} />
           <input name="estado" placeholder="Estado" value={cliente.estado} onChange={handleChange} />

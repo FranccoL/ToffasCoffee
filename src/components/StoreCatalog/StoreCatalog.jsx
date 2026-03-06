@@ -1,13 +1,31 @@
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useCallback } from "react";
 import "./StoreCatalog.css";
 import { ShoppingBag, Search, Filter } from "lucide-react";
 import { useCart } from "../../context/CartContext";
 import { Link } from "react-router-dom";
+import Toast from "../Toast/Toast";
 
 export default function StoreCatalog() {
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("all");
   const { addToCart } = useCart();
+const [toastVisible, setToastVisible] = useState(false);
+  const [toastMessage, setToastMessage] = useState("");
+ 
+  const showToast = useCallback((msg) => {
+    setToastMessage(msg);
+    setToastVisible(true);
+  }, []);
+ 
+  const handleAddToCart = useCallback((item, selected, precoAtual) => {
+    addToCart(
+      { ...item, id: item.variantes[selected].dbId },
+      selected,
+      precoAtual
+    );
+    showToast(`${item.nome} (${selected}) adicionado ao carrinho!`);
+  }, [addToCart, showToast]);
+
 
   const categorias = [
     { value: "all", label: "Todos os Produtos" },
@@ -244,13 +262,9 @@ export default function StoreCatalog() {
                   <div className="produto-footer">
                     <span className="produto-preco">{precoAtual}</span>
 
-                    <button
+                     <button
                       className="produto-btn"
-                      onClick={() => addToCart(
-                        { ...item, id: item.variantes[selected].dbId },
-                        selected,
-                        precoAtual
-                      )}
+                      onClick={() => handleAddToCart(item, selected, precoAtual)}
                     >
                       <ShoppingBag size={18} /> Adicionar
                     </button>
@@ -264,6 +278,11 @@ export default function StoreCatalog() {
         {filteredProducts.length === 0 && (
           <p className="no-results">Nenhum produto encontrado.</p>
         )}
+         <Toast
+          message={toastMessage}
+          visible={toastVisible}
+          onClose={() => setToastVisible(false)}
+        />
       </div>
     </section>
   );
