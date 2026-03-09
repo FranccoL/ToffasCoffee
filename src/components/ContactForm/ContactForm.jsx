@@ -21,13 +21,13 @@ function ContactForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Substituindo as quebras de linha por <br /> diretamente no campo de mensagem
+    
     const mensagemComQuebras = formData.mensagem.replace(/\n/g, '<br />');
 
-    // Criando um objeto com os valores que serão enviados ao EmailJS
+    
     const formDataToSend = {
       from_name: formData.nome,
-      to_name: 'Destinatário', // Substitua pelo nome real se necessário
+      to_name: 'Destinatário', // 
       email: formData.email,
       mensagem: mensagemComQuebras
     };
