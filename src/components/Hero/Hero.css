@@ -229,11 +229,26 @@ font-size: 62px;
   .slide-1 .hero-text h1 {
     margin: 0 !important;
     font-size: 28px;
+    
   }
   
   .slide-1 .btHero {
     margin: 0 0 40px 0 !important;
+    
   }
+
+  .slide-2 .hero-text h1 {
+  font-size: 25px !important;
+  font-weight: 400;
+  line-height: 1.35;
+  margin-top: 400px;
+  letter-spacing: 0.4px;
+
+  color: #f3f3f3;
+  max-width: 620px;
+
+  text-shadow: 0 3px 8px rgba(0,0,0,0.45);
+}
 
   /* O restante do seu código mobile continua igual, sem afetar o Slide 2 ou 3 */
 }
