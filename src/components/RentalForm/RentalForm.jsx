@@ -23,11 +23,17 @@ export default function RentalForm({ backgroundColor = "#f7f3ed" }) {
     }
 
     try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 15000);
+
       const res = await fetch(`${API_URL}/api/send-email`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
+        signal: controller.signal,
       });
+
+      clearTimeout(timeoutId);
 
       if (!res.ok) {
         throw new Error("Erro ao enviar");
@@ -42,7 +48,17 @@ export default function RentalForm({ backgroundColor = "#f7f3ed" }) {
       setTimeout(() => setSuccessMessage(""), 10000);
     } catch (error) {
       console.error("Erro ao enviar formulário:", error);
-      alert("Erro ao enviar formulário. Tente novamente.");
+      if (error.name === "AbortError") {
+        alert(
+          "A requisição demorou demais. Verifique sua conexão e tente novamente."
+        );
+      } else if (error.message === "Failed to fetch") {
+        alert(
+          "Não foi possível conectar ao servidor. Se você usa bloqueador de anúncios, desative-o e tente novamente."
+        );
+      } else {
+        alert("Erro ao enviar formulário. Tente novamente.");
+      }
     }
   };
 

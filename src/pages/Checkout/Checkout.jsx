@@ -3,10 +3,11 @@ import { useCart } from "../../context/CartContext";
 import { apiPost, apiGet } from "../../services/api";
 import "./Checkout.css";
 
-const BACKEND_URL = "https://toffas-backend.onrender.com";
+const BACKEND_URL = import.meta.env.VITE_API_URL || "https://toffas-backend.onrender.com";
 
 export default function Checkout() {
   const { cart, clearCart } = useCart();
+
   const [cliente, setCliente] = useState({
     nome: "",
     email: "",
