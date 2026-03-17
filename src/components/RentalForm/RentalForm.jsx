@@ -24,7 +24,7 @@ export default function RentalForm({ backgroundColor = "#f7f3ed" }) {
 
     try {
       const controller = new AbortController();
-      const timeoutId = setTimeout(() => controller.abort(), 15000);
+      const timeoutId = setTimeout(() => controller.abort(), 60000);
 
       const res = await fetch(`${API_URL}/api/send-email`, {
         method: "POST",
