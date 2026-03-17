@@ -7,7 +7,6 @@ const BACKEND_URL = "https://toffas-backend.onrender.com";
 
 export default function Checkout() {
   const { cart, clearCart } = useCart();
-
   const [cliente, setCliente] = useState({
     nome: "",
     email: "",
