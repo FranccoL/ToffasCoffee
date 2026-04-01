@@ -121,8 +121,8 @@ const [toastVisible, setToastVisible] = useState(false);
     route: "/LeitePo",
     variantes: {
       "250g": { preco: "R$ 15,90", dbId: 18 },
-      "500g": { preco: "R$ 27,90", dbId: 19 },
-      "1kg":  { preco: "R$ 49,90", dbId: 20 },
+      "500g": { preco: "R$ 30,74", dbId: 19 },
+      "1kg":  { preco: "R$ 61,48", dbId: 20 },
     },
   },
   {
