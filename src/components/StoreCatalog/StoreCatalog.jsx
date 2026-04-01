@@ -133,7 +133,7 @@ const [toastVisible, setToastVisible] = useState(false);
     imagem: "/limao.svg",
     route: "/chaL",
     variantes: {
-      "250g": { preco: "R$ 11,66", dbId: 21 },
+      "250g": { preco: "R$ 13,25", dbId: 21 },
       "500g": { preco: "R$ 25,97", dbId: 22 },
       "1kg":  { preco: "R$ 47,55", dbId: 23 },
     },
@@ -146,7 +146,7 @@ const [toastVisible, setToastVisible] = useState(false);
     imagem: "/pessego.svg",
     route: "/chaP",
     variantes: {
-      "250g": { preco: "R$ 11,66", dbId: 24 },
+      "250g": { preco: "R$ 13,25", dbId: 24 },
       "500g": { preco: "R$ 25,97", dbId: 25 },
       "1kg":  { preco: "R$ 47,55", dbId: 26 },  // ⚠️ CONFIRME este ID no banco
     },
@@ -159,7 +159,7 @@ const [toastVisible, setToastVisible] = useState(false);
     imagem: "/frutas.svg",
     route: "/chaV",
     variantes: {
-      "250g": { preco: "R$ 11,66", dbId: 27 },  // ⚠️ CONFIRME este ID no banco
+      "250g": { preco: "R$ 13,25", dbId: 27 },  // ⚠️ CONFIRME este ID no banco
       "500g": { preco: "R$ 25,97", dbId: 28 },  // ⚠️ CONFIRME este ID no banco
       "1kg":  { preco: "R$ 47,55", dbId: 29 },  // ⚠️ CONFIRME este ID no banco
     },
