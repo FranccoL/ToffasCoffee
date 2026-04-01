@@ -8,6 +8,6 @@ export default defineConfig({
     outDir: 'dist',
   },
   server: {
-    historyApiFallback: true, k
+    historyApiFallback: true,
   },
 });
