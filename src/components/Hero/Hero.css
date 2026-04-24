@@ -240,8 +240,8 @@
   /* ================= SLIDE 1 MOBILE ================= */
   .slide-1 {
     background-image: url('/pistacheM.svg') !important;
-    background-position: center 75% !important;
-    background-size: 100% !important;
+    
+    background-size: 130% !important;
   }
 
   .slide-1 .hero-text {
@@ -259,26 +259,27 @@
   }
 
   .slide-1 .btHero {
-    height: 11px;
-    width: 130px;
+    height: 30px;
+    width: 190px;
     font-size: 15px;
-    margin-bottom: 14px;
-    margin-right: 118px;
+    margin-bottom: 18px;
+    margin-right: 112px;
   }
 
   /* ================= SLIDE 2 MOBILE ================= */
   .slide-2 {
     background-image: url('/aluguelMaquinaM.svg') !important;
     background-position: center 70% !important;
-    background-size: 100% !important;
+    background-size: 130% !important;
+   
   }
 
  .slide-2 .hero-text {
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Empurra o topo para cima e o resto para baixo */
-    height: 80%; /* Ajuste essa altura conforme o tamanho da sua imagem de fundo */
-    padding: 40px 20px; /* Dá um respiro nas bordas */
+    justify-content: space-between; 
+    height: 80%; 
+    padding: 40px 20px; 
   }
 
   /* Título no topo */
@@ -288,20 +289,20 @@
     text-align: center;
   }
 
-  /* Container para agrupar H2 e Botão na parte de baixo */
+  
   .slide-2 .hero-text h2, 
   .slide-2 .hero-text .btHero {
     text-align: center;
-    margin-left: 0 !important; /* Remove os 50px de margem que você tinha antes */
+    margin-left: 0 !important; 
     margin-right: 0 !important;
   }
 
   .slide-2 .hero-text h2 {
     font-size: 15px !important;
-    margin-top: 260px;
+    margin-top: 460px;
   }
 
-  /* Ajuste do botão para mobile */
+  /* botão para mobile */
   .slide-2 .hero-text .btHero {
     width: fit-content;
     align-self: center; 
@@ -312,9 +313,9 @@
 
   /* ================= SLIDE 3 MOBILE ================= */
   .slide-3 {
-    background-image: url('/ChoSuicoM.svg') !important;
-    background-position: center 45% !important;
-    background-size: 100% !important;
+    background-image: url('/chocolateSuicoM.svg') !important;
+
+    background-size: 130% !important;
   }
 
   .slide-3 .hero-text h1 {
@@ -328,7 +329,7 @@
     height: 20px;
     width: 120px;
     align-items: center;
-    margin-top: 200px;
+    margin-top: 400px;
     margin-left: -5px;
   }
 
