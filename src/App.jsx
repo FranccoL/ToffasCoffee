@@ -28,7 +28,9 @@ import ChaL from "./pages/ChaL";
 import HotDrinks from "./pages/BebidasQuentes";
 import Cappuccino from "./pages/Cappuccino";
 import CappuccinoSA from "./pages/CappuccinoSA";
+import CappPist from "./pages/CappPist";
 import Chocolate from "./pages/Chocolate";
+import Suico from "./pages/Suico";
 import LeitePo from "./pages/LeitePo";
 import NossosProdutos from "./pages/NossosProdutos";
 import QuemSomos from "./pages/QuemSomos";
@@ -67,7 +69,9 @@ function App() {
             <Route path="/bebidasQuentes" element={<HotDrinks />} />
             <Route path="/cappuccino" element={<Cappuccino />} />
             <Route path="/cappuccinoSA" element={<CappuccinoSA />} />
+            <Route path="/cappPist" element={<CappPist />} />
             <Route path="/chocolate" element={<Chocolate />} />
+            <Route path="/suico" element={<Suico />} />
             <Route path="/leitePo" element={<LeitePo />} />
             <Route path="/produtos" element={<NossosProdutos />} />
             <Route path="/quemSomos" element={<QuemSomos />} />

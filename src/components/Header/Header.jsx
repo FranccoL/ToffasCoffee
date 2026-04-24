@@ -172,8 +172,10 @@ function Header() {
 
                                 <div className={`dropdown-content ${isDrinksDropdownOpen ? "visible" : ""}`}>
                                     <Link to="/cappuccino" onClick={handleLinkClick}>Cappuccino</Link>
+                                    <Link to="/cappPist" onClick={handleLinkClick}>Cappuccino de Pistache</Link>
                                     <Link to="/cappuccinoSA" onClick={handleLinkClick}>Cappuccino s/ Açúcar</Link>
                                     <Link to="/chocolate" onClick={handleLinkClick}>Chocolate</Link>
+                                    <Link to="/suico" onClick={handleLinkClick}>Chocolate Suiço</Link>
                                     <Link to="/leitePo" onClick={handleLinkClick}>Leite em Pó</Link>
                                 </div>
                             </li>

@@ -11,23 +11,24 @@ const slidesData = [
   {
     id: 1,
     title: "Conheça nossos Cafés Especiais",
-    backgroundUrl: "/bannerCaffe.svg",
-    ctaText: "Compre Agora!",
-    ctaLink: "/cafe"
+    backgroundUrl: "/capPistache.svg",
+    ctaText: "Peça o seu!",
+    ctaLink: "/cappPist"
   },
   {
     id: 2,
-    title: "Aluguel de Máquinas para sua Empresa",
+    title: <>O AUTÊNTICO SABOR DO <span className="highlight">CAFÉ</span> EM SEU <span className="highlight">ESCRITÓRIO</span></>,
+    subtitle: "Aluguel de máquinas: tecnologia de ponta e café premium no seu escritório.",
     backgroundUrl: "/bannerMaquina.svg",
-    ctaText: "Conheça as Máquinas",
+    ctaText: "Conheça Mais!",
     ctaLink: "/aluguel"
   },
   {
     id: 3,
-    title: "Chás Premium: Sabores que Encantam",
-    backgroundUrl: "/bannerChaa.svg",
-    ctaText: "Comprar Agora",
-    ctaLink: "/cha"
+    title: "Uma experiência cremosa que derrete no paladar.",
+    backgroundUrl: "/suico.svg",
+    ctaText: "Comprar Agora!",
+    ctaLink: "/suico"
   }
 ];
 
@@ -62,7 +63,7 @@ function Hero() {
             >
               <div className="hero-text">
                 <h1>{slide.title}</h1>
-
+                {slide.subtitle && <h2 className="hero-subtitle">{slide.subtitle}</h2>}
                 <Link
                   to={slide.ctaLink}
                   className="btHero"

@@ -126,8 +126,10 @@
 }
 
 .hotdrinks-icon.brown { background: #6b4b1c; }
+.hotdrinks-icon.pistache { background: #1ba103; }
 .hotdrinks-icon.green { background: #ff630f; }
 .hotdrinks-icon.chocolate { background: #8d6e63; }
+.hotdrinks-icon.suico { background: #c73906; }
 .hotdrinks-icon.leite { background: #2197ff; }
 
 .hotdrinks-grid-item h3 {

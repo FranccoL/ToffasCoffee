@@ -11,11 +11,11 @@
   height: 100%;
 }
 
+/* BASE GERAL DOS SLIDES */
 .hero-slide {
   width: 100%;
   height: 100vh;
   background-size: cover;
-  background-position: center;
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
@@ -34,7 +34,7 @@
   gap: 22px;
   max-width: 650px;
   color: #ffffff;
-  text-shadow: 0 3px 8px rgba(0,0,0,0.55);
+  text-shadow: 0 3px 8px rgba(0, 0, 0, 0.55);
 }
 
 .hero-text h1 {
@@ -60,26 +60,143 @@
 
 /* ================= CUSTOMIZAÇÃO SLIDES (DESKTOP) ================= */
 
-/* Slide 1 */
+/* ================= SLIDE 1 ================= */
+.slide-1 {
+  background-position: center 75%;
+  background-size: 100%;
+
+}
 .slide-1 .hero-text h1 {
   font-size: 46px;
   font-weight: 800;
   text-transform: uppercase;
+  visibility: hidden;
 }
-.slide-1 .btHero { background-color: #ffffff; color: #1a1a1a; }
+.slide-1 .btHero {
+  background-color: #515533;
+  color: #F5E7D9;
+  border-radius: 30px;
+  width: 250px;
+  height: 45px;
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-top: 330px;
+  margin-left: 120px;
+  
+  transition: all 0.35s ease;
+  cursor: pointer;
+}
 
-/* Slide 2 */
-.slide-2 .hero-text h1 { font-size: 40px; }
-.slide-2 .btHero { background-color: #201e1d; }
 
-/* SLIDE 3 - O QUE VOCÊ QUERIA MUDAR NO DESKTOP */
-.slide-3 .hero-text h1 {
-  font-size: 62px; 
-  font-weight: 800;
-  line-height: 1.15;
+.slide-1 .btHero:hover {
+  background-color: #3f4227; 
+  transform: translateY(-4px) scale(1.03);
+  box-shadow: 0 12px 28px rgba(81, 85, 51, 0.35);
+  
+}
+
+
+.slide-1 .btHero:active {
+  transform: translateY(-1px) scale(0.98);
+}
+
+/* ================= SLIDE 2 ================= */
+.slide-2 {
+  background-position: center 70%;
+  background-size: 100%;
+}
+.slide-2 .hero-text h1 {
+  font-family: "Serifa Moderna", serif;
+  font-size: 50px;
   color: #ffffff;
+  max-width: 700px;
+  line-height: 100%;
+  margin-bottom: 100px;
 }
-.slide-3 .btHero { background-color: #e65b0a; }
+.slide-2 .hero-text .highlight {
+  color: #D4A373; 
+}
+.slide-2 .hero-text h2 {
+  font-size: 25px;
+  max-width: 500px;
+  color: #ffffff;
+  font-weight: 100;
+  margin-top: -100px;
+  letter-spacing: 2px;
+}
+
+
+.slide-2 .btHero {
+  background-color: #201e1d;
+  margin-top: 50px;
+  margin-left: 50px;
+  
+  
+  display: inline-block;
+  padding: 15px 35px;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.2); 
+  
+
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.slide-2 .btHero:hover {
+  background-color: #3d3a38; 
+  border-color: #ffffff; 
+  transform: translateY(-3px); 
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5); 
+  letter-spacing: 1px; 
+}
+/* ================= SLIDE 3 ================= */
+.slide-3 {
+  background-position: center 55%;
+  background-size: 100%;
+   
+}
+
+.slide-3 .hero-text h1 {
+  margin-top: 300px;
+  font-size: 20px;
+  font-weight: 700;
+  color: #ca2121;
+  margin-bottom: 30px; 
+  letter-spacing: 1.5px; 
+  max-width: 900px; 
+  text-shadow: none;
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-underline-offset: 10px;
+  text-decoration-color: #02254B;
+  text-decoration-thickness: 2px;
+  
+}
+
+.slide-3 .btHero {
+  background-color: #02254B;
+  margin-left: 120px;
+  width: 200px;
+  height: 45px;
+  border-radius: 20px;
+  font-size: 27px;
+  transition: all 0.35s ease;
+  cursor: pointer;
+}
+.slide-3 .btHero:hover {
+  background-color: #8f0909; /* tom mais escuro */
+  transform: translateY(-4px) scale(1.03); /* sobe levemente */
+  box-shadow: 0 12px 28px rgba(186, 13, 13, 0.35);
+}
+
+/* clique */
+.slide-3 .btHero:active {
+  transform: translateY(-1px) scale(0.98);
+}
 
 /* ================= WHATSAPP & CONTROLES ================= */
 .whatsapp-fly {
@@ -92,14 +209,25 @@
   border-radius: 50%;
   display: flex;
 }
-.whatsapp-icon { width: 40px; height: 40px; }
-.swiper-button-prev, .swiper-button-next { color: #ffffff !important; }
-.swiper-pagination-bullet-active { background: #91490B !important; }
+
+.whatsapp-icon {
+  width: 40px;
+  height: 40px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: #ffffff !important;
+}
+
+.swiper-pagination-bullet-active {
+  background: #91490B !important;
+}
 
 /* ================= VERSÃO MOBILE ================= */
 @media (max-width: 768px) {
-  
-  /* Reset geral para mobile */
+
+  /* Reset geral mobile */
   .hero-text {
     left: 50%;
     top: 50%;
@@ -109,8 +237,13 @@
     width: 90%;
   }
 
-  /* SLIDE 1 MOBILE */
-  .slide-1 { background-image: url('/cafemb.svg') !important; background-position: center !important; }
+  /* ================= SLIDE 1 MOBILE ================= */
+  .slide-1 {
+    background-image: url('/pistacheM.svg') !important;
+    background-position: center 75% !important;
+    background-size: 100% !important;
+  }
+
   .slide-1 .hero-text {
     height: 80vh;
     display: flex;
@@ -119,25 +252,93 @@
     position: absolute;
     top: 60%;
   }
-  .slide-1 .hero-text h1 { font-size: 28px !important; margin: 0 !important; }
-  .slide-1 .btHero { margin: 0 0 40px 0 !important; }
 
-  /* SLIDE 2 MOBILE */
-  .slide-2 { background-image: url('/bannerCelular.png') !important; background-position: center !important; }
+  .slide-1 .hero-text h1 {
+    font-size: 28px !important;
+    margin: 0 !important;
+  }
+
+  .slide-1 .btHero {
+    height: 11px;
+    width: 130px;
+    font-size: 15px;
+    margin-bottom: 14px;
+    margin-right: 118px;
+  }
+
+  /* ================= SLIDE 2 MOBILE ================= */
+  .slide-2 {
+    background-image: url('/aluguelMaquinaM.svg') !important;
+    background-position: center 70% !important;
+    background-size: 100% !important;
+  }
+
+ .slide-2 .hero-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Empurra o topo para cima e o resto para baixo */
+    height: 80%; /* Ajuste essa altura conforme o tamanho da sua imagem de fundo */
+    padding: 40px 20px; /* Dá um respiro nas bordas */
+  }
+
+  /* Título no topo */
   .slide-2 .hero-text h1 {
     font-size: 25px !important;
-    margin-top: 400px !important; /* Seu margin-top original */
+    margin-top: 50px;
+    text-align: center;
   }
 
-  /* SLIDE 3 MOBILE */
-  .slide-3 { background-image: url('/bannerChaa.svg') !important; background-position: center !important; }
+  /* Container para agrupar H2 e Botão na parte de baixo */
+  .slide-2 .hero-text h2, 
+  .slide-2 .hero-text .btHero {
+    text-align: center;
+    margin-left: 0 !important; /* Remove os 50px de margem que você tinha antes */
+    margin-right: 0 !important;
+  }
+
+  .slide-2 .hero-text h2 {
+    font-size: 15px !important;
+    margin-top: 260px;
+  }
+
+  /* Ajuste do botão para mobile */
+  .slide-2 .hero-text .btHero {
+    width: fit-content;
+    align-self: center; 
+    margin-top: 0px;
+    margin-bottom: 20px;
+  }
+
+
+  /* ================= SLIDE 3 MOBILE ================= */
+  .slide-3 {
+    background-image: url('/ChoSuicoM.svg') !important;
+    background-position: center 45% !important;
+    background-size: 100% !important;
+  }
+
   .slide-3 .hero-text h1 {
-    font-size: 35px !important;
-    margin-bottom: 350px !important; /* Seu margin-bottom original */
-    width: 320px; /* Ajustado para caber no celular */
+    font-size: 15px !important;
+    visibility: hidden;
+    width: 320px;
   }
-  .slide-3 .btHero { font-size: 20px; }
 
-  .whatsapp-fly { left: 20px; bottom: 30px; }
-  .whatsapp-icon { width: 34px; height: 34px; }
+  .slide-3 .btHero {
+    font-size: 15px;
+    height: 20px;
+    width: 120px;
+    align-items: center;
+    margin-top: 200px;
+    margin-left: -5px;
+  }
+
+  .whatsapp-fly {
+    left: 20px;
+    bottom: 30px;
+  }
+
+  .whatsapp-icon {
+    width: 34px;
+    height: 34px;
+  }
 }

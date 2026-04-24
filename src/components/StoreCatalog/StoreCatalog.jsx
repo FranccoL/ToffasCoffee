@@ -39,7 +39,7 @@ const [toastVisible, setToastVisible] = useState(false);
   {
     id: "cafe-graos",
     category: "coffee",
-    nome: "Café Toffa's Torrado em Grãos",
+    nome: "Café Torrado em Grãos - Toffa's Coffee",
     descricao: "Blend 100% arábica.",
     imagem: "/grao1.svg",
     route: "/cafeGrao",
@@ -52,7 +52,7 @@ const [toastVisible, setToastVisible] = useState(false);
   {
     id: "cafe-moido",
     category: "coffee",
-    nome: "Café Toffa's Torrado e Moído",
+    nome: "Café Torrado e Moído - Toffa's Coffee",
     descricao: "Blend 100% arábica.",
     imagem: "/cafemoido.svg",
     route: "/cafeMoido",
@@ -63,7 +63,7 @@ const [toastVisible, setToastVisible] = useState(false);
   {
     id: "cafe-premium",
     category: "coffee",
-    nome: "Café Toffa's Premium",
+    nome: "Café Premium - Toffa's Coffee",
     descricao: "Seleção especial de grãos de altitude.",
     imagem: "/premium.svg",
     route: "/cafePremium",
@@ -76,7 +76,7 @@ const [toastVisible, setToastVisible] = useState(false);
   {
     id: "chocolate",
     category: "bebidasquentes",
-    nome: "Chocolate Toffa's Coffee",
+    nome: "Chocolate - Toffa's Coffee",
     descricao: "Produto solúvel.",
     imagem: "/chocolate1.svg",
     route: "/chocolate",
@@ -87,9 +87,22 @@ const [toastVisible, setToastVisible] = useState(false);
     },
   },
   {
+    id: "suico",
+    category: "bebidasquentes",
+    nome: "Chocolate Suiço - Toffa's Coffee",
+    descricao: "Produto solúvel.",
+    imagem: "/chocolateSuico.svg",
+    route: "/suico",
+    variantes: {
+      "250g": { preco: "R$ 23,95", dbId: 33 },
+      "500g": { preco: "R$ 45,50", dbId: 34 },
+      "1kg":  { preco: "R$ 88,62", dbId: 35 },
+    },
+  },
+  {
     id: "cappuccino",
     category: "bebidasquentes",
-    nome: "Cappuccino Toffa's Coffee",
+    nome: "Cappuccino - Toffa's Coffee",
     descricao: "Produto solúvel.",
     imagem: "/grao 1.svg",
     route: "/cappuccino",
@@ -100,9 +113,22 @@ const [toastVisible, setToastVisible] = useState(false);
     },
   },
   {
+    id: "pistache",
+    category: "bebidasquentes",
+    nome: "Cappuccino de Pistache - Toffa's Coffee",
+    descricao: "Produto solúvel.",
+    imagem: "/pistache.svg",
+    route: "/cappPist",
+    variantes: {
+      "250g": { preco: "R$ 23,40", dbId: 30 },
+      "500g": { preco: "R$ 39,15", dbId: 31 },
+      "1kg":  { preco: "R$ 73,85", dbId: 32 },
+    },
+  },
+  {
     id: "cappuccino-zero",
     category: "bebidasquentes",
-    nome: "Cappuccino Toffa's Coffee - Zero Açúcar",
+    nome: "Cappuccino Zero Açúcar - Toffa's Coffee",
     descricao: "Produto solúvel.",
     imagem: "/capp.svg",
     route: "/cappuccinoSA",
@@ -115,7 +141,7 @@ const [toastVisible, setToastVisible] = useState(false);
   {
     id: "leite-po",
     category: "bebidasquentes",
-    nome: "Leite em Pó Toffa's Coffee",
+    nome: "Leite em Pó - Toffa's Coffee",
     descricao: "Produto solúvel.",
     imagem: "/leite.png",
     route: "/LeitePo",
@@ -128,7 +154,7 @@ const [toastVisible, setToastVisible] = useState(false);
   {
     id: "cha-limao",
     category: "tea",
-    nome: "Chá Mate de Limão Toffa's",
+    nome: "Chá Mate de Limão - Toffa's Coffee",
     descricao: "Blend aromático e revigorante.",
     imagem: "/limao.svg",
     route: "/chaL",
@@ -141,7 +167,7 @@ const [toastVisible, setToastVisible] = useState(false);
   {
     id: "cha-pessego",
     category: "tea",
-    nome: "Chá Mate de Pêssego Toffa's",
+    nome: "Chá Mate de Pêssego - Toffa's Coffee",
     descricao: "Blend aromático e revigorante.",
     imagem: "/pessego.svg",
     route: "/chaP",
@@ -154,7 +180,7 @@ const [toastVisible, setToastVisible] = useState(false);
   {
     id: "cha-frutas",
     category: "tea",
-    nome: "Chá Preto de Frutas Vermelhas Toffa's",
+    nome: "Chá Preto de Frutas Vermelhas - Toffa's Coffee",
     descricao: "Blend aromático e revigorante.",
     imagem: "/frutas.svg",
     route: "/chaV",

@@ -49,6 +49,17 @@ export default function HotDrinks() {
     </Link>
   </div>
 
+  {/* CAPPUCCINO PISTACHE*/}
+  <div className="hotdrinks-grid-item">
+    <Link to="/cappPist" className="hotdrink-link">
+      <div className="hotdrinks-icon pistache">
+        <GiCoffeeCup size={36} />
+      </div>
+      <h3>Cappuccino Pistache</h3>
+      <p>Textura extremamente cremosa e o sabor marcante.</p>
+    </Link>
+  </div>
+
   {/* CAPPUCCINO SEM AÇÚCAR */}
   <div className="hotdrinks-grid-item">
     <Link to="/cappuccinoSA" className="hotdrink-link">
@@ -71,9 +82,20 @@ export default function HotDrinks() {
     </Link>
   </div>
 
+   {/* CHOCOLATE SUIÇO */}
+  <div className="hotdrinks-grid-item">
+    <Link to="/suico" className="hotdrink-link">
+      <div className="hotdrinks-icon suico">
+        <GiChocolateBar size={36} />
+      </div>
+      <h3>Chocolate Suiço</h3>
+      <p>Delicioso e cremoso, ideal para qualquer hora do dia.</p>
+    </Link>
+  </div>
+
   {/* LEITE */}
   <div className="hotdrinks-grid-item">
-    <Link to="/leite" className="hotdrink-link">
+    <Link to="/leitePo" className="hotdrink-link">
       <div className="hotdrinks-icon leite">
         <GiMilkCarton size={36} />
       </div>
