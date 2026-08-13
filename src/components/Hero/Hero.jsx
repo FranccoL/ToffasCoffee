@@ -10,10 +10,10 @@ import 'swiper/css/navigation';
 const slidesData = [
   {
     id: 1,
-    title: "Conheça nossos Cafés Especiais",
-    backgroundUrl: "/capPistache.svg",
-    ctaText: "Peça o seu!",
-    ctaLink: "/cappPist"
+    title: "TESTE",
+    backgroundUrl: "/group-914.svg",
+    ctaText: "Ver Produto!",
+    ctaLink: "/cafeMoido"
   },
   {
     id: 2,
@@ -26,9 +26,9 @@ const slidesData = [
   {
     id: 3,
     title: "Uma experiência cremosa que derrete no paladar.",
-    backgroundUrl: "/suico.svg",
+    backgroundUrl: "/group915.svg",
     ctaText: "Comprar Agora!",
-    ctaLink: "/suico"
+    ctaLink: "/chocolate"
   }
 ];
 

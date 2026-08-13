@@ -62,8 +62,10 @@
 
 /* ================= SLIDE 1 ================= */
 .slide-1 {
-  background-position: center 75%;
-  background-size: 100%;
+  background-size: cover;
+    background-position: 80% 1%;
+    background-repeat: no-repeat;
+    background-color: #F7F0E6;
 
 }
 .slide-1 .hero-text h1 {
@@ -73,15 +75,15 @@
   visibility: hidden;
 }
 .slide-1 .btHero {
-  background-color: #515533;
+  background-color: #894F1D;
   color: #F5E7D9;
   border-radius: 30px;
-  width: 250px;
-  height: 45px;
+  width: 150px;
+  height: 25px;
   font-size: 20px;
   text-transform: uppercase;
-  margin-top: 330px;
-  margin-left: 120px;
+  margin-top: 480px;
+  margin-left: 250px;
   
   transition: all 0.35s ease;
   cursor: pointer;
@@ -89,7 +91,7 @@
 
 
 .slide-1 .btHero:hover {
-  background-color: #3f4227; 
+  background-color: #c17533; 
   transform: translateY(-4px) scale(1.03);
   box-shadow: 0 12px 28px rgba(81, 85, 51, 0.35);
   
@@ -174,13 +176,14 @@
   text-underline-offset: 10px;
   text-decoration-color: #02254B;
   text-decoration-thickness: 2px;
-  
+  display: none;
 }
 
 .slide-3 .btHero {
-  background-color: #02254B;
+  background-color: #C8956D;
   margin-left: 120px;
-  width: 200px;
+  margin-top: 430px;
+  width: 220px;
   height: 45px;
   border-radius: 20px;
   font-size: 27px;
@@ -188,9 +191,9 @@
   cursor: pointer;
 }
 .slide-3 .btHero:hover {
-  background-color: #8f0909; /* tom mais escuro */
-  transform: translateY(-4px) scale(1.03); /* sobe levemente */
-  box-shadow: 0 12px 28px rgba(186, 13, 13, 0.35);
+  background-color: #7D5233; 
+  transform: translateY(-4px) scale(1.03); 
+  box-shadow: 0 12px 28px rgba(222, 145, 1, 0.35);
 }
 
 /* clique */
@@ -239,10 +242,11 @@
 
   /* ================= SLIDE 1 MOBILE ================= */
   .slide-1 {
-    background-image: url('/pistacheM.svg') !important;
-    background-size: cover !important;
-  background-position: center top !important;
-  background-repeat: no-repeat;
+    background-image: url('/group913.svg') !important;
+  background-size: cover !important;
+  background-position: 70% 60% !important;
+  background-repeat: no-repeat !important;
+  background-color: #f8f2ea;
   }
 
   .slide-1 .hero-text {
@@ -251,7 +255,7 @@
     flex-direction: column;
     justify-content: space-between;
     position: absolute;
-    top: 60%;
+    top: 3%;
   }
 
   .slide-1 .hero-text h1 {
@@ -262,9 +266,9 @@
   .slide-1 .btHero {
     height: 10px;
     width: 100px;
-    font-size: 15px;
-    margin-bottom: 30px;
-    margin-right: 112px;
+    font-size: 12px;
+    margin-bottom: -460px;
+    margin-right: 250px;
   }
 
   /* ================= SLIDE 2 MOBILE ================= */
@@ -281,7 +285,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between; 
-    height: 80%; 
+    height: 50%; 
     padding: 40px 20px; 
   }
 
@@ -289,18 +293,18 @@
  .slide-2 .hero-text {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end; /* joga conteúdo para baixo */
+  justify-content: flex-end; 
   align-items: center;
   height: 100%;
   padding: 40px 20px;
-  gap: 12px; /* espaço entre h2 e botão */
+  gap: 12px; 
 }
 
 /* título principal continua no topo */
 .slide-2 .hero-text h1 {
   font-size: 25px !important;
   margin-top: 150px;
-  margin-bottom: auto; /* empurra o resto para baixo */
+  margin-bottom: auto; 
   text-align: center;
 }
 
@@ -321,9 +325,9 @@
 
   /* ================= SLIDE 3 MOBILE ================= */
   .slide-3 {
-    background-image: url('/chocolateSuicoM.svg') !important;
+    background-image: url('/group917.svg') !important;
     background-size: cover !important;
-    background-position: center top !important;
+    background-position: 50% 90% !important;
     background-repeat: no-repeat;
   }
 
@@ -335,10 +339,10 @@
 
   .slide-3 .btHero {
     font-size: 15px;
-    height: 20px;
+    height: 10px;
     width: 120px;
     align-items: center;
-    margin-top: 200px;
+    margin-top: 750px;
     margin-left: -5px;
   }
 
@@ -352,3 +356,4 @@
     height: 34px;
   }
 }
+

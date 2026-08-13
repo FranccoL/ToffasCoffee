@@ -40,6 +40,7 @@ import Loja from "./pages/Loja";
 import Checkout from "./pages/Checkout/Checkout";
 import AdminCupom from "./pages/AdminCupom";
 import CookieConsent from "./components/CookieConsent/CookieConsent";
+import Assinatura from "./pages/Assinatura";
 
 //BACK_URLS
 import PedidoSucesso from "./pages/PedidoSucesso";
@@ -83,7 +84,7 @@ function App() {
             <Route path="/pedido/sucesso" element={<PedidoSucesso />} />
             <Route path="/pedido/falha" element={<PedidoFalha />} />
             <Route path="/pedido/pendente" element={<PedidoPendente />} />
-            
+            <Route path="/assinatura" element={<Assinatura />} />
             </Route>
 
           {/* ADMIN */}

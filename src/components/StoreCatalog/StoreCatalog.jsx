@@ -104,7 +104,7 @@ const [toastVisible, setToastVisible] = useState(false);
     category: "bebidasquentes",
     nome: "Cappuccino - Toffa's Coffee",
     descricao: "Produto solúvel.",
-    imagem: "/grao 1.svg",
+    imagem: "/capp.svg",
     route: "/cappuccino",
     variantes: {
       "250g": { preco: "R$ 17,03", dbId: 12 },
@@ -130,7 +130,7 @@ const [toastVisible, setToastVisible] = useState(false);
     category: "bebidasquentes",
     nome: "Cappuccino Zero Açúcar - Toffa's Coffee",
     descricao: "Produto solúvel.",
-    imagem: "/capp.svg",
+    imagem: "/cappA.svg",
     route: "/cappuccinoSA",
     variantes: {
       "250g": { preco: "R$ 29,13", dbId: 15 },
@@ -143,7 +143,7 @@ const [toastVisible, setToastVisible] = useState(false);
     category: "bebidasquentes",
     nome: "Leite em Pó - Toffa's Coffee",
     descricao: "Produto solúvel.",
-    imagem: "/leite.png",
+    imagem: "/leite.svg",
     route: "/LeitePo",
     variantes: {
       "250g": { preco: "R$ 15,90", dbId: 18 },

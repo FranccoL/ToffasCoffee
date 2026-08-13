@@ -42,7 +42,7 @@ NÃO CONTÉM GLÚTEN.
     id: "leite-toffas",
     nome: "Leite Toffa's Coffee",
     categoria: "bebidasquentes",
-    imagem: "/leite.png",
+    imagem: "/leite.svg",
   };
 
   return (
