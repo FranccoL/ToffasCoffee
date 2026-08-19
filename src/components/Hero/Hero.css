@@ -230,7 +230,7 @@
 /* ================= VERSÃO MOBILE ================= */
 @media (max-width: 768px) {
 
-  /* Reset geral mobile */
+  
   .hero-text {
     left: 50%;
     top: 50%;
@@ -238,90 +238,74 @@
     align-items: center;
     text-align: center;
     width: 90%;
+   
+    height: 100%; 
+    padding: 40px 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; 
   }
 
   /* ================= SLIDE 1 MOBILE ================= */
   .slide-1 {
     background-image: url('/group913.svg') !important;
-  background-size: cover !important;
-  background-position: 70% 60% !important;
-  background-repeat: no-repeat !important;
-  background-color: #f8f2ea;
+    background-size: cover !important;
+    background-position: 70% 60% !important;
+    background-repeat: no-repeat !important;
+    background-color: #f8f2ea;
   }
 
   .slide-1 .hero-text {
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: absolute;
-    top: 3%;
+    
+    justify-content: flex-end; 
   }
 
   .slide-1 .hero-text h1 {
     font-size: 28px !important;
-    margin: 0 !important;
+    margin-top: auto; 
+    margin-bottom: auto; 
   }
 
   .slide-1 .btHero {
-    height: 10px;
-    width: 100px;
-    font-size: 12px;
-    margin-bottom: -360px;
-    margin-right: 250px;
+    
+    padding: 12px 24px; 
+    font-size: 14px;
+    width: fit-content;
+    align-self: center;
+    margin: 0 0 1px 0 !important; 
   }
 
   /* ================= SLIDE 2 MOBILE ================= */
   .slide-2 {
     background-image: url('/aluguelMaquinaM.svg') !important;
-    background-position: center 70% !important;
-    background-size: cover !important;
     background-position: center top !important;
+    background-size: cover !important;
     background-repeat: no-repeat;
-   
   }
 
- .slide-2 .hero-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; 
-    height: 50%; 
-    padding: 40px 20px; 
+  .slide-2 .hero-text {
+    gap: 12px; 
   }
 
-  /* Título no topo */
- .slide-2 .hero-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end; 
-  align-items: center;
-  height: 100%;
-  padding: 40px 20px;
-  gap: 12px; 
-}
+  .slide-2 .hero-text h1 {
+    font-size: 25px !important;
+    margin-top: auto; 
+    margin-bottom: auto; 
+    text-align: center;
+  }
 
-/* título principal continua no topo */
-.slide-2 .hero-text h1 {
-  font-size: 25px !important;
-  margin-top: 150px;
-  margin-bottom: auto; 
-  text-align: center;
-}
+  .slide-2 .hero-text h2 {
+    font-size: 15px !important;
+    text-align: center;
+    margin: 0;
+  }
 
-/* subtítulo */
-.slide-2 .hero-text h2 {
-  font-size: 15px !important;
-  text-align: center;
-  margin: 0;
-}
-
-/* botão */
-.slide-2 .hero-text .btHero {
-  width: fit-content;
-  align-self: center;
-  margin: 0 0 20px 0;
-}
-
+  .slide-2 .btHero {
+    width: fit-content;
+    align-self: center;
+    margin: 0 0 20px 0 !important;
+  }
 
   /* ================= SLIDE 3 MOBILE ================= */
   .slide-3 {
@@ -331,21 +315,28 @@
     background-repeat: no-repeat;
   }
 
+  .slide-3 .hero-text {
+    justify-content: flex-end;
+  }
+
   .slide-3 .hero-text h1 {
     font-size: 15px !important;
     visibility: hidden;
     width: 320px;
+    margin-top: auto;
+    margin-bottom: auto;
   }
 
   .slide-3 .btHero {
+    padding: 12px 24px; 
     font-size: 15px;
-    height: 10px;
-    width: 120px;
-    align-items: center;
-    margin-top: 650px;
-    margin-left: -5px;
+    height: 15px;
+    width: fit-content;
+    align-self: center;
+    margin: 0 0 -12px 0 !important; 
   }
 
+  /* ================= WHATSAPP & CONTROLES ================= */
   .whatsapp-fly {
     left: 20px;
     bottom: 30px;
@@ -356,4 +347,3 @@
     height: 34px;
   }
 }
-
