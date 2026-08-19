@@ -94,9 +94,9 @@ const [toastVisible, setToastVisible] = useState(false);
     imagem: "/chocolateSuico.svg",
     route: "/suico",
     variantes: {
-      "250g": { preco: "R$ 23,95", dbId: 33 },
-      "500g": { preco: "R$ 45,50", dbId: 34 },
-      "1kg":  { preco: "R$ 88,62", dbId: 35 },
+      "250g": { preco: "R$ 26,95", dbId: 33 },
+      "500g": { preco: "R$ 47,50", dbId: 34 },
+      "1kg":  { preco: "R$ 89,00", dbId: 35 },
     },
   },
   {
@@ -107,9 +107,9 @@ const [toastVisible, setToastVisible] = useState(false);
     imagem: "/capp.svg",
     route: "/cappuccino",
     variantes: {
-      "250g": { preco: "R$ 17,03", dbId: 12 },
+      "250g": { preco: "R$ 17,53", dbId: 12 },
       "500g": { preco: "R$ 33,87", dbId: 13 },
-      "1kg":  { preco: "R$ 63,33", dbId: 14 },
+      "1kg":  { preco: "R$ 67,00", dbId: 14 },
     },
   },
   {
@@ -159,9 +159,9 @@ const [toastVisible, setToastVisible] = useState(false);
     imagem: "/limao.svg",
     route: "/chaL",
     variantes: {
-      "250g": { preco: "R$ 13,25", dbId: 21 },
-      "500g": { preco: "R$ 25,97", dbId: 22 },
-      "1kg":  { preco: "R$ 47,55", dbId: 23 },
+      "250g": { preco: "R$ 16,25", dbId: 21 },
+      "500g": { preco: "R$ 29,97", dbId: 22 },
+      "1kg":  { preco: "R$ 54,00", dbId: 23 },
     },
   },
   {
@@ -172,9 +172,9 @@ const [toastVisible, setToastVisible] = useState(false);
     imagem: "/pessego.svg",
     route: "/chaP",
     variantes: {
-      "250g": { preco: "R$ 13,25", dbId: 24 },
-      "500g": { preco: "R$ 25,97", dbId: 25 },
-      "1kg":  { preco: "R$ 47,55", dbId: 26 },  
+      "250g": { preco: "R$ 16,25", dbId: 24 },
+      "500g": { preco: "R$ 29,97", dbId: 25 },
+      "1kg":  { preco: "R$ 54,00", dbId: 26 },  
     },
   },
   {
@@ -185,9 +185,9 @@ const [toastVisible, setToastVisible] = useState(false);
     imagem: "/frutas.svg",
     route: "/chaV",
     variantes: {
-      "250g": { preco: "R$ 13,25", dbId: 27 },  
-      "500g": { preco: "R$ 25,97", dbId: 28 },  
-      "1kg":  { preco: "R$ 47,55", dbId: 29 },  
+      "250g": { preco: "R$ 16,25", dbId: 27 },  
+      "500g": { preco: "R$ 29,97", dbId: 28 },  
+      "1kg":  { preco: "R$ 54,00", dbId: 29 },  
     },
   },
 ];

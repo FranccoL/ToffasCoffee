@@ -349,11 +349,29 @@ const validarCpf = (cpf) => {
 
           <input name="nome" placeholder="Nome Completo *" value={cliente.nome} onChange={handleChange} />
           <input name="email" placeholder="E-mail *" value={cliente.email} onChange={handleChange} onBlur={(e) => buscarClientePorEmail(e.target.value)} />
-          <input name="cpf" placeholder="CPF *"value={cliente.cpf} onChange={(e) =>setCliente((prev) => ({...prev,cpf: formatarCpf(e.target.value),}))}/>
+          <div className="campo-cpf">
+  <input
+    name="cpf"
+    placeholder="CPF *"
+    value={cliente.cpf}
+    onChange={(e) =>
+      setCliente((prev) => ({
+        ...prev,
+        cpf: formatarCpf(e.target.value),
+      }))
+    }
+  />
+
+  {cliente.cpf && !validarCpf(cliente.cpf) && (
+    <small className="cpf-erro">
+      CPF inválido
+    </small>
+  )}
+</div>
           <input name="telefone" placeholder="Telefone/Celular" value={cliente.telefone} onChange={(e) => setCliente((prev) => ({ ...prev, telefone: formatarTelefone(e.target.value) }))} />
           
 
-              {cliente.cpf && !validarCpf(cliente.cpf) && (<small style={{ color: "red" }}>CPF inválido</small>)}
+              
           <div className="cep-container">
             <input
               name="cep"
