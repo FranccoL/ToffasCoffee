@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./RentalForm.css";
 import { CheckCircle } from "lucide-react";
 
-export default function RentalForm({ backgroundColor = "#f7f3ed" }) {
+export default function RentalForm({ backgroundColor = "#1A1311" }) {
   const [activeTab, setActiveTab] = useState("company");
   const [successMessage, setSuccessMessage] = useState("");
 
@@ -73,56 +73,67 @@ export default function RentalForm({ backgroundColor = "#f7f3ed" }) {
     >
       <div className="rental-form-container">
         <div className="rental-form-header">
-          <h2>Solicite um Orçamento</h2>
+          <span className="eyebrow-text">Solicite sua proposta</span>
+          <h2>Vamos escolher a máquina ideal para você</h2>
           <p>
-            Preencha o formulário abaixo e nossos especialistas entrarão em
-            contato.
+            Preencha os dados abaixo e nossa equipe entra em contato
+            com a proposta de locação mais adequada ao seu consumo.
           </p>
         </div>
 
-        <div className="rental-tabs">
-          <button
-            type="button"
-            className={`tab-trigger ${
-              activeTab === "company" ? "active" : ""
-            }`}
-            onClick={() => setActiveTab("company")}
-          >
-            Sou Empresa
-          </button>
+        <div className="rental-tabs-container">
+          <div className="rental-tabs">
+            <button
+              type="button"
+              className={`tab-trigger ${
+                activeTab === "company" ? "active" : ""
+              }`}
+              onClick={() => setActiveTab("company")}
+            >
+              Empresa
+            </button>
 
-          <button
-            type="button"
-            className={`tab-trigger ${
-              activeTab === "person" ? "active" : ""
-            }`}
-            onClick={() => setActiveTab("person")}
-          >
-            Sou Pessoa Física
-          </button>
+            <button
+              type="button"
+              className={`tab-trigger ${
+                activeTab === "person" ? "active" : ""
+              }`}
+              onClick={() => setActiveTab("person")}
+            >
+              Pessoa Física
+            </button>
+          </div>
         </div>
 
         <div className="rental-form-content">
           {/* FORMULÁRIO EMPRESA */}
           {activeTab === "company" && (
             <form onSubmit={handleSubmit} className="form-body form-company">
-              <div className="form-grid">
-                <div className="form-group">
-                  <label>Nome da Empresa</label>
-                  <input
-                    type="text"
-                    name="empresa"
-                    placeholder="Sua empresa"
-                    required
-                  />
-                </div>
+              
+              <div className="form-group full-width">
+                <label>Razão Social / Nome da Empresa</label>
+                <input
+                  type="text"
+                  name="empresa"
+                  required
+                />
+              </div>
 
+              <div className="form-grid">
                 <div className="form-group">
                   <label>Nome do Responsável</label>
                   <input
                     type="text"
                     name="responsavel"
-                    placeholder="Seu nome"
+                    required
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label>CNPJ</label>
+                  <input
+                    type="text"
+                    name="cnpj"
                     required
                   />
                 </div>
@@ -130,11 +141,10 @@ export default function RentalForm({ backgroundColor = "#f7f3ed" }) {
 
               <div className="form-grid">
                 <div className="form-group">
-                  <label>E-mail Corporativo</label>
+                  <label>E-mail</label>
                   <input
                     type="email"
                     name="email"
-                    placeholder="email@empresa.com"
                     required
                   />
                 </div>
@@ -144,34 +154,55 @@ export default function RentalForm({ backgroundColor = "#f7f3ed" }) {
                   <input
                     type="text"
                     name="telefone"
-                    placeholder="11999999999"
                     required
                     onInput={handlePhoneInput}
-                    maxLength={11}
+                    maxLength={15}
                   />
                 </div>
               </div>
 
-              <div className="form-group">
-                <label>Número de Colaboradores</label>
+              <div className="form-grid">
+                <div className="form-group">
+                  <label>Cidade</label>
+                  <input
+                    type="text"
+                    name="cidade"
+                    required
+                  />
+                </div>
+
+                <div className="form-group">
+                  <label>Linha de Interesse</label>
+                  <select name="linha_interesse">
+                    <option value="Nao sei ainda">Não sei ainda</option>
+                    <option value="Maquinas de Cafe Espresso">Linha Select</option>
+                    <option value="Maquinas Multibebidas">Linha Performance</option>
+                    <option value="Vending Machines">Linha Signature</option>
+                  </select>
+                </div>
+              </div>
+
+              <div className="form-group full-width">
+                <label>Consumo Estimado Por Dia</label>
                 <input
-                  type="number"
-                  name="colaboradores"
-                  placeholder="Ex: 50"
+                  type="text"
+                  name="consumo"
+                  placeholder="Ex.: 80 cafés por dia"
                 />
               </div>
 
-              <div className="form-group">
-                <label>Mensagem (Opcional)</label>
+              <div className="form-group full-width">
+                <label>Mensagem</label>
                 <textarea
                   name="mensagem"
-                  placeholder="Conte-nos mais sobre o que precisa..."
                 ></textarea>
               </div>
 
-              <button type="submit" className="submit-btn btn-primary">
-                Solicitar Orçamento Empresarial
-              </button>
+              <div className="form-action">
+                <button type="submit" className="submit-btn">
+                  Enviar Solicitação
+                </button>
+              </div>
 
               {successMessage && (
                 <div className="success-message">
@@ -185,12 +216,11 @@ export default function RentalForm({ backgroundColor = "#f7f3ed" }) {
           {/* FORMULÁRIO PESSOA FÍSICA */}
           {activeTab === "person" && (
             <form onSubmit={handleSubmit} className="form-body form-person">
-              <div className="form-group">
+              <div className="form-group full-width">
                 <label>Nome Completo</label>
                 <input
                   type="text"
                   name="nome"
-                  placeholder="Seu nome"
                   required
                 />
               </div>
@@ -201,7 +231,6 @@ export default function RentalForm({ backgroundColor = "#f7f3ed" }) {
                   <input
                     type="email"
                     name="email"
-                    placeholder="email@email.com"
                     required
                   />
                 </div>
@@ -211,25 +240,43 @@ export default function RentalForm({ backgroundColor = "#f7f3ed" }) {
                   <input
                     type="text"
                     name="telefone"
-                    placeholder="11999999999"
                     required
                     onInput={handlePhoneInput}
-                    maxLength={11}
+                    maxLength={15}
                   />
                 </div>
               </div>
 
-              <div className="form-group">
+              <div className="form-grid">
+                <div className="form-group">
+                  <label>Cidade</label>
+                  <input
+                    type="text"
+                    name="cidade"
+                    required
+                  />
+                </div>
+                <div className="form-group">
+                  <label>CPF</label>
+                  <input
+                    type="text"
+                    name="cpf"
+                  />
+                </div>
+              </div>
+
+              <div className="form-group full-width">
                 <label>Mensagem (Opcional)</label>
                 <textarea
                   name="mensagem"
-                  placeholder="Dúvidas, preferências ou necessidade..."
                 ></textarea>
               </div>
 
-              <button type="submit" className="submit-btn btn-secondary">
-                Solicitar Orçamento Pessoal
-              </button>
+              <div className="form-action">
+                <button type="submit" className="submit-btn">
+                  Enviar Solicitação
+                </button>
+              </div>
 
               {successMessage && (
                 <div className="success-message">
