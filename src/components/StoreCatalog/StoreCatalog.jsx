@@ -178,6 +178,19 @@ const [toastVisible, setToastVisible] = useState(false);
     },
   },
   {
+    id: "cha-pessego-zero",
+    category: "tea",
+    nome: "Chá Mate de Pêssego Zero Açúcar - Toffa's Coffee",
+    descricao: "Blend aromático e revigorante.",
+    imagem: "/pessegozero.svg",
+    route: "/chaPZ",
+    variantes: {
+      "250g": { preco: "R$ 24,00", dbId: 36 },
+      "500g": { preco: "R$ 42,00", dbId: 37 },
+      "1kg":  { preco: "R$ 77,00", dbId: 38 },  
+    },
+  },
+  {
     id: "cha-frutas",
     category: "tea",
     nome: "Chá Preto de Frutas Vermelhas - Toffa's Coffee",

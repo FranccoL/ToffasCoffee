@@ -24,6 +24,7 @@ import CafePremium from "./pages/CafePremium";
 import Cha from "./pages/Cha";
 import ChaV from "./pages/ChaV";
 import ChaP from "./pages/ChaP";
+import ChaPZ from "./components/ProductPagePZ/ProductPagePZ";
 import ChaL from "./pages/ChaL";
 import HotDrinks from "./pages/BebidasQuentes";
 import Cappuccino from "./pages/Cappuccino";
@@ -66,6 +67,7 @@ function App() {
             <Route path="/cha" element={<Cha />} />
             <Route path="/chaV" element={<ChaV />} />
             <Route path="/chaP" element={<ChaP />} />
+            <Route path="/chaPZ" element={<ChaPZ />} />
             <Route path="/chaL" element={<ChaL />} />
             <Route path="/bebidasQuentes" element={<HotDrinks />} />
             <Route path="/cappuccino" element={<Cappuccino />} />
