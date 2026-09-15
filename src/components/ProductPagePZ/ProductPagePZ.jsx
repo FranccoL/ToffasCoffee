@@ -9,17 +9,15 @@ export default function ProductPagePZ() {
   const navigate = useNavigate();
 
   const preparoText = `
-Coloque 3 a 4 colheres de sopa de Toffa’s Chá Mate de Pêssego.
+Coloque 3 a 4 colheres de sopa de Toffa’s Chá Mate de Pêssego Zero Açúcar.
 Adicione 300mL de água fria com gelo ou quente.
 Misture bem com uma colher ou mixer (recomendado).
 Pronto! Agora é só saborear seu chá refrescante e cheio de sabor. 
   `;
 
   const ingredientesText = `
-Açúcar; extrato de mate, suco desidratado de pêssego, vitamina C (ácido ascórbico); 
-acidulante ácido cítrico, regulador de acidez citrato de sódio, 
-antiumectante dióxido de silício e aromatizante. 
-NÃO CONTÉM GLÚTEN.
+Maltodextrina, mate solúvel (Ilex paraguariensis), aroma idêntico ao natural de pêssego, acidulante ácido cítrico, antiumectante dióxido de silício e fosfato tricálcico.
+*ZERO AÇÚCAR ADICIONADO.
   `;
 
   const goBack = () => navigate(-1);
@@ -35,7 +33,7 @@ NÃO CONTÉM GLÚTEN.
 
   const produto = {
     id: "cha-pessego-zero",
-    nome: "Chá Mate de Pêssego Zero Açúcar",
+    nome: "Chá Mate de Pêssego Zero Açúcar*",
     categoria: "tea",
     imagem: "/pessegozero.svg",
   };

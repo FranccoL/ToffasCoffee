@@ -180,7 +180,7 @@ const [toastVisible, setToastVisible] = useState(false);
   {
     id: "cha-pessego-zero",
     category: "tea",
-    nome: "Chá Mate de Pêssego Zero Açúcar - Toffa's Coffee",
+    nome: "Chá Mate de Pêssego Zero Açúcar* - Toffa's Coffee",
     descricao: "Blend aromático e revigorante.",
     imagem: "/pessegozero.svg",
     route: "/chaPZ",
