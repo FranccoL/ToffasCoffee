@@ -23,9 +23,9 @@ ALÉRGICOS: NÃO CONTÉM LACTOSE. NÃO CONTÉM GLÚTEN.
   const [selectedWeight, setSelectedWeight] = useState("250g");
 
   const precoPorPeso = {
-    "250g": "R$ 23,95",
-    "500g": "R$ 45,50",
-    "1kg": "R$ 88,62",
+    "250g": "R$ 27,90",
+    "500g": "R$ 49,90",
+    "1kg": "R$ 91,90",
   };
 
   const produto = {

@@ -34,8 +34,8 @@ NÃO CONTÉM GLÚTEN.
 
   const precoPorPeso = {
     "250g": "R$ 15,90",
-    "500g": "R$ 30,74",
-    "1kg": "R$ 61,48",
+    "500g": "R$ 30,54",
+    "1kg": "R$ 60,90",
   };
 
   const produto = {

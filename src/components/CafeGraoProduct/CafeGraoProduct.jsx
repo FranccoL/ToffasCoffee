@@ -35,9 +35,9 @@ Não contém glúten, lactose ou aditivos.
   const [selectedWeight, setSelectedWeight] = useState("250g");
 
   const precoPorPeso = {
-    "250g": "R$ 25,97",
-    "500g": "R$ 47,44",
-    "1kg": "R$ 90,59",
+    "250g": "R$ 25,90",
+    "500g": "R$ 47,90",
+    "1kg": "R$ 89,90",
   };
 
   const [quantidade, setQuantidade] = useState(1);

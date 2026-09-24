@@ -44,9 +44,9 @@ const [toastVisible, setToastVisible] = useState(false);
     imagem: "/grao1.svg",
     route: "/cafeGrao",
     variantes: {
-      "250g": { preco: "R$ 25,97", dbId: 2 },
-      "500g": { preco: "R$ 47,44", dbId: 3 },
-      "1kg":  { preco: "R$ 90,59", dbId: 4 },
+      "250g": { preco: "R$ 25,90", dbId: 2 },
+      "500g": { preco: "R$ 47,90", dbId: 3 },
+      "1kg":  { preco: "R$ 89,90", dbId: 4 },
     },
   },
   {
@@ -68,9 +68,9 @@ const [toastVisible, setToastVisible] = useState(false);
     imagem: "/premium.svg",
     route: "/cafePremium",
     variantes: {
-      "250g": { preco: "R$ 28,60", dbId: 6 },
-      "500g": { preco: "R$ 52,70", dbId: 7 },
-      "1kg":  { preco: "R$ 100,38", dbId: 8 },
+      "250g": { preco: "R$ 28,90", dbId: 6 },
+      "500g": { preco: "R$ 52,90", dbId: 7 },
+      "1kg":  { preco: "R$ 99,90", dbId: 8 },
     },
   },
   {
@@ -81,9 +81,9 @@ const [toastVisible, setToastVisible] = useState(false);
     imagem: "/chocolate1.svg",
     route: "/chocolate",
     variantes: {
-      "250g": { preco: "R$ 17,45", dbId: 9 },
-      "500g": { preco: "R$ 34,71", dbId: 10 },
-      "1kg":  { preco: "R$ 68,60", dbId: 11 },
+      "250g": { preco: "R$ 17,50", dbId: 9 },
+      "500g": { preco: "R$ 33,90", dbId: 10 },
+      "1kg":  { preco: "R$ 68,90", dbId: 11 },
     },
   },
   {
@@ -94,9 +94,9 @@ const [toastVisible, setToastVisible] = useState(false);
     imagem: "/chocolateSuico.svg",
     route: "/suico",
     variantes: {
-      "250g": { preco: "R$ 26,95", dbId: 33 },
-      "500g": { preco: "R$ 47,50", dbId: 34 },
-      "1kg":  { preco: "R$ 89,00", dbId: 35 },
+      "250g": { preco: "R$ 27,50", dbId: 33 },
+      "500g": { preco: "R$ 49,90", dbId: 34 },
+      "1kg":  { preco: "R$ 91,90", dbId: 35 },
     },
   },
   {
@@ -107,9 +107,9 @@ const [toastVisible, setToastVisible] = useState(false);
     imagem: "/capp.svg",
     route: "/cappuccino",
     variantes: {
-      "250g": { preco: "R$ 17,53", dbId: 12 },
-      "500g": { preco: "R$ 33,87", dbId: 13 },
-      "1kg":  { preco: "R$ 67,00", dbId: 14 },
+      "250g": { preco: "R$ 17,50", dbId: 12 },
+      "500g": { preco: "R$ 34,90", dbId: 13 },
+      "1kg":  { preco: "R$ 68,90", dbId: 14 },
     },
   },
   {
@@ -120,9 +120,9 @@ const [toastVisible, setToastVisible] = useState(false);
     imagem: "/pistache.svg",
     route: "/cappPist",
     variantes: {
-      "250g": { preco: "R$ 23,40", dbId: 30 },
-      "500g": { preco: "R$ 39,15", dbId: 31 },
-      "1kg":  { preco: "R$ 73,85", dbId: 32 },
+      "250g": { preco: "R$ 23,50", dbId: 30 },
+      "500g": { preco: "R$ 38,90", dbId: 31 },
+      "1kg":  { preco: "R$ 73,90", dbId: 32 },
     },
   },
   {
@@ -133,9 +133,9 @@ const [toastVisible, setToastVisible] = useState(false);
     imagem: "/cappA.svg",
     route: "/cappuccinoSA",
     variantes: {
-      "250g": { preco: "R$ 29,13", dbId: 15 },
-      "500g": { preco: "R$ 52,81", dbId: 16 },
-      "1kg":  { preco: "R$ 105,38", dbId: 17 },
+      "250g": { preco: "R$ 28,90", dbId: 15 },
+      "500g": { preco: "R$ 52,90", dbId: 16 },
+      "1kg":  { preco: "R$ 104,90", dbId: 17 },
     },
   },
   {
@@ -147,8 +147,8 @@ const [toastVisible, setToastVisible] = useState(false);
     route: "/LeitePo",
     variantes: {
       "250g": { preco: "R$ 15,90", dbId: 18 },
-      "500g": { preco: "R$ 30,74", dbId: 19 },
-      "1kg":  { preco: "R$ 61,48", dbId: 20 },
+      "500g": { preco: "R$ 30,50", dbId: 19 },
+      "1kg":  { preco: "R$ 60,90", dbId: 20 },
     },
   },
   {
@@ -159,9 +159,9 @@ const [toastVisible, setToastVisible] = useState(false);
     imagem: "/limao.svg",
     route: "/chaL",
     variantes: {
-      "250g": { preco: "R$ 16,25", dbId: 21 },
-      "500g": { preco: "R$ 29,97", dbId: 22 },
-      "1kg":  { preco: "R$ 54,00", dbId: 23 },
+      "250g": { preco: "R$ 15,50", dbId: 21 },
+      "500g": { preco: "R$ 29,90", dbId: 22 },
+      "1kg":  { preco: "R$ 54,90", dbId: 23 },
     },
   },
   {
@@ -172,9 +172,9 @@ const [toastVisible, setToastVisible] = useState(false);
     imagem: "/pessego.svg",
     route: "/chaP",
     variantes: {
-      "250g": { preco: "R$ 16,25", dbId: 24 },
-      "500g": { preco: "R$ 29,97", dbId: 25 },
-      "1kg":  { preco: "R$ 54,00", dbId: 26 },  
+      "250g": { preco: "R$ 15,50", dbId: 24 },
+      "500g": { preco: "R$ 29,90", dbId: 25 },
+      "1kg":  { preco: "R$ 54,90", dbId: 26 },  
     },
   },
   {
@@ -198,9 +198,9 @@ const [toastVisible, setToastVisible] = useState(false);
     imagem: "/frutas.svg",
     route: "/chaV",
     variantes: {
-      "250g": { preco: "R$ 16,25", dbId: 27 },  
-      "500g": { preco: "R$ 29,97", dbId: 28 },  
-      "1kg":  { preco: "R$ 54,00", dbId: 29 },  
+      "250g": { preco: "R$ 15,50", dbId: 27 },  
+      "500g": { preco: "R$ 29,90", dbId: 28 },  
+      "1kg":  { preco: "R$ 54,90", dbId: 29 },  
     },
   },
 ];
