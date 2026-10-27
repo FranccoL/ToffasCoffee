@@ -15,7 +15,7 @@ export default function PedidoDetalhe() {
     try {
       const response = await adminApi.get(`/pedidos/${id}`);
       setPedido(response.data);
-    } catch (err) {
+    } catch {
       setErro("Erro ao carregar pedido");
     } finally {
       setLoading(false);
@@ -30,6 +30,9 @@ export default function PedidoDetalhe() {
   if (erro) return <p className="admin-error">{erro}</p>;
   if (!pedido) return null;
 
+  const cliente = pedido.cliente ?? pedido;
+  const valor = (preco) => Number(preco || 0).toFixed(2).replace(".", ",");
+
   return (
     <div className="pedido-detalhe-container">
       <button className="voltar" onClick={() => navigate(-1)}>
@@ -40,8 +43,17 @@ export default function PedidoDetalhe() {
 
       <section className="bloco">
         <h2>Cliente</h2>
-        <p><strong>Nome:</strong> {pedido.cliente.nome}</p>
-        <p><strong>Email:</strong> {pedido.cliente.email}</p>
+        <p><strong>Nome:</strong> {cliente.nome ?? pedido.nome_cliente ?? "-"}</p>
+        <p><strong>E-mail:</strong> {cliente.email ?? pedido.email_cliente ?? "-"}</p>
+        <p><strong>CPF:</strong> {cliente.cpf ?? pedido.cpf ?? "-"}</p>
+        <p><strong>Telefone:</strong> {cliente.telefone ?? pedido.telefone ?? "-"}</p>
+        <p><strong>CEP:</strong> {cliente.cep ?? pedido.cep ?? "-"}</p>
+        <p><strong>Endereço:</strong> {cliente.endereco ?? pedido.endereco ?? "-"}</p>
+        <p><strong>Número:</strong> {cliente.numero ?? pedido.numero ?? "-"}</p>
+        <p><strong>Complemento:</strong> {cliente.complemento ?? pedido.complemento ?? "-"}</p>
+        <p><strong>Bairro:</strong> {cliente.bairro ?? pedido.bairro ?? "-"}</p>
+        <p><strong>Cidade:</strong> {cliente.cidade ?? pedido.cidade ?? "-"}</p>
+        <p><strong>Estado:</strong> {cliente.estado ?? pedido.estado ?? "-"}</p>
       </section>
 
       <section className="bloco">
@@ -72,9 +84,9 @@ export default function PedidoDetalhe() {
               <tr key={index}>
                 <td>{item.nome}</td>
                 <td>{item.quantidade}</td>
-                <td>R$ {item.preco.toFixed(2)}</td>
+                <td>R$ {valor(item.preco)}</td>
                 <td>
-                  R$ {(item.preco * item.quantidade).toFixed(2)}
+                  R$ {valor(Number(item.preco) * Number(item.quantidade))}
                 </td>
               </tr>
             ))}
@@ -82,7 +94,7 @@ export default function PedidoDetalhe() {
         </table>
 
         <div className="total">
-          Total: <strong>R$ {pedido.total.toFixed(2)}</strong>
+          Total: <strong>R$ {valor(pedido.total)}</strong>
         </div>
       </section>
     </div>

@@ -19,6 +19,12 @@
   text-align: center;
 }
 
+.cliente-pedido span {
+  display: block;
+  overflow-wrap: anywhere;
+  font-size: 13px;
+}
+
 .admin-pedidos-table th {
   background: #f4f4f4;
   font-weight: 600;

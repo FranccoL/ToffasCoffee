@@ -36,7 +36,7 @@ export default function Login() {
   return (
     <div className="admin-login-container">
       <form className="admin-login-form" onSubmit={handleSubmit}>
-        <h1 className="admin-login-title">Admin • Toffas Coffee</h1>
+        <h1 className="admin-login-title">Admin Toffa's Coffee</h1>
 
         {erro && <p className="admin-login-error">{erro}</p>}
 

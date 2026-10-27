@@ -68,7 +68,11 @@ export default function Pedidos() {
                 </button>
               </td>
 
-              <td>{pedido.nome_cliente}</td>
+              <td className="cliente-pedido">
+                <strong>{pedido.cliente?.nome ?? pedido.nome_cliente ?? "-"}</strong>
+                <span>{pedido.cliente?.email ?? pedido.email_cliente ?? pedido.email ?? "-"}</span>
+                <span>{pedido.cliente?.telefone ?? pedido.telefone_cliente ?? pedido.telefone ?? "-"}</span>
+              </td>
 
               <td>R$ {Number(pedido.total).toFixed(2)}</td>
 
