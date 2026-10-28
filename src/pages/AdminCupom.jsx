@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { apiPost } from "../services/api";
+import adminApi from "../admin/services/adminApi";
 import "./AdminCupom.css";
 
 export default function AdminCupom() {
@@ -13,6 +13,9 @@ export default function AdminCupom() {
     primeira_compra: false,
     uso_por_cliente: false
   });
+  const [saving, setSaving] = useState(false);
+  const [erro, setErro] = useState("");
+  const [sucesso, setSucesso] = useState("");
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -22,10 +25,15 @@ export default function AdminCupom() {
     }));
   };
 
-  const salvar = async () => {
+  const salvar = async (e) => {
+    e.preventDefault();
+    setErro("");
+    setSucesso("");
+    setSaving(true);
+
     try {
-      await apiPost("/admin/cupom", form);
-      alert("Cupom criado!");
+      await adminApi.post("/cupom", form);
+      setSucesso("Cupom criado com sucesso.");
       setForm({
         codigo: "",
         tipo: "percentual",
@@ -37,15 +45,18 @@ export default function AdminCupom() {
         uso_por_cliente: false
       });
     } catch (err) {
-      alert("Erro ao criar cupom");
+      setErro(err.response?.data?.error || "Erro ao criar cupom.");
+    } finally {
+      setSaving(false);
     }
   };
 
   return (
     <div className="admin-cupom-page">
-
-    <div className="admin-cupom-container">
-      <h2 className="admin-cupom-title">Criar Cupom</h2>
+    <form className="admin-cupom-container" onSubmit={salvar}>
+      <h1 className="admin-cupom-title">Criar cupom</h1>
+      {erro && <p className="admin-cupom-error" role="alert">{erro}</p>}
+      {sucesso && <p className="admin-cupom-success" role="status">{sucesso}</p>}
 
       <input
         className="admin-cupom-input"
@@ -53,6 +64,7 @@ export default function AdminCupom() {
         placeholder="NOME DO CUPOM"
         value={form.codigo}
         onChange={handleChange}
+        required
       />
 
       <select
@@ -67,10 +79,14 @@ export default function AdminCupom() {
 
       <input
         className="admin-cupom-input"
+        type="number"
+        min="0"
+        step="0.01"
         name="valor"
         placeholder="Valor"
         value={form.valor}
         onChange={handleChange}
+        required
       />
 
       <label className="admin-cupom-date-label">
@@ -86,6 +102,9 @@ export default function AdminCupom() {
 
       <input
         className="admin-cupom-input"
+        type="number"
+        min="1"
+        step="1"
         name="uso_maximo"
         placeholder="Quantas vezes o cupom pode ser usado no total"
         value={form.uso_maximo}
@@ -107,10 +126,10 @@ export default function AdminCupom() {
         Uso único por cliente
       </label>
 
-      <button className="admin-cupom-button" onClick={salvar}>
-        Salvar Cupom
+      <button className="admin-cupom-button" type="submit" disabled={saving}>
+        {saving ? "Salvando..." : "Salvar cupom"}
       </button>
-    </div>
+    </form>
     </div>
   );
 }

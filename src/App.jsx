@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import ScrollToTop from "./utils/ScrollTop";
 
 // CONTEXT
@@ -82,7 +82,6 @@ function App() {
             <Route path="/aluguel" element={<AluguelMaquinaPage />} />
             <Route path="/loja" element={<Loja />} />
             <Route path="/checkout" element={<Checkout />} />
-            <Route path="/cupom" element={<AdminCupom />} />
             <Route path="/pedido/sucesso" element={<PedidoSucesso />} />
             <Route path="/pedido/falha" element={<PedidoFalha />} />
             <Route path="/pedido/pendente" element={<PedidoPendente />} />
@@ -91,11 +90,13 @@ function App() {
 
           {/* ADMIN */}
             <Route path="/admin/login" element={<AdminLogin />} />
+            <Route path="/cupom" element={<Navigate to="/admin/cupom" replace />} />
          
             <Route path="/admin"element={<ProtectedRoute><AdminLayout /></ProtectedRoute>}>
             <Route path="dashboard" element={<Dashboard />} />
             <Route path="pedidos" element={<Pedidos />} />
             <Route path="pedidos/:id" element={<PedidoDetalhe />} />
+            <Route path="cupom" element={<AdminCupom />} />
             
           </Route>
 
