@@ -62,29 +62,50 @@
 
 /* ================= SLIDE 1 ================= */
 .slide-1 {
-  background-size: cover;
-    background-position: 80% 1%;
-    background-repeat: no-repeat;
-    background-color: #F7F0E6;
-
+  background-size: 105% auto;
+  background-position: 80% 60%;
+  background-repeat: no-repeat;
+  background-color: #F7F0E6;
+}
+.slide-1 .hero-text {
+  left: clamp(32px, 5vw, 72px);
+  top: 50%;
+  transform: translateY(-50%);
+  align-items: flex-start;
+  text-align: left;
+  width: min(28vw, 380px);
+  max-width: 380px;
+  height: auto;
+  padding: 0;
+  gap: 16px;
+  color: #4b2b19;
+  text-shadow: none;
 }
 .slide-1 .hero-text h1 {
-  font-size: 46px;
+  font-size: clamp(32px, 3.2vw, 46px);
   font-weight: 800;
-  text-transform: uppercase;
-  visibility: hidden;
+  line-height: 1.12;
+  visibility: visible;
+}
+.slide-1 .hero-subtitle {
+  margin: 0;
+  font-size: 24px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 1.4;
+}
+.slide-1-desktop-break {
+  display: initial;
 }
 .slide-1 .btHero {
   background-color: #894F1D;
   color: #F5E7D9;
   border-radius: 30px;
-  width: 150px;
-  height: 25px;
-  font-size: 20px;
-  text-transform: uppercase;
-  margin-top: 480px;
-  margin-left: 250px;
-  
+  width: fit-content;
+  height: auto;
+  padding: 14px 28px;
+  font-size: 16px;
+  margin: 4px 0 0;
   transition: all 0.35s ease;
   cursor: pointer;
 }
@@ -249,33 +270,56 @@
 
   /* ================= SLIDE 1 MOBILE ================= */
   .slide-1 {
-    background-image: url('/group913.svg') !important;
-    background-size: cover !important;
-    background-position: 70% 60% !important;
+    background-image: url('/hero1m.svg') !important;
+    background-size: 105% auto !important;
+    background-position: 70% 65% !important;
     background-repeat: no-repeat !important;
     background-color: #f8f2ea;
   }
 
   .slide-1 .hero-text {
-    
-    justify-content: flex-end; 
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    transform: translateX(-50%);
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    width: calc(100% - 32px);
+    max-width: 440px;
+    height: 100%;
+    padding: 105px 0 42px;
+    box-sizing: border-box;
+    gap: 10px;
+  }
+
+  .slide-1 .hero-text h1,
+  .slide-1 .hero-subtitle {
+    flex-shrink: 0;
+  }
+
+  .slide-1-desktop-break {
+    display: none;
   }
 
   .slide-1 .hero-text h1 {
-    font-size: 28px !important;
-    margin-top: auto; 
-    margin-bottom: auto; 
-   
+    font-size: clamp(23px, 6vw, 30px) !important;
+    line-height: 1.12;
+    margin: 0;
+    visibility: visible;
+  }
 
+  .slide-1 .hero-subtitle {
+    font-size: 14px;
+    line-height: 1.35;
   }
 
   .slide-1 .btHero {
-    
-    padding: 12px 24px; 
+    padding: 12px 22px;
     font-size: 14px;
     width: fit-content;
     align-self: center;
-    margin: 0 0 -12px 0 !important; 
+    margin: auto 0 0 !important;
   }
 
   /* ================= SLIDE 2 MOBILE ================= */

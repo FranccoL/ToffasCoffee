@@ -10,9 +10,22 @@ import 'swiper/css/navigation';
 const slidesData = [
   {
     id: 1,
-    title: "TESTE",
-    backgroundUrl: "/group-914.svg",
-    ctaText: "Ver Produto!",
+    title: (
+      <>
+        Aroma Marcante.
+        <br className="slide-1-desktop-break" />
+        {" "}Sabor Inesquecível.
+      </>
+    ),
+    subtitle: (
+      <>
+        Café 100% Arábica selecionado para transformar a sua rotina num momento
+        <br className="slide-1-desktop-break" />
+        {" "}especial.
+      </>
+    ),
+    backgroundUrl: "/hero1.svg",
+    ctaText: "Experimentar Agora",
     ctaLink: "/cafeMoido"
   },
   {
